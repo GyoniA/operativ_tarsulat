@@ -26,7 +26,7 @@ public class AmnesiaVirus extends Agent {
     	throw new RuntimeException("Unimplemented");
     }
     
-    public Boolean HandleParalized(Virologist v) {
+    public Boolean HandleParalyzed(Virologist v) {
     	throw new RuntimeException("Unimplemented");
     }
     
