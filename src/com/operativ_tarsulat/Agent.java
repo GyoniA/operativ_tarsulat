@@ -24,4 +24,8 @@ public abstract class Agent implements Steppable, Effect {
     public void Step() {
     	throw new RuntimeException("Unimplemented");
     }
+    
+    public void SetDuration(int length) {
+    	
+    }
 }

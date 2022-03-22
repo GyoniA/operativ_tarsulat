@@ -14,6 +14,15 @@ package com.operativ_tarsulat;
 
 
 public class Warehouse implements Building {
+	
+	public void SetAmino(int amount) {
+		throw new RuntimeException("Unimplemented");
+	}
+	
+	public void SetNucleo(int amount) {
+		throw new RuntimeException("Unimplemented");
+	}
+	
     public void Interact(Virologist v) {
     	throw new RuntimeException("Unimplemented");
     }

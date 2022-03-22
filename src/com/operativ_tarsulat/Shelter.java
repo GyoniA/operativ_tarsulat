@@ -16,5 +16,10 @@ package com.operativ_tarsulat;
 public class Shelter implements Building {
     private Gear localGear;
     public void Interact(Virologist v) {
+    	throw new RuntimeException("Unimplemented");
+    }
+    
+    public void SetGear(Gear g) {
+    	throw new RuntimeException("Unimplemented");
     }
 }

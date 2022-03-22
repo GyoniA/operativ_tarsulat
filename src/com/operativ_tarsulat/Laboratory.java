@@ -15,6 +15,9 @@ package com.operativ_tarsulat;
 
 public class Laboratory extends Field {
     private GeneticCode localGeneticCode;
+    public void SetGeneticCode(GeneticCode gc) {
+    	localGeneticCode = gc;
+    }
     public void Interact(Virologist v) {
     	throw new RuntimeException("Unimplemented");
     }
