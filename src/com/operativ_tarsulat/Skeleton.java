@@ -119,13 +119,11 @@ public class Skeleton {
 	/// Main function called at the start of the program
 	///	
 	public static void main(String[] args) {
-		
-	    Game.GetInstance().AddVirologist(new Virologist());
 		while(true) {
 			int testCase = AskQuestion("Melyik tesztet szeretnéd futtatni?", new String[]{"Kilépés","Játékos lép","Genetikai kód tanulása", "Felszerelés felvétele", "Anyag felvétele", "Ágens készítése", "Játék betöltése", "Játék indítása","Ágens kenése", "Anyagkészlet lopása", "Felszerelés lopása", "Kör kezdete", "Kör kezdete tánc ágensel","Kör kezdete bénító ágensel" });
 			switch(testCase) {
 			case 0: // Exits the program
-				System.exit(0);
+				Game.GetInstance().ExitGame();
 				break;
 			case 1: // Runs virologist moves test
 				VirologistMoveTest(); 
