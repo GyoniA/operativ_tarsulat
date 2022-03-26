@@ -17,19 +17,31 @@ public class Shelter implements Building {
     private Gear localGear;
     public Shelter(Gear localG)
     {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),localG.getClass().getName());
     	localGear = localG;
+    	Skeleton.LogReturn();
     }
     public Shelter() {}
+    /**
+     * The virologist wants to pick up or change the local gear.
+     * @param v The virologist who wants to interact with the Shelter.
+     */
     public void Interact(Virologist v) {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
     	if(localGear!=null)
     	{
     		Gear g=v.GetGear(localGear);
-    		v.RemoveGear(g);
+    		localGear = g;
     	}
-    	
+    	Skeleton.LogReturn();
     }
-    
+    /**
+     * This function set a new gear that will be stored here.
+     * @param g The new gear that will be stored.
+     */
     public void SetGear(Gear g) {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),g.getClass().getName());
     	localGear=g;
+    	Skeleton.LogReturn();
     }
 }
