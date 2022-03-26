@@ -150,8 +150,11 @@ public class Virologist implements Steppable {
 
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
-        for(int i = 0;i<activeAgents.size();i++)
+        for(int i = 0;i<activeAgents.size();i++) {
+            activeAgents.get(i).HandleTurnStart(this);
             activeAgents.get(i).Step();
+        }
+
         Skeleton.LogReturn();
     }
 
