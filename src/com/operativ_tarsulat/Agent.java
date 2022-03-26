@@ -3,19 +3,32 @@ package com.operativ_tarsulat;
 public abstract class Agent implements Steppable, Effect {
     public int Duration;
     private Virologist virologist;
+
+    /**
+     * Creates a blank Agent
+     */
     Agent() {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+        Skeleton.LogFunctionCall("Agent ctr");
         Duration = 0;
         virologist = null;
         Skeleton.LogReturn();
     }
+
+    /**
+     *
+     * @param d The duration of this Agent
+     * @param v The virologist that this Agent will belong to
+     */
     Agent(int d, Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+        Skeleton.LogFunctionCall("Agent ctr");
         Duration = d;
         virologist = v;
         Skeleton.LogReturn();
     }
 
+    /**
+     * Decreases the duration of this Agent until it hits 0
+     */
     public void DecreaseDuration() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	if (Duration > 0) {
@@ -23,21 +36,40 @@ public abstract class Agent implements Steppable, Effect {
         }
         Skeleton.LogReturn();
     }
+
+    /**
+     * Sets the Agent's virologist
+     * @param v The virologist that this Agent will belong to
+     */
     public void setVirologist(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
         virologist = v;
         Skeleton.LogReturn();
     }
+
+    /**
+     * Returns the Agent's virologist
+     * @return The virologist of this Agent
+     */
     public Virologist getVirologist() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+        Skeleton.LogReturn(virologist.getName());
         return virologist;
     }
 
+    /**
+     * Calls the DecreaseDuration function;
+     */
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         DecreaseDuration();
+        Skeleton.LogReturn();
     }
-    
+
+    /**
+     * Sets the duration of this Agent
+     * @param length The length to set the duration to
+     */
     public void SetDuration(int length) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), String.valueOf(length));
         Duration = length;

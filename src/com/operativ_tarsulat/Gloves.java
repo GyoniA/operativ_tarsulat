@@ -12,7 +12,7 @@ public class Gloves extends Gear {
      * @return true, because v can't reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
+        Skeleton.LogFunctionCall("Gloves ctr", v.getClass().getName(), i.toString(), v2.getClass().getName());
         Skeleton.LogReturn("true");
     	return true;
     }

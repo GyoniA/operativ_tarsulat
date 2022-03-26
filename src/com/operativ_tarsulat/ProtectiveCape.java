@@ -12,7 +12,7 @@ public class ProtectiveCape extends Gear {
      * @return true in 82,3% of the cases
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
+        Skeleton.LogFunctionCall("ProtectiveCape ctr", v.getClass().getName(), i.toString(), v2.getClass().getName());
     	//Generating a random number (0-999)
         Random rand = new Random();
     	int num = rand.nextInt(1000);

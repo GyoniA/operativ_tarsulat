@@ -1,6 +1,7 @@
 package com.operativ_tarsulat;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 //
@@ -18,18 +19,23 @@ import java.util.List;
 
 
 public abstract class Field {
-    private ArrayList<Virologist> virologists;
+    private LinkedList<Virologist> virologists;
     private List<Field> neighbours;
     public Gear droppedGear;
-    public Field(Gear g,List<Field> neigh,ArrayList<Virologist> virologists)
-    {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),virologists.getClass().getName(),neigh.getClass().getName(),g.getClass().getName());
-    	droppedGear = g;
-    	neighbours = neigh;
-    	this.virologists  = virologists;
+    /**
+     * The constructor of the Field class.
+     * @param g The Gear
+     * @param neigh
+     * @param virologists
+     */
+    
+    public Field() {
+    	Skeleton.LogFunctionCall("Field ctr");
+    	neighbours = new LinkedList<Field>();
+    	virologists = new LinkedList<Virologist>();
     	Skeleton.LogReturn();
     }
-    public Field() {}
+    
 	public void Accept(Virologist v) {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
     	virologists.add(v);

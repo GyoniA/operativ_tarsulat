@@ -14,6 +14,12 @@ package com.operativ_tarsulat;
 
 
 public class FreeField extends Field {
+	
+	public FreeField()
+	{
+		Skeleton.LogFunctionCall("FreeField ctr");
+		Skeleton.LogReturn();
+	}
     public void Interact(Virologist v) {
     }
 }

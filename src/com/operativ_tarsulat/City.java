@@ -20,7 +20,7 @@ public class City extends Field {
     private List<Building> buildings;
     public City(List<Building> buildings)
     {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),buildings.getClass().getName());
+    	Skeleton.LogFunctionCall("City ctr");
     	this.buildings = buildings;
     	Skeleton.LogReturn();
     }
