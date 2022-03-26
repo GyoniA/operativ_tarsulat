@@ -37,7 +37,7 @@ public class Bag extends Gear {
      */
     public int HandleInventoryCapacity(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
-        Skeleton.LogReturn(capacityGrow.toString());
+        Skeleton.LogReturn(Integer.toString(capacityGrow));
     	return capacityGrow;
     }
 

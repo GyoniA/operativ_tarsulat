@@ -35,7 +35,7 @@ public class Gloves extends Gear {
      */
     public int HandleInventoryCapacity(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
-        Skeleton.LogReturn(0.toString());
+        Skeleton.LogReturn(Integer.toString(0));
     	return 0;
     }
 
