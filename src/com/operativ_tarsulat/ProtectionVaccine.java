@@ -28,7 +28,11 @@ public class ProtectionVaccine extends Agent {
      * @param v2 The targeted Virologist
      * @return true, because v can't reach v2
      */
-    public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) { return true; }
+    public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), i.getClass().getName(), v2.getName());
+        Skeleton.LogReturn("true");
+        return true;
+    }
 
     /**
      *
@@ -69,7 +73,11 @@ public class ProtectionVaccine extends Agent {
      * @param code The GeneticCode which it wants to use to create an Agent
      * @return false, because it can create Agent
      */
-    public Boolean HandleCreateAgent(Virologist v, GeneticCode code) { return false; }
+    public Boolean HandleCreateAgent(Virologist v, GeneticCode code) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), code.getClass().getName());
+        Skeleton.LogReturn("false");
+        return false;
+    }
 
     /**
      * Handles the start of the turn

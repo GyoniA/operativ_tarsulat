@@ -63,6 +63,7 @@ public abstract class Agent implements Steppable, Effect {
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         DecreaseDuration();
+        Skeleton.LogReturn();
     }
 
     /**

@@ -31,7 +31,11 @@ public class DanceVirus extends Agent {
      * @param v2 The targeted Virologist
      * @return false, because v can reach v2
      */
-    public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) { return false; }
+    public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), i.getClass().getName(), v2.getName());
+        Skeleton.LogReturn("false");
+        return false;
+    }
 
     /**
      *
@@ -72,7 +76,7 @@ public class DanceVirus extends Agent {
      * @return false, because it can create Agent
      */
     public Boolean HandleCreateAgent(Virologist v, GeneticCode code) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), code.getClass().getName());
         Skeleton.LogReturn("false");
         return false;
     }

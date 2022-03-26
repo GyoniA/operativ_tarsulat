@@ -30,6 +30,7 @@ public class AmnesiaGeneticCode extends GeneticCode {
      */
     public  AmnesiaVirus CreateInstance(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn(this.getClass().getName());
         return new AmnesiaVirus(duration, v);
     }
 
@@ -38,6 +39,8 @@ public class AmnesiaGeneticCode extends GeneticCode {
      * @param ls The list which will be set
      */
     public void CheckList(GeneticCodeCheckList ls) {
-    	ls.Amnesia = true;
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), ls.getClass().getName());
+        ls.Amnesia = true;
+        Skeleton.LogReturn();
     }
 }

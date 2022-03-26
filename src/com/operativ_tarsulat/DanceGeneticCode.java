@@ -29,6 +29,7 @@ public class DanceGeneticCode extends GeneticCode {
      */
     public DanceVirus CreateInstance(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn(this.getClass().getName());
         return new DanceVirus(duration, v);
     }
 
@@ -37,6 +38,8 @@ public class DanceGeneticCode extends GeneticCode {
      * @param ls The list which will be set
      */
     public void CheckList(GeneticCodeCheckList ls) {
-    	ls.Dance = true;
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), ls.getClass().getName());
+        ls.Dance = true;
+        Skeleton.LogReturn();
     }
 }

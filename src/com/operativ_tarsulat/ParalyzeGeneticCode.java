@@ -29,6 +29,7 @@ public class ParalyzeGeneticCode extends GeneticCode {
      */
     public ParalyzeVirus CreateInstance(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn(this.getClass().getName());
         return new ParalyzeVirus(duration, v);
     }
 
@@ -38,6 +39,7 @@ public class ParalyzeGeneticCode extends GeneticCode {
      * @param ls The list which will be set
      */
     public void CheckList(GeneticCodeCheckList ls) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), ls.getClass().getName());
         ls.Paralyze = true;
         Skeleton.LogReturn();
     }

@@ -29,6 +29,7 @@ public class ProtectionGeneticCode extends GeneticCode {
      */
     public ProtectionVaccine CreateInstance(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn(this.getClass().getName());
         return new ProtectionVaccine(duration, v);
     }
 
@@ -37,7 +38,8 @@ public class ProtectionGeneticCode extends GeneticCode {
      * @param ls The list which will be set
      */
     public void CheckList(GeneticCodeCheckList ls) {
-    	ls.Protection = true;
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), ls.getClass().getName());
+        ls.Protection = true;
         Skeleton.LogReturn();
     }
 }
