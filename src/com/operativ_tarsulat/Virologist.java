@@ -18,7 +18,7 @@ public class Virologist implements Steppable {
     private int aminoCount;
     private int nucleoCount;
 
-    private int inventoryCapacity;
+    private final int inventoryCapacity = 100;
 
     /**
      *
@@ -188,8 +188,8 @@ public class Virologist implements Steppable {
 
     public void InteractWithField() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
-        boolean movement = checkMovement();
-        field.Interact(this);
+        if(checkMovement())
+        	field.Interact(this);
         Skeleton.LogReturn();
     }
 
@@ -243,10 +243,17 @@ public class Virologist implements Steppable {
 
     public void CreateAgent(GeneticCode code) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),code.getClass().toString());
-        Agent createdAgent = code.CreateInstance(this);
-        agentInventory.add(createdAgent);
+        if(checkMovement()&&!checkAmnesia(code)) {
+        	int amino = code.GetAminoCost();
+        	int nucleo = code.GetNucleoCost();
+        	if(aminoCount>=amino&&nucleoCount>=nucleo) {
+        		aminoCount-=amino;
+        		nucleoCount-=nucleo;
+        		Agent createdAgent = code.CreateInstance(this);
+    	        agentInventory.add(createdAgent);	
+        	}	        
+        }
         Skeleton.LogReturn();
-
     }
 
     public void EndTurn() {
@@ -285,6 +292,17 @@ public class Virologist implements Steppable {
             }
         Skeleton.LogReturn("true");
         return true;
+    }
+    
+    private boolean checkAmnesia(GeneticCode gc){
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+        for (int i = 0;i < activeAgents.size(); i++)
+            if(activeAgents.get(i).HandleCreateAgent(this,gc)) {
+                Skeleton.LogReturn("true");
+                return true;
+            }
+        Skeleton.LogReturn("false");
+        return false;
     }
 
     private boolean checkTouch(Agent a, Virologist v) {

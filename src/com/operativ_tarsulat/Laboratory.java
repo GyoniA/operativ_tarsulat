@@ -46,7 +46,7 @@ public class Laboratory extends Field {
      * @param v The virologist who wants to learn the genetic code. 
      */
     public void Interact(Virologist v) {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
     	v.LearnGeneticCode(localGeneticCode);
     	Skeleton.LogReturn();
     }

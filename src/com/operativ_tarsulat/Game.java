@@ -103,8 +103,10 @@ public class Game implements Serializable {
      * @return the strored instance of the class, creates a new one if there isn't one yet
      */
     public static Game GetInstance() {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	if(instance == null)
     		instance = new Game();
+    	Skeleton.LogReturn(instance.getClass().getName());
     	return instance;
     }
     
@@ -112,8 +114,10 @@ public class Game implements Serializable {
      * Constructor with no arguments, initializes all attributes
      */
     public Game() {
+    	Skeleton.LogFunctionCall("Game ctr");
     	virologists = new ArrayList<>();
     	fields = new ArrayList<>();
+    	Skeleton.LogReturn();
     }
     
     /**
@@ -121,7 +125,9 @@ public class Game implements Serializable {
      * Creates a new game
      */
     public void Clear() {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	instance = new Game(); // Creates a new instance of the game class discarding the last one
+    	Skeleton.LogReturn();
     }
     /**
      * Returns a random int between the given bounds
@@ -130,6 +136,7 @@ public class Game implements Serializable {
      * @return Random number between min and max
      */
     private int RandomInt(int min,int max) {
+    	int mod = max-min;
     	return (r.nextInt()%(max-min))+min;
     }
 
@@ -162,9 +169,8 @@ public class Game implements Serializable {
     	virologists.clear();
     	fields.clear();
     	
-    	//TODO add name to virologist
     	for(String name : names)
-    		virologists.add(new Virologist(/*name*/)); 
+    		virologists.add(new Virologist(name)); 
     	
     	List<Field> createdFields = new LinkedList<Field>();
     	
@@ -189,12 +195,13 @@ public class Game implements Serializable {
     	for(int i = 0;i<warehouseCount;i++) {
     		int nucleo = RandomInt(MIN_NUCLEO_PER_WAREHOUSE,MAX_NUCLEO_PER_WAREHOUSE); // nucleo amount to be created
     		int amino = RandomInt(MIN_AMINO_PER_WAREHOUSE,MAX_AMINO_PER_WAREHOUSE); // amino amount to be created
-    		warehouses.add(new Warehouse(/*nucleo,amino*/)); //TODO check argument order    		
+    		warehouses.add(new Warehouse(nucleo,amino));   		
     	}
     	
     	for(int i = 0;i<shelterCount;i++) {
     		Gear[] g = new Gear[] {new ProtectiveCape(),new Gloves(),new Bag()};// Probably should be changed to switch case for performance purposes
-    		shelters.add(new Shelter(/*g[RandomInt(0,g.length)]*/)); //TODO add argument
+    		int index = RandomInt(0,g.length);
+    		shelters.add(new Shelter(g[index])); 
     	}
     	
     	List<City> cities = new LinkedList<City>();
@@ -272,7 +279,7 @@ public class Game implements Serializable {
      */
     public void EndGame() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
-    	System.out.println("A játék véget ért, az összes genetikai kódot megtanulta "+virologists.get(currentVirologistIndex).toString()); // TODO change to name of virologist and check that there is a virologist
+    	System.out.println("A játék véget ért, az összes genetikai kódot megtanulta "+virologists.get(currentVirologistIndex).getName()); 
     	Skeleton.LogReturn();
     }
     

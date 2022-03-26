@@ -387,7 +387,7 @@ public class Skeleton {
 		if(AskYesNoQuestion("Hat a virológusra amnézia vírus?")) {
 			v.AddAgent(new AmnesiaVirus());
 		}
-		int codeToUse = AskQuestion("Melyik genetikai kódot tanulja meg a virológus?",new String[] {"Bénító","Amnézia","Védelmi","Táncoló"});
+		int codeToUse = AskQuestion("Melyik genetikai kódot hozza létre a virológus?",new String[] {"Bénító","Amnézia","Védelmi","Táncoló"});
 		
 		GeneticCode c = new GeneticCode[] {new ParalyzeGeneticCode(),new AmnesiaGeneticCode(),new ProtectionGeneticCode(),new DanceGeneticCode()}[codeToUse];
 		v.AddGeneticCode(c);
@@ -436,10 +436,11 @@ public class Skeleton {
 	/// Játékos lépésének tesztelése
 	///
 	public static void VirologistMoveTest() {
-		Virologist v = new Virologist();
+		Virologist v = new Virologist("v");
 		Field f = new FreeField();
 		Field f2 = new FreeField();
-		//set field of virologist to f
+
+		v.SetField(f);
 		if(AskYesNoQuestion("Legyen bénító ágens a varázslón?")) {
 			ParalyzeVirus p = new ParalyzeVirus();
 			v.AddAgent(p);
@@ -453,8 +454,10 @@ public class Skeleton {
 	/// Genetikai kód tanulásának tesztelése
 	///
 	private static void LearnGeneticCodeTest() {
-		Virologist v = new Virologist();
+		Virologist v = new Virologist("tanuló");
 		Laboratory l = new Laboratory();
+		Game.GetInstance().Clear();
+		Game.GetInstance().AddVirologist(v);
 		v.SetField(l);
 		if(AskYesNoQuestion("Le van bénulva a virológus?")) {
 			v.AddAgent(new ParalyzeVirus());
@@ -468,17 +471,17 @@ public class Skeleton {
 			i++;
 		}
 		if(codeToLearn!=1&&AskYesNoQuestion("A virológus már megtanulta az amnézia genetikai kódot")) {
-			ParalyzeGeneticCode p = new ParalyzeGeneticCode();
+			AmnesiaGeneticCode p = new AmnesiaGeneticCode();
 			v.AddGeneticCode(p);
 			i++;
 		}
 		if(codeToLearn!=2&&AskYesNoQuestion("A virológus már megtanulta a védelmi genetikai kódot")) {
-			ParalyzeGeneticCode p = new ParalyzeGeneticCode();
+			ProtectionGeneticCode p = new ProtectionGeneticCode();
 			v.AddGeneticCode(p);
 			i++;
 		}
 		if(codeToLearn!=3&&i!=3&&AskYesNoQuestion("A virológus már megtanulta a táncoló genetikai kódot")) {
-			ParalyzeGeneticCode p = new ParalyzeGeneticCode();
+			DanceGeneticCode p = new DanceGeneticCode();
 			v.AddGeneticCode(p);
 		}
 		v.InteractWithField();

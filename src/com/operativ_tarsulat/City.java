@@ -1,5 +1,6 @@
 package com.operativ_tarsulat;
 
+import java.util.LinkedList;
 import java.util.List;
 
 //
@@ -24,7 +25,9 @@ public class City extends Field {
     	this.buildings = buildings;
     	Skeleton.LogReturn();
     }
-    public City() {}
+    public City() {
+    	buildings = new LinkedList<>();
+    }
     public List<Building> GetBuildings() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	Skeleton.LogReturn(buildings.toString());
