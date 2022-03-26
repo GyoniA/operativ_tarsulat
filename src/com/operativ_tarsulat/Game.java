@@ -12,71 +12,131 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Game class that represents the whole game. Stores virologists and fields and controls the flow of gameplay
+ *
+ */
 public class Game implements Serializable {
+	/**
+     * Maximum number of free fields generated per map
+     */
 	private final int MAX_FREE_FIELDS = 6; 
+	/**
+     * Minimum number of free fields generated per map
+     */
 	private final int MIN_FREE_FIELDS = 0;
-		 
+		
+	/**
+     * Maximum number of neighbours a field can have
+     */
     private final int MAX_ROADS = 5; 
     
+    /**
+     * Minimum number of shelters generated per map
+     */
     private final int MIN_SHELTERS = 4;
+    /**
+     * Maximum number of shelters generated per map
+     */
     private final int MAX_SHELTERS = 6;
     
+    /**
+     * Minimum number of warehouses generated per map
+     */
     private final int MIN_WAREHOUSES = 4;
+    /**
+     * Maximum number of warehouses generated per map
+     */
     private final int MAX_WAREHOUSES = 6;
     
+    /**
+     * Minimum number of amonis generated per warehouse
+     */
     private final int MIN_AMINO_PER_WAREHOUSE = 10;
+    /**
+     * Maximum number of aminos generated per warehouse
+     */
     private final int MAX_AMINO_PER_WAREHOUSE = 100;
     
+    /**
+     * Minimum number of nucleos generated per warehouse
+     */
     private final int MIN_NUCLEO_PER_WAREHOUSE = 10;
+    /**
+     * Maximum number of nucleos generated per warehouse
+     */
     private final int MAX_NUCLEO_PER_WAREHOUSE = 100;
     
+    /**
+     * Random object used for randomized decisions
+     */
     private Random r;
 	
 	
+	/**
+	 * Virologists that are on the field 
+	 */
 	private List<Virologist> virologists;
+	
+    /**
+     * Fields that make up the map
+     */
     private List<Field> fields;
+    
+    
+    /**
+     * Currently playing virologist's index 
+     */
     private int currentVirologistIndex = 0;
+    
+    /**
+     * stores the name of the file the game can be saved to
+     */
     private String saveFile;
     
     
     
     private static Game instance;
     
-    ///
-    ///	Singleton implementation, returns the strored instance of the class, creates a new one if there isn't one yet
-    ///
+    /**
+     * Singleton implementation
+     * @return the strored instance of the class, creates a new one if there isn't one yet
+     */
     public static Game GetInstance() {
     	if(instance == null)
     		instance = new Game();
     	return instance;
     }
     
-    ///
-    /// Constructor with no arguments, initializes all attributes
-    ///
+    /**
+     * Constructor with no arguments, initializes all attributes
+     */
     public Game() {
     	virologists = new ArrayList<>();
     	fields = new ArrayList<>();
     }
     
-    ///
-    /// For testing purposes, so the test can be rerun
-    ///
+    /**
+     * For testing purposes, so the test can be rerun
+     * Creates a new game
+     */
     public void Clear() {
     	instance = new Game(); // Creates a new instance of the game class discarding the last one
     }
-    
-    ///
-    ///	Returns a random int between the given bounds
-    /// min is inclusive, max is exclusive
-    ///
+    /**
+     * Returns a random int between the given bounds
+     * @param min Minimum number, inclusive
+     * @param max Maximum number, exclusive
+     * @return Random number between min and max
+     */
     private int RandomInt(int min,int max) {
     	return (r.nextInt()%(max-min))+min;
     }
-    
-    ///
-    ///	For testing purposes, adds a virologist to the list
-    ///
+
+    /**
+     * For testing purposes, adds a virologist to the list
+     * @param v Virologist to be added
+     */
     public void AddVirologist(Virologist v) {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getClass().getName());
     	virologists.add(v);
@@ -84,6 +144,12 @@ public class Game implements Serializable {
     }
     
     
+    /**
+     * Starts a new game by generating a new map with the given seeds
+     * @param saveFile Name of the game, will be saved to a file called this
+     * @param seed Seed for random number generation
+     * @param names Names of the virologists
+     */
     public void StartGame(String saveFile, Integer seed, String[] names) {
     	String namesArgAsString = "Array: ";
     	for(String name : names)
@@ -91,6 +157,10 @@ public class Game implements Serializable {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),saveFile,seed.toString(),namesArgAsString);
     	this.saveFile = saveFile; // store save file name for future saves
     	r = new Random(seed); // Random for world generation 
+    	
+    	// Cleanup
+    	virologists.clear();
+    	fields.clear();
     	
     	//TODO add name to virologist
     	for(String name : names)
@@ -189,6 +259,7 @@ public class Game implements Serializable {
     	}
     	
     	//TODO add extra connections if needed
+    	//TODO place virologists
     	
     	
     	// Store created fields 
@@ -196,18 +267,18 @@ public class Game implements Serializable {
     	Skeleton.LogReturn();
     }
     
-    ///
-    ///	Game has been won by a player
-    ///
+    /**
+     * Game has been won by a player
+     */
     public void EndGame() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	System.out.println("A játék véget ért, az összes genetikai kódot megtanulta "+virologists.get(currentVirologistIndex).toString()); // TODO change to name of virologist and check that there is a virologist
     	Skeleton.LogReturn();
     }
     
-    ///
-    /// Ends the turn for current virologist and starts the turn for the next one
-    ///
+    /**
+     * Ends the turn for current virologist and starts the turn for the next one
+     */
     public void NextTurn() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	currentVirologistIndex = (currentVirologistIndex+1)%virologists.size();
@@ -215,9 +286,10 @@ public class Game implements Serializable {
     	Skeleton.LogReturn();
     }
     
-    ///
-    ///	Loads a saved game from the save folder with the filename "saveFile".save
-    ///    
+    /**
+     * Loads a saved game from the save folder with the filename "saveFile".save
+     * @param saveFile Name of the file to be loaded
+     */
     public static void LoadGame(String saveFile)  {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),saveFile);
     	try {
@@ -239,10 +311,9 @@ public class Game implements Serializable {
     	Skeleton.LogReturn();
     }
     
-    
-    ///
-    ///	Saves the game into the saves folder into the "saveFile".save file
-    ///
+    /**
+     * Saves the game into the saves folder into the "saveFile".save file
+     */
     public void SaveGame() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	try {

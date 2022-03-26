@@ -3,11 +3,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Skeleton that runs the testing application
+ * controls tests and responsible for logging
+ *
+ */
 public class Skeleton {
 
-	///
-	///	Asks a question and only accepts an option 
-	///	
+	/**
+	 * Asks a question and only accepts an option 
+	 * @param question Question text to be printed
+	 * @param options Potential answers, only one of these will be accepted
+	 * @return Index of option chosen
+	 */
 	public static int AskQuestion(String question, String[] options) {
 		System.out.println(question+"\t");
 		int i = 0;
@@ -35,23 +43,31 @@ public class Skeleton {
 		}		
 	}
 	
-	///
-	///	Asks a question and only accepts an option 
-	///	
+	/**
+	 * Asks a question and only accepts yes or no as an answer
+	 * @param question Question text to be printed
+	 * @return true - User chose yes, false - user chose no 
+	 */
 	public static boolean AskYesNoQuestion(String question) {
 		return (AskQuestion(question,new String[] {"Yes", "No"}) == 0);
 	}
 	
-	///
-	///	Asks a question and accepts a number between 0 and Integer.MAX_VALUE as answer  
-	///	
+	/**
+	 * Asks a question and accepts a number between 0 and Integer.MAX_VALUE as answer  
+	 * @param question Question text to be printed
+	 * @returnNumber answered by user
+	 */
 	public static int AskQuestion(String question) {
 		return AskQuestion(question, 0, Integer.MAX_VALUE);
 	}
 	
-	///
-	///	Asks a question and accepts a number between min and max as answer  
-	///	
+	/**
+	 * Asks a question and accepts a number between min and max as answer  
+	 * @param question Question text to be printed
+	 * @param min Minimum value accepted
+	 * @param max Maximum value accepted
+	 * @return Number answered by user
+	 */
 	public static int AskQuestion(String question, int min,int max) {
 		System.out.println(question+"\t");		
 		while(true) {
@@ -72,14 +88,16 @@ public class Skeleton {
 		}		
 	}
 	
-	///
-	/// Stores the number of indentations for logging
-	///
+	/**
+	 * Stores the number of indentations for logging
+	 */
 	private static int logTabCount = 0;
 	
-	///
-	/// Logs a function call with arguments
-	///
+	/**
+	 * Logs a function call with arguments
+	 * @param functionName Name of the function called
+	 * @param args Argumens of the call as strings
+	 */
 	public static void LogFunctionCall(String functionName, String... args) {
 		for(int i = 0;i<logTabCount;i++) // Indentation
 			System.out.print("\t");
@@ -95,16 +113,17 @@ public class Skeleton {
 		logTabCount++;
 	}
 	
-	///
-	/// Logs a return with no return value
-	///
+	/**
+	 *  Logs a return with no return value
+	 */
 	public static void LogReturn() {
 		LogReturn(null);
 	}
 	
-	///
-	/// Logs a return with return value
-	///
+	/**
+	 * Logs a return with return value
+	 * @param value value returned
+	 */
 	public static void LogReturn(String value) {		
 		logTabCount--;
 		for(int i = 0;i<logTabCount;i++)
@@ -115,9 +134,10 @@ public class Skeleton {
 		System.out.println(""); //new line
 	}
 	
-	///
-	/// Main function called at the start of the program
-	///	
+	/**
+	 * Main function called at the start of the program
+	 * @param args Command line arguments, not used currently
+	 */
 	public static void main(String[] args) {
 		while(true) {
 			int testCase = AskQuestion("Melyik tesztet szeretnéd futtatni?", new String[]{"Kilépés","Játékos lép","Genetikai kód tanulása", "Felszerelés felvétele", "Anyag felvétele", "Ágens készítése", "Játék betöltése", "Játék indítása","Ágens kenése", "Anyagkészlet lopása", "Felszerelés lopása", "Kör kezdete", "Kör kezdete tánc ágensel","Kör kezdete bénító ágensel" });
@@ -168,9 +188,9 @@ public class Skeleton {
 		}
 	}
 	
-	///
-	///	Új kör bénító ágensel tesztelése
-	///
+	/**
+	 * Új kör bénító ágensel tesztelése
+	 */
 	private static void StartTurnWithParalyzeAgentTest() {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -186,9 +206,9 @@ public class Skeleton {
 		v1.EndTurn();		
 	}
 
-	///
-	///	Új kör táncóló ágensel tesztelése
-	///
+	/**
+	 * Új kör táncóló ágensel tesztelése
+	 */
 	private static void StartTurnWithDanceAgentTest() {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -221,9 +241,9 @@ public class Skeleton {
 		
 	}
 
-	///
-	///	Új kör indításának tesztelése
-	///
+	/**
+	 * Új kör indításának tesztelése
+	 */
 	private static void StartTurnTest() {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -251,9 +271,9 @@ public class Skeleton {
 		v1.EndTurn();
 	}
 
-	///
-	///	Felszerelés lopásának tesztelése
-	///
+	/**
+	 * Felszerelés lopásának tesztelése
+	 */
 	private static void StealGearTest() {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -278,10 +298,10 @@ public class Skeleton {
 		v1.Steal(v2, gear);
 		
 	}
-
-	///
-	///	Anyag lopásának tesztelsée
-	///
+	
+	/**
+	 * Anyag lopásának tesztelsée
+	 */
 	private static void StealMaterialTest() {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
@@ -315,9 +335,9 @@ public class Skeleton {
 		v1.StealMaterials(v2);
 	}
 
-	///
-	///	Ágens kenésének tesztelése
-	///
+	/**
+	 * Ágens kenésének tesztelése
+	 */
 	private static void UseAgentTest() {
 		Virologist v1= new Virologist();
 		Virologist v2 = new Virologist();
@@ -341,24 +361,24 @@ public class Skeleton {
 		v1.AddAgentToInventory(agents[agent]);
 		v1.UseAgent(v2,agents[agent]);
 	}
-
-	///
-	///	Játék indításának tesztelése
-	///
+	
+	/**
+	 * Játék indításának tesztelése
+	 */
 	private static void StartGameTest() {
 		Game.GetInstance().StartGame("sampleGame", 100,new String[] {"Virológus 1","Virológus2","Virológus3"});
 	}
 
-	///
-	///	Játék betöltésének tesztelése	
-	///
+	/**
+	 * Játék betöltésének tesztelése	
+	 */
 	private static void LoadGameTest() {
 		Game.GetInstance().LoadGame("sampleGame");		
 	}
 
-	///
-	///	Ágens létrehozásának tesztelése
-	///
+	/**
+	 * Ágens létrehozásának tesztelése
+	 */
 	private static void CreateAgentTest() {
 		Virologist v = new Virologist();
 		if(AskYesNoQuestion("Le van bénulva a virológus?")) {
