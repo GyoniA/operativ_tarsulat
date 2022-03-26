@@ -15,13 +15,20 @@ package com.operativ_tarsulat;
 
 public class Shelter implements Building {
     private Gear localGear;
+    /**
+     * The constructor of the Shelter class.
+     * @param localG This gear will be stored here.
+     */
     public Shelter(Gear localG)
     {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),localG.getClass().getName());
+    	Skeleton.LogFunctionCall("Shelter ctr");
     	localGear = localG;
     	Skeleton.LogReturn();
     }
-    public Shelter() {}
+    public Shelter() {
+    	Skeleton.LogFunctionCall("Shelter ctr");
+    	Skeleton.LogReturn();
+    }
     /**
      * The virologist wants to pick up or change the local gear.
      * @param v The virologist who wants to interact with the Shelter.
