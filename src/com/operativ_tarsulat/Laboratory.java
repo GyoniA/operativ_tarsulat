@@ -22,6 +22,7 @@ public class Laboratory extends Field {
 	{
 		localGeneticCode = gc;
 	}
+	public Laboratory() {}
     
     public void SetGeneticCode(GeneticCode gc) {
     	localGeneticCode = gc;

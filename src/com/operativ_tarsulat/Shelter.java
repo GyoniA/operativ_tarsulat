@@ -23,7 +23,8 @@ public class Shelter implements Building {
     public void Interact(Virologist v) {
     	if(localGear!=null)
     	{
-    		v.GetGear(localGear);
+    		Gear g=v.GetGear(localGear);
+    		v.RemoveGear(g);
     	}
     	
     }

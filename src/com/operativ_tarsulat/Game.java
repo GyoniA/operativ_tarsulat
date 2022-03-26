@@ -169,10 +169,10 @@ public class Game implements Serializable {
     	List<Field> createdFields = new LinkedList<Field>();
     	
     	// Create 4 laboratories
-    	createdFields.add(new Laboratory(/*new ProtectionGeneticCode()*/));
-    	createdFields.add(new Laboratory(/*new AmnesiaGeneticCode()*/));
-    	createdFields.add(new Laboratory(/*new ParalyzeGeneticCode()*/));
-    	createdFields.add(new Laboratory(/*new DanceGeneticCode()*/));
+    	createdFields.add(new Laboratory(new ProtectionGeneticCode()));
+    	createdFields.add(new Laboratory(new AmnesiaGeneticCode()));
+    	createdFields.add(new Laboratory(new ParalyzeGeneticCode()));
+    	createdFields.add(new Laboratory(new DanceGeneticCode()));
     	
     	int warehouseCount = RandomInt(MIN_WAREHOUSES,MAX_WAREHOUSES+1); // count of warehouses to be generated
     	int shelterCount = RandomInt(MIN_SHELTERS,MAX_SHELTERS+1); // count of shelters to be generated
@@ -252,7 +252,7 @@ public class Game implements Serializable {
     			Field connected;
     			do {
     				connected = disconnectedFields.get(RandomInt(0,connectedFields.size()));
-    			}while(connected.GetNeighbours().length>=MAX_ROADS); // repick if selected already has max number of roads    			
+    			}while(connected.GetNeighbours().size()>=MAX_ROADS); // repick if selected already has max number of roads    			
     			connected.AddNeighbour(disconnected);
     			disconnected.AddNeighbour(connected);
     		}

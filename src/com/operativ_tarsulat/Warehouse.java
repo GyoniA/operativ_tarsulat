@@ -33,8 +33,7 @@ public class Warehouse implements Building {
 	}
 	
     public void Interact(Virologist v) {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
-    
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getClass().getName());
     	int aminoNeed=v.GetVacantAmino();
     	int nucleoNeed=v.GetVacantNucleo();
     	v.GetMaterial(aminoNeed, nucleoNeed);
