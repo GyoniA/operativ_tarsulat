@@ -1,8 +1,8 @@
 package com.operativ_tarsulat;
 
+import java.io.Serializable;
 
-
-public class Bag extends Gear {
+public class Bag extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.Bag;
     private final int capacityGrow = 20;
 

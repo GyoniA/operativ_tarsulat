@@ -1,6 +1,8 @@
 package com.operativ_tarsulat;
 
-public class ParalyzeVirus extends Agent {
+import java.io.Serializable;
+
+public class ParalyzeVirus extends Agent implements Serializable {
     /**
      * Calls the blank Agent constructor
      */

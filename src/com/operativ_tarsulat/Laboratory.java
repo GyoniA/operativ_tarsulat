@@ -10,10 +10,9 @@ package com.operativ_tarsulat;
 //
 //
 
+import java.io.Serializable;
 
-
-
-public class Laboratory extends Field {
+public class Laboratory extends Field implements Serializable {
 	
 	
 	private GeneticCode localGeneticCode;

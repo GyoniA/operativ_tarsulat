@@ -1,5 +1,6 @@
 package com.operativ_tarsulat;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
 
 
 
-public class City extends Field {
+public class City extends Field implements Serializable {
     private List<Building> buildings;
     public City(List<Building> buildings)
     {

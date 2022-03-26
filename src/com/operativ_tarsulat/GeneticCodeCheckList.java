@@ -1,5 +1,7 @@
 package com.operativ_tarsulat;
 
+import java.io.Serializable;
+
 public class GeneticCodeCheckList {
     public Boolean Protection = false;
     public Boolean Amnesia = false;

@@ -1,5 +1,7 @@
 package com.operativ_tarsulat;
 
-public abstract class Gear implements Effect {
+import java.io.Serializable;
+
+public abstract class Gear implements Effect, Serializable {
     public abstract GearSlot GetSlot();
 }

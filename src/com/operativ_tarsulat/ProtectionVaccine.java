@@ -1,6 +1,8 @@
 package com.operativ_tarsulat;
 
-public class ProtectionVaccine extends Agent {
+import java.io.Serializable;
+
+public class ProtectionVaccine extends Agent implements Serializable {
     /**
      * Calls the blank Agent constructor
      */

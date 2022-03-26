@@ -1,5 +1,6 @@
 package com.operativ_tarsulat;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
 
 
 
-public abstract class Field {
+public abstract class Field implements Serializable {
     private LinkedList<Virologist> virologists;
     private List<Field> neighbours;
     public Gear droppedGear;

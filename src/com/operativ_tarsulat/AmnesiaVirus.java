@@ -1,6 +1,8 @@
 package com.operativ_tarsulat;
 
-public class AmnesiaVirus extends Agent {
+import java.io.Serializable;
+
+public class AmnesiaVirus extends Agent implements Serializable {
     /**
      * Calls the blank Agent constructor
      */

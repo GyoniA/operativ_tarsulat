@@ -1,9 +1,10 @@
 package com.operativ_tarsulat;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
 
-public class DanceVirus extends Agent {
+public class DanceVirus extends Agent implements Serializable {
     /**
      * Calls the blank Agent constructor
      */

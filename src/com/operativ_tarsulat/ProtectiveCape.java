@@ -1,7 +1,8 @@
 package com.operativ_tarsulat;
+import java.io.Serializable;
 import java.util.Random;
 
-public class ProtectiveCape extends Gear {
+public class ProtectiveCape extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.ProtectiveCape;
 
     /**

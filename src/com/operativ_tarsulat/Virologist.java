@@ -1,8 +1,9 @@
 package com.operativ_tarsulat;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Virologist implements Steppable {
+public class Virologist implements Steppable, Serializable {
     private String name;
     private Field field;
 

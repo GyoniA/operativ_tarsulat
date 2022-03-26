@@ -140,7 +140,7 @@ public class Skeleton {
 	 */
 	public static void main(String[] args) {
 		while(true) {
-			int testCase = AskQuestion("Melyik tesztet szeretnéd futtatni?", new String[]{"Kilépés","Játékos lép","Genetikai kód tanulása", "Felszerelés felvétele", "Anyag felvétele", "Ágens készítése", "Játék betöltése", "Játék indítása","Ágens kenése", "Anyagkészlet lopása", "Felszerelés lopása", "Kör kezdete", "Kör kezdete tánc ágensel","Kör kezdete bénító ágensel" });
+			int testCase = AskQuestion("Melyik tesztet szeretnéd futtatni?", new String[]{"Kilépés","Játékos lép","Genetikai kód tanulása", "Felszerelés felvétele", "Anyag felvétele", "Ágens készítése","Játék mentése", "Játék betöltése", "Játék indítása","Ágens kenése", "Anyagkészlet lopása", "Felszerelés lopása", "Kör kezdete", "Kör kezdete tánc ágensel","Kör kezdete bénító ágensel" });
 			switch(testCase) {
 			case 0: // Exits the program
 				Game.GetInstance().ExitGame();
@@ -161,27 +161,30 @@ public class Skeleton {
 				CreateAgentTest(); 
 				break;
 			case 6: // Runs loading the game test
+				SaveGameTest(); 
+				break;
+			case 7: // Runs loading the game test
 				LoadGameTest(); 
 				break;
-			case 7: // Runs starting the game test
+			case 8: // Runs starting the game test
 				StartGameTest(); 
 				break;
-			case 8: // Runs use of agent test
+			case 9: // Runs use of agent test
 				UseAgentTest();
 				break;
-			case 9: // Runs steal materials test
+			case 10: // Runs steal materials test
 				StealMaterialTest(); 
 				break;
-			case 10: // Runs steal gear test
+			case 11: // Runs steal gear test
 				StealGearTest(); 
 				break;
-			case 11: // Runs start turn test
+			case 12: // Runs start turn test
 				StartTurnTest(); 
 				break;
-			case 12: // Runs start turn with dance agent test
+			case 13: // Runs start turn with dance agent test
 				StartTurnWithDanceAgentTest() ;
 				break;
-			case 13: // Runs start turn with paralyze agent test
+			case 14: // Runs start turn with paralyze agent test
 				StartTurnWithParalyzeAgentTest(); 
 				break;
 			}
@@ -235,7 +238,7 @@ public class Skeleton {
 		f4.AddNeighbour(f1);
 		
 		v2.SetField(f1); // set the current field of the upcoming virologist
-		v2.AddAgent(new DanceVirus()); // add dance virus to the virologis
+		v2.AddAgent(new DanceVirus(5, v2)); // add dance virus to the virologis
 		
 		v1.EndTurn();
 		
@@ -369,6 +372,21 @@ public class Skeleton {
 		Game.GetInstance().StartGame("sampleGame", 100,new String[] {"Virológus 1","Virológus2","Virológus3"});
 	}
 
+	/**
+	 * Játék betöltésének tesztelése	
+	 */
+	private static void SaveGameTest() {
+		Game.Clear();
+		Game g = Game.GetInstance();
+		g.SetSaveFile("sampleGame");
+		g.AddVirologist(new Virologist("v1"));
+		g.AddVirologist(new Virologist("v2"));
+		g.AddField(new Laboratory(new ParalyzeGeneticCode()));
+		g.AddField(new Laboratory(new AmnesiaGeneticCode()));
+		g.AddField(new FreeField());		
+		g.SaveGame();		
+	}
+	
 	/**
 	 * Játék betöltésének tesztelése	
 	 */

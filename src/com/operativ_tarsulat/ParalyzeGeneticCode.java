@@ -1,6 +1,8 @@
 package com.operativ_tarsulat;
 
-public class ParalyzeGeneticCode extends GeneticCode {
+import java.io.Serializable;
+
+public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
     /**
      * Calls the GeneticCode blank constructor
      */

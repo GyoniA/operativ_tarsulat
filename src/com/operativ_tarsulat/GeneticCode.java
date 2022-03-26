@@ -1,6 +1,8 @@
 package com.operativ_tarsulat;
 
-public abstract class GeneticCode {
+import java.io.Serializable;
+
+public abstract class GeneticCode implements Serializable {
     private Virologist virologist;
     protected int duration;
     private int aminoCost;

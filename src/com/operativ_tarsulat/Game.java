@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -137,7 +139,11 @@ public class Game implements Serializable {
      */
     private int RandomInt(int min,int max) {
     	int mod = max-min;
-    	return (r.nextInt()%(max-min))+min;
+    	int rand =r.nextInt(Integer.MAX_VALUE); 
+    	if((rand%(mod))+min<0) {
+    		System.out.println("WTF");
+    	}
+    	return (rand%(mod))+min;
     }
 
     /**
@@ -145,11 +151,30 @@ public class Game implements Serializable {
      * @param v Virologist to be added
      */
     public void AddVirologist(Virologist v) {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getClass().getName());
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
     	virologists.add(v);
     	Skeleton.LogReturn();
     }
     
+    /**
+     * For testing purposes, adds a field to the list
+     * @param f Field to be added
+     */
+    public void AddField(Field f) {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),f.getClass().getName());
+    	fields.add(f);
+    	Skeleton.LogReturn();
+    }  
+    
+    /**
+     * For testing purposes, sets the saveFile
+     * @param saveFile new value
+     */
+    public void SetSaveFile(String saveFile) {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),saveFile);
+    	this.saveFile = saveFile;
+    	Skeleton.LogReturn();
+    }    
     
     /**
      * Starts a new game by generating a new map with the given seeds
@@ -258,10 +283,12 @@ public class Game implements Serializable {
     		} else {
     			Field connected;
     			do {
-    				connected = disconnectedFields.get(RandomInt(0,connectedFields.size()));
+    				connected = connectedFields.get(RandomInt(0,connectedFields.size()));
     			}while(connected.GetNeighbours().size()>=MAX_ROADS); // repick if selected already has max number of roads    			
     			connected.AddNeighbour(disconnected);
     			disconnected.AddNeighbour(connected);
+    			disconnectedFields.remove(disconnected);
+    			connectedFields.add(disconnected);
     		}
     	}
     	
@@ -300,7 +327,8 @@ public class Game implements Serializable {
     public static void LoadGame(String saveFile)  {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),saveFile);
     	try {
-    		FileInputStream fis = new FileInputStream(new File("saves/"+saveFile+".save"));
+    		String path = System.getProperty("user.dir")+"/saves/";
+    		FileInputStream fis = new FileInputStream(new File(path+saveFile+".save"));
     		ObjectInputStream ois = new ObjectInputStream(fis);
     	
     		try {
@@ -324,7 +352,12 @@ public class Game implements Serializable {
     public void SaveGame() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	try {
-    		FileOutputStream fos = new FileOutputStream(new File("saves/"+saveFile+".save"));
+    		String path = System.getProperty("user.dir")+"/saves/";
+    		File pathAsFile = new File(path);
+    		if (!Files.exists(Paths.get(path))) {
+    			pathAsFile.mkdir();
+    		}
+    		FileOutputStream fos = new FileOutputStream(new File(path+saveFile+".save"));
     		ObjectOutputStream oos = new ObjectOutputStream(fos);
     	
     		try {

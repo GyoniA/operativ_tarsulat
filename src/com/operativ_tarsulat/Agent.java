@@ -1,8 +1,9 @@
 package com.operativ_tarsulat;
 
 import java.io.Console;
+import java.io.Serializable;
 
-public abstract class Agent implements Steppable, Effect {
+public abstract class Agent implements Steppable, Effect,Serializable {
     public int Duration;
     private Virologist virologist;
 
