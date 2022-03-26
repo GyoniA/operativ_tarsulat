@@ -14,11 +14,19 @@ package com.operativ_tarsulat;
 
 
 public class Laboratory extends Field {
-    private GeneticCode localGeneticCode;
+	
+	
+	private GeneticCode localGeneticCode;
+	
+	public Laboratory(GeneticCode gc)
+	{
+		localGeneticCode = gc;
+	}
+    
     public void SetGeneticCode(GeneticCode gc) {
     	localGeneticCode = gc;
     }
     public void Interact(Virologist v) {
-    	throw new RuntimeException("Unimplemented");
+    	v.LearnGeneticCode(localGeneticCode);
     }
 }

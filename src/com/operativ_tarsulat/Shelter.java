@@ -15,11 +15,20 @@ package com.operativ_tarsulat;
 
 public class Shelter implements Building {
     private Gear localGear;
+    public Shelter(Gear localG)
+    {
+    	localGear = localG;
+    }
+    public Shelter() {}
     public void Interact(Virologist v) {
-    	throw new RuntimeException("Unimplemented");
+    	if(localGear!=null)
+    	{
+    		v.GetGear(localGear);
+    	}
+    	
     }
     
     public void SetGear(Gear g) {
-    	throw new RuntimeException("Unimplemented");
+    	localGear=g;
     }
 }

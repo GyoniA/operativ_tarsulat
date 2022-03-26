@@ -1,5 +1,7 @@
 package com.operativ_tarsulat;
 
+
+
 public class Virologist implements Steppable {
     private Field field;
     private Gear gear;
@@ -7,6 +9,8 @@ public class Virologist implements Steppable {
     private Agent activeAgents;
     private Agent agentInventory;
     
+    
+   
     public void SetAmino(int amount) {
     	throw new RuntimeException("Unimplemented");
     }

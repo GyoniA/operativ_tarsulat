@@ -15,15 +15,29 @@ package com.operativ_tarsulat;
 
 public class Warehouse implements Building {
 	
+	
+	private int nucleo;
+	private int amino;
+	public Warehouse(int nuc,int am)
+	{
+		nucleo = nuc;
+		amino = am;
+	}
+	public Warehouse() {}
 	public void SetAmino(int amount) {
-		throw new RuntimeException("Unimplemented");
+		amino = amount;
 	}
 	
 	public void SetNucleo(int amount) {
-		throw new RuntimeException("Unimplemented");
+		nucleo = amount;
 	}
 	
     public void Interact(Virologist v) {
-    	throw new RuntimeException("Unimplemented");
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
+    
+    	int aminoNeed=v.GetVacantAmino();
+    	int nucleoNeed=v.GetVacantNucleo();
+    	v.GetMaterial(aminoNeed, nucleoNeed);
+    	Skeleton.LogReturn();
     }
 }

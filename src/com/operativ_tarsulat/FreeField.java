@@ -15,6 +15,5 @@ package com.operativ_tarsulat;
 
 public class FreeField extends Field {
     public void Interact(Virologist v) {
-    	throw new RuntimeException("Unimplemented");
     }
 }
