@@ -23,9 +23,11 @@ public abstract class Field {
     public Gear droppedGear;
     public Field(Gear g,List<Field> neigh,ArrayList<Virologist> virologists)
     {
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),virologists.getClass().getName(),neigh.getClass().getName(),g.getClass().getName());
     	droppedGear = g;
     	neighbours = neigh;
     	this.virologists  = virologists;
+    	Skeleton.LogReturn();
     }
     public Field() {}
 	public void Accept(Virologist v) {
@@ -35,7 +37,7 @@ public abstract class Field {
     }
     
     public Boolean Remove(Virologist v, Field f) {
-    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
+    	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),f.getClass().getName(),v.getClass().getName());
     	if(neighbours.contains(f))
     	{
     		virologists.remove(v);
