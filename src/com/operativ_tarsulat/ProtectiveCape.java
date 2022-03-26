@@ -1,5 +1,5 @@
 package com.operativ_tarsulat;
-
+import java.util.Random;
 
 public class ProtectiveCape extends Gear {
     private GearSlot slot = GearSlot.ProtectiveCape;
