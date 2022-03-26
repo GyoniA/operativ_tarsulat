@@ -2,7 +2,7 @@ package com.operativ_tarsulat;
 
 
 public class ProtectiveCape extends Gear {
-    private GearSlot slot = GearSlot.PROTECTIVECAPE;
+    private GearSlot slot = GearSlot.ProtectiveCape;
 
     /**
      *

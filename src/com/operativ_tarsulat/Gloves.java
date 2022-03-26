@@ -2,7 +2,7 @@ package com.operativ_tarsulat;
 
 
 public class Gloves extends Gear {
-    private GearSlot slot = GearSlot.GLOVES;
+    private GearSlot slot = GearSlot.Glove;
 
     /**
      *

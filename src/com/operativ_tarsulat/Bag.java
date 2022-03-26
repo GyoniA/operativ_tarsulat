@@ -3,7 +3,7 @@ package com.operativ_tarsulat;
 
 
 public class Bag extends Gear {
-    private GearSlot slot = GearSlot.BAG;
+    private GearSlot slot = GearSlot.Bag;
     private int capacityGrow;
 
     /**
