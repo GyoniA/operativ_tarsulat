@@ -12,7 +12,7 @@ public class ProtectiveCape extends Gear {
      * @return true in 82,3% of the cases
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
     	//Generating a random number (0-999)
         Random rand = new Random();
     	int num = rand.nextInt(1000);
@@ -32,7 +32,7 @@ public class ProtectiveCape extends Gear {
      * @return false, because v can move
      */
     public Boolean HandleMove(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
@@ -43,7 +43,7 @@ public class ProtectiveCape extends Gear {
      * @return a number, which shows how much the capacity increased, it's 0 because the Gloves doesn't provide bigger capacity
      */
     public int HandleInventoryCapacity(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn(Integer.toString(0));
     	return 0;
     }
@@ -54,7 +54,7 @@ public class ProtectiveCape extends Gear {
      * @return false because it isn't
      */
     public Boolean HandleParalyzed(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
@@ -66,13 +66,13 @@ public class ProtectiveCape extends Gear {
      * @return false, because it can create Agent
      */
     public Boolean HandleCreateAgent(Virologist v, GeneticCode code) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
     
     public void HandleTurnStart(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
@@ -82,7 +82,7 @@ public class ProtectiveCape extends Gear {
      * @return The Slot which contains the ProtectiveCape
      */
     public GearSlot GetSlot() {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Skeleton.LogReturn(slot.toString());
         return slot;
     }

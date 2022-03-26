@@ -12,7 +12,7 @@ public class Gloves extends Gear {
      * @return true, because v can't reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
         Skeleton.LogReturn("true");
     	return true;
     }
@@ -23,7 +23,7 @@ public class Gloves extends Gear {
      * @return false, because v can move
      */
     public Boolean HandleMove(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
         return false;
     }
@@ -34,7 +34,7 @@ public class Gloves extends Gear {
      * @return a number, which shows how much the capacity increased, it's 0 because the Gloves doesn't provide bigger capacity
      */
     public int HandleInventoryCapacity(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn(Integer.toString(0));
     	return 0;
     }
@@ -45,7 +45,7 @@ public class Gloves extends Gear {
      * @return false because it isn't
      */
     public Boolean HandleParalyzed(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
@@ -57,13 +57,13 @@ public class Gloves extends Gear {
      * @return false, because it can create Agent
      */
     public Boolean HandleCreateAgent(Virologist v, GeneticCode code) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
     
     public void HandleTurnStart(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(), v.getClass().getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
         Skeleton.LogReturn("false");
     	return false;
     }
@@ -73,7 +73,7 @@ public class Gloves extends Gear {
      * @return The Slot which contains the Gloves
      */
     public GearSlot GetSlot() {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Skeleton.LogReturn(slot.toString());
     	return slot;
     }
