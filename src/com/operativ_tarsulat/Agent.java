@@ -1,5 +1,7 @@
 package com.operativ_tarsulat;
 
+import java.io.Console;
+
 public abstract class Agent implements Steppable, Effect {
     public int Duration;
     private Virologist virologist;
@@ -58,11 +60,15 @@ public abstract class Agent implements Steppable, Effect {
     }
 
     /**
-     * Calls the DecreaseDuration function;
+     * Calls the DecreaseDuration function
+     * Removes the Agent if it's duration is 0
      */
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         DecreaseDuration();
+        if(Duration <= 0) {
+            virologist.RemoveAgent(this);
+        }
         Skeleton.LogReturn();
     }
 
