@@ -5,16 +5,26 @@ public abstract class GeneticCode {
     protected int duration;
     private int aminoCost;
     private int nucleoCost;
+
+    /**
+     * Creates a new GeneticCode
+     * @param v The virologist that this Agent belongs to
+     * @param a The amino cost of this GeneticCode
+     * @param n The nucleo cost of this GeneticCode
+     */
     GeneticCode(Virologist v, int a, int n){
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), String.valueOf(a), String.valueOf(n));
+        Skeleton.LogFunctionCall("GeneticCode ctr", v.getName() , String.valueOf(a), String.valueOf(n));
         virologist = v;
         aminoCost = a;
         nucleoCost = n;
         Skeleton.LogReturn();
     }
 
+    /**
+     * Creates a new blank GeneticCode
+     */
     GeneticCode() {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+        Skeleton.LogFunctionCall("GeneticCode ctr");
         virologist = null;
         aminoCost = 0;
         nucleoCost = 0;
@@ -22,17 +32,32 @@ public abstract class GeneticCode {
     }
 
     public abstract Agent CreateInstance(Virologist v);
+
+    /**
+     * Returns the amino cost of this GeneticCode
+     * @return The amino cost of this GeneticCode
+     */
     public int GetAminoCost() {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Skeleton.LogReturn();
         return aminoCost;
     }
     public abstract void CheckList(GeneticCodeCheckList ls);
+
+    /**
+     * Returns the nucleo cost of this GeneticCode
+     * @return The nucleo cost of this GeneticCode
+     */
     public int GetNucleoCost() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Skeleton.LogReturn();
         return nucleoCost;
     }
+
+    /**
+     * Sets the duration of this GeneticCode
+     * @param d The duration of this GeneticCode
+     */
     public void SetDuration(int d) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), String.valueOf(d));
         duration = d;
