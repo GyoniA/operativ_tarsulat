@@ -124,7 +124,7 @@ public class Game implements Serializable {
      * For testing purposes, so the test can be rerun
      * Creates a new game
      */
-    public void Clear() {
+    public static void Clear() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	instance = new Game(); // Creates a new instance of the game class discarding the last one
     	Skeleton.LogReturn();

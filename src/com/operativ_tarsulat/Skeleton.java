@@ -195,8 +195,8 @@ public class Skeleton {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		
+		Game.Clear();
 		Game g = Game.GetInstance();
-		g.Clear();
 		
 		g.AddVirologist(v1);
 		g.AddVirologist(v2);
@@ -213,8 +213,8 @@ public class Skeleton {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		
+		Game.Clear();
 		Game g = Game.GetInstance();
-		g.Clear(); // Clear game so the test can be run multiple times
 		
 		g.AddVirologist(v1);
 		g.AddVirologist(v2);
@@ -248,8 +248,8 @@ public class Skeleton {
 		Virologist v1 = new Virologist();
 		Virologist v2 = new Virologist();
 		
+		Game.Clear();
 		Game g = Game.GetInstance();
-		g.Clear();
 		
 		g.AddVirologist(v1);
 		g.AddVirologist(v2);

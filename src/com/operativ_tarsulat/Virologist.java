@@ -211,9 +211,9 @@ public class Virologist implements Steppable {
             if(nucleoToGiveAway > this.nucleoCount)
                 nucleoToGiveAway = this.nucleoCount;
 
-            v.GetMaterial(aminoToGiveAway,nucleoToGiveAway);
-            Skeleton.LogReturn();
+            v.GetMaterial(aminoToGiveAway,nucleoToGiveAway);            
         }
+        Skeleton.LogReturn();
     }
 
     public void GetMaterial(int amino, int nucleo) {
