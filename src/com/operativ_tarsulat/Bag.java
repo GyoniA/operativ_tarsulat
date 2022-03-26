@@ -14,7 +14,7 @@ public class Bag extends Gear {
      * @return false, because v can reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName(), i.toString(), v2.getClass().getName());
+        Skeleton.LogFunctionCall("Bag ctr", v.getClass().getName(), i.toString(), v2.getClass().getName());
         Skeleton.LogReturn("false");
         return false;
     }
