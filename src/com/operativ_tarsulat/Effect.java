@@ -10,5 +10,5 @@ public interface Effect {
 
     public Boolean HandleCreateAgent(Virologist v, GeneticCode code);
     
-    public int HandleTurnStart(Virologist v);
+    public void HandleTurnStart(Virologist v);
 }

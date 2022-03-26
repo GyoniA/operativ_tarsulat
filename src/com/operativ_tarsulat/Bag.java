@@ -3,8 +3,8 @@ package com.operativ_tarsulat;
 
 
 public class Bag extends Gear {
-    private GearSlot slot = GearSlot.Bag;
-    private int capacityGrow;
+    private final GearSlot slot = GearSlot.Bag;
+    private final int capacityGrow = 20;
 
     /**
      *
@@ -63,11 +63,13 @@ public class Bag extends Gear {
         Skeleton.LogReturn("false");
     	return false;
     }
-    
+
+    /**
+     * Handles the start of the turn
+     * @param v The Virologist, whose turn starts
+     */
     public void HandleTurnStart(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
-        Skeleton.LogReturn("false");
-    	return false;
+
     }
 
     /**

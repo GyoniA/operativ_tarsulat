@@ -2,7 +2,7 @@ package com.operativ_tarsulat;
 import java.util.Random;
 
 public class ProtectiveCape extends Gear {
-    private GearSlot slot = GearSlot.ProtectiveCape;
+    private final GearSlot slot = GearSlot.ProtectiveCape;
 
     /**
      *
@@ -70,11 +70,13 @@ public class ProtectiveCape extends Gear {
         Skeleton.LogReturn("false");
     	return false;
     }
-    
+
+    /**
+     * Handles the start of the turn
+     * @param v The Virologist, whose turn starts
+     */
     public void HandleTurnStart(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
-        Skeleton.LogReturn("false");
-    	return false;
+
     }
 
     /**

@@ -2,7 +2,7 @@ package com.operativ_tarsulat;
 
 
 public class Gloves extends Gear {
-    private GearSlot slot = GearSlot.Glove;
+    private final GearSlot slot = GearSlot.Glove;
 
     /**
      *
@@ -61,11 +61,13 @@ public class Gloves extends Gear {
         Skeleton.LogReturn("false");
     	return false;
     }
-    
+
+    /**
+     * Handles the start of the turn
+     * @param v The Virologist, whose turn starts
+     */
     public void HandleTurnStart(Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
-        Skeleton.LogReturn("false");
-    	return false;
+
     }
 
     /**
