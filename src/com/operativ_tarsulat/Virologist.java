@@ -86,12 +86,21 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * This function returns the name of the virologist
+     * @return
+     */
     public String getName(){
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Skeleton.LogReturn(this.name);
         return this.name;
     }
 
+    /**
+     * Virologist receives touch from other virologist
+      * @param a The agent that is used
+     * @param v The other virologist
+     */
     public void ReceiveAgentUse(Agent a, Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), a.getClass().toString(), v.getName());
         boolean allowtouch = checkTouch(a,v);
@@ -100,6 +109,10 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Virologist learns genetic code and checks the endcondition
+     * @param s The learned genetic code
+     */
     public void LearnGeneticCode(GeneticCode s) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), s.getClass().toString());
         if(!learnedGeneticCodes.contains(s)){
@@ -112,6 +125,11 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * The virologist gets a gear, returns with null if the slot was empty, otherwise returns its own gear
+     * @param g
+     * @return
+     */
     public Gear GetGear(Gear g) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), g.getClass().toString());
         GearSlot gs = g.GetSlot();
@@ -129,18 +147,30 @@ public class Virologist implements Steppable, Serializable {
         return null;
     }
 
+    /**
+     * Removes a gear from the virologist
+     * @param r
+     */
     public void RemoveGear(Gear r) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),r.getClass().toString());
         gears.remove(r);
         Skeleton.LogReturn();
     }
 
+    /**
+     * Adds a genetic code to learned genetic codes
+     * @param gc Genetic code to be added
+     */
     public void AddGeneticCode(GeneticCode gc) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),gc.getClass().toString());
         learnedGeneticCodes.add(gc);
         Skeleton.LogReturn();
     }
 
+    /**
+     * Moves the virologist from the current field to the field in the parameter if it is allowed
+     * @param f2
+     */
     public void Move(Field f2) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),f2.getClass().toString());
         if(this.checkMovement())
@@ -149,6 +179,9 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Calls the appropriate functions after every step
+     */
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         for(int i = 0;i<activeAgents.size();i++) {
@@ -159,6 +192,11 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Initiates gear stealing
+     * @param v2 virologist to be stolen from
+     * @param r Gear to be stolen
+     */
     public void Steal(Virologist v2, Gear r) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v2.getName(),r.getClass().toString());
         if(this.checkMovement())
@@ -166,7 +204,12 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
-
+    /**
+     * Handles gear stealing
+     * @param v the virologist who is stealing
+     * @param r Gear to be stolen
+     * @return
+     */
     public Boolean StolenFrom(Virologist v, Gear r) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(),r.getClass().toString());
         if(!this.checkMovement()){
@@ -178,18 +221,29 @@ public class Virologist implements Steppable, Serializable {
         return true;
     }
 
+    /**
+     * Returns the field where the virologist is standing
+     * @return
+     */
     public Field GetField() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Skeleton.LogReturn(this.field.toString());
         return this.field;
     }
 
+    /**
+     * Sets the field of the virologist
+     * @param f The given field
+     */
     public void SetField(Field f) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),f.getClass().toString());
         this.field = f;
         Skeleton.LogReturn();
     }
 
+    /**
+     * Initiates interaction with a field
+     */
     public void InteractWithField() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         if(checkMovement())
@@ -197,6 +251,10 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Stealign material from a virologist
+     * @param v Virologist to be stolen from
+     */
     public void StealMaterials(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
         if(this.checkMovement())
@@ -204,6 +262,10 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Giving away material from this virologist
+     * @param v
+     */
     public void StolenMaterialsFrom(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
         if(!this.checkMovement()){
@@ -220,6 +282,11 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Incrementing amino and nucleo count
+     * @param amino
+     * @param nucleo
+     */
     public void GetMaterial(int amino, int nucleo) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), Integer.toString(amino), Integer.toString(nucleo));
         this.aminoCount += amino;
@@ -227,6 +294,10 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * This function returns with the number of free amino slots
+     * @return
+     */
     public int GetVacantAmino() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         int extraAmino = 0;
@@ -236,6 +307,10 @@ public class Virologist implements Steppable, Serializable {
         return (inventoryCapacity + extraAmino) - aminoCount;
     }
 
+    /**
+     * This function returns with the number of free nucleo slots
+     * @return
+     */
     public int GetVacantNucleo() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         int extraNucleo = 0;
@@ -245,6 +320,10 @@ public class Virologist implements Steppable, Serializable {
         return (inventoryCapacity + extraNucleo) - nucleoCount;
     }
 
+    /**
+     * Creates an agent from the given genetic code
+     * @param code
+     */
     public void CreateAgent(GeneticCode code) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),code.getClass().toString());
         if(checkMovement()&&!checkAmnesia(code)) {
@@ -260,6 +339,9 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Ends the current turn
+     */
     public void EndTurn() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         Game.GetInstance().NextTurn();
@@ -267,6 +349,10 @@ public class Virologist implements Steppable, Serializable {
 
     }
 
+    /**
+     * Adds an agent to the active agents of the virologist
+     * @param a
+     */
     public void AddAgent(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
         activeAgents.add(a);
@@ -274,6 +360,10 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Adds an agents to the agent inventory of the virologist
+     * @param a
+     */
     public void AddAgentToInventory(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
         agentInventory.add(a);
@@ -281,12 +371,20 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn();
     }
 
+    /**
+     * Removes an agent from the active agents
+     * @param a
+     */
     public void RemoveAgent(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
         activeAgents.remove(a);
         Skeleton.LogReturn();
     }
 
+    /**
+     * Checks whether the virologist can move or not
+     * @return
+     */
     private boolean checkMovement(){
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         for (int i = 0;i < activeAgents.size(); i++)
@@ -297,7 +395,12 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn("true");
         return true;
     }
-    
+
+    /**
+     * Checks whether the virologist is under amnesia or not
+     * @param gc
+     * @return
+     */
     private boolean checkAmnesia(GeneticCode gc){
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         for (int i = 0;i < activeAgents.size(); i++)
@@ -309,6 +412,12 @@ public class Virologist implements Steppable, Serializable {
         return false;
     }
 
+    /**
+     * Checks whether the virologist can be touched or not
+     * @param a
+     * @param v
+     * @return
+     */
     private boolean checkTouch(Agent a, Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString(),v.getName());
         for (int i = 0; i < activeAgents.size(); i++)
