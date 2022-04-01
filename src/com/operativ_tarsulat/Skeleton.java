@@ -405,7 +405,7 @@ public class Skeleton {
 		if(AskYesNoQuestion("Hat a virológusra amnézia vírus?")) {
 			v.AddAgent(new AmnesiaVirus());
 		}
-		int codeToUse = AskQuestion("Melyik genetikai kódot hozza létre a virológus?",new String[] {"Bénító","Amnézia","Védelmi","Táncoló"});
+		int codeToUse = AskQuestion("Melyik ágenst hozza létre a virológus?",new String[] {"Bénító","Amnézia","Védelmi","Táncoló"});
 		
 		GeneticCode c = new GeneticCode[] {new ParalyzeGeneticCode(),new AmnesiaGeneticCode(),new ProtectionGeneticCode(),new DanceGeneticCode()}[codeToUse];
 		v.AddGeneticCode(c);
