@@ -25,9 +25,9 @@ public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
      * @param a The amino cost of this GeneticCode
      * @param n The nucleo cost of this GeneticCode
      */
-    ParalyzeGeneticCode(Virologist v, int a, int n) {
-        super(v, a, n);
-        Skeleton.LogFunctionCall("ParalyzeGeneticCode ctr", v.getName(), String.valueOf(a), String.valueOf(n));
+    ParalyzeGeneticCode( int a, int n) {
+        super(a, n);
+        Skeleton.LogFunctionCall("ParalyzeGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();
     }
 
