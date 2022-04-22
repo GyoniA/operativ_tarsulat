@@ -104,12 +104,11 @@ public class Axe extends Gear implements Serializable, Weapon{
 
 
     /**
-     * Handles an Attack, the Virologist will die
+     * Handles an Attack
      * @param v The Virologist, who is being attacked
      */
     public void Attack(Virologist v){
         if(!hasAttacked){
-            Game.GetInstance().RemoveVirologist(v);
             v.Attacked();
             hasAttacked = true;
         }
