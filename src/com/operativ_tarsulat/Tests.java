@@ -51,6 +51,9 @@ public class Tests {
 			case "createAgent":
 				CreateAgentTest();
 				break;
+			case "useAgent":
+				UseAgentTest();
+				break;
 			
 				
 			
@@ -173,7 +176,6 @@ public class Tests {
 		
 	}
 
-	
 	static void PickUpMaterialTest()
 	{
 		BufferedReader lr = new BufferedReader(new InputStreamReader(System.in));
@@ -277,18 +279,22 @@ public class Tests {
 				v1.Steal(v2, new Gloves());
 				if(v2.GetGear(new Gloves()) == null)
 					System.out.println("Nem sikerult felszerelest lopni.");
+				break;
 			case 2:
 				v1.Steal(v2,new Bag());
 				if(v2.GetGear(new Bag()) == null)
 					System.out.println("Nem sikerult felszerelest lopni.");
+				break;
 			case 3:
 				v1.Steal(v2,new ProtectiveCape());
 				if(v2.GetGear(new ProtectiveCape()) != null)
-					System.out.println("A virologus Cape felszerelest lopott" + v2.getName() + "nevu virologustol.");
+					System.out.println("A virologus Cape felszerelest lopott " + v2.getName() + " nevu virologustol.");
+				break;
 			case 4:
 				v1.Steal(v2, new Axe());
 				if(v2.GetGear(new Axe()) == null)
 					System.out.println("Nem sikerult felszerelest lopni.");
+				break;
 		}
 	}
 
@@ -312,7 +318,7 @@ public class Tests {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		 System.out.println( valasz);
+	
 		Virologist v = new Virologist(name);
 		v.SetAmino(20);
 		v.SetNucleo(20);
@@ -348,6 +354,64 @@ public class Tests {
 		}
 		
 	}
-	
+
+	static void UseAgentTest()
+	{
+		BufferedReader lr = new BufferedReader(new InputStreamReader(System.in));
+		
+		String vn1 = "";
+		String vn2 = "";
+		int valasz = 0;
+		try {
+			System.out.print("Ki keni: ");
+			vn1 = lr.readLine();
+			System.out.print("Kire keni: ");
+			vn2 = lr.readLine();
+			System.out.println("(1)Amnesia agent (2)Dance agent (3)Paralyze agent (4)Protection agent");
+			valasz = Integer.parseInt(lr.readLine());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		Virologist v= new Virologist(vn1);
+		Virologist v2 = new Virologist(vn2);
+		FreeField f = new FreeField();
+		v.SetField(f);
+		v2.SetField(f);
+		
+		switch(valasz)
+		{
+		case 1:
+			v.AddGeneticCode(new AmnesiaGeneticCode());
+			v.CreateAgent(v.getGeneticCodes().get(0));
+			v.UseAgent(v2, v.getAgentInventory().get(0));
+			System.out.println("Sikeresen használva lett az Amnesia ágens a "+vn2+" nevû virológuson");
+			break;
+		case 2:
+			v.AddGeneticCode(new DanceGeneticCode());
+			v.CreateAgent(v.getGeneticCodes().get(0));
+			v.UseAgent(v2, v.getAgentInventory().get(0));
+			System.out.println("Sikeresen használva lett az Dance ágens a "+vn2+" nevû virológuson");
+			
+			break;
+		case 3:
+			v.AddGeneticCode(new ParalyzeGeneticCode());
+			v.CreateAgent(v.getGeneticCodes().get(0));
+			v.UseAgent(v2, v.getAgentInventory().get(0));
+			System.out.println("Sikeresen használva lett az Paralyze ágens a "+vn2+" nevû virológuson");
+			
+			break;
+		case 4:
+			v.AddGeneticCode(new ProtectionGeneticCode());
+			v.CreateAgent(v.getGeneticCodes().get(0));
+			v.UseAgent(v2, v.getAgentInventory().get(0));
+			System.out.println("Sikeresen használva lett az Protection ágens a "+vn2+" nevû virológuson");
+			 
+			break;
+		case 0: System.out.println("Nem jo valasz");
+			break;
+		}
+	}
 	
 }
