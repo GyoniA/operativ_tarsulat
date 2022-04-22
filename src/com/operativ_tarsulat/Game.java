@@ -306,6 +306,7 @@ public class Game implements Serializable {
     			connectedFields.add(disconnected);
     		}
     	}
+    	this.fields = createdFields;
     	
     	//add extra connections
 		for(int i = 0;i<fields.size();i++) {
@@ -330,7 +331,6 @@ public class Game implements Serializable {
 		}
     	
     	// Store created fields 
-    	this.fields = createdFields;
     	Skeleton.LogReturn();
     }
     
