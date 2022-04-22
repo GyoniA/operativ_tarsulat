@@ -8,7 +8,17 @@ import java.util.List;
 public abstract class Field implements Serializable {
     private LinkedList<Virologist> virologists;
     private List<Field> neighbours;
-    public Gear droppedGear;
+
+	/**
+	 * @return The description of the class
+	 */
+	public String toString(){
+		String s = new String();
+		for (Virologist v:virologists){
+			s = s+v.toString()+" ";
+		}
+		return s;
+	}
 
 	/**
 	 * Constructor to create a new field

@@ -6,6 +6,12 @@ public class Axe extends Gear implements Serializable, Weapon{
     private final GearSlot slot = GearSlot.Weapon;
     private Boolean hasAttacked = false;
 
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "Axe, used: "+hasAttacked;
+    }
 
     /**
      * Handles a Virologist getting materials from a Warehouse

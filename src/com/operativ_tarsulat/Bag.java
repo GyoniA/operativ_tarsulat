@@ -92,6 +92,12 @@ public class Bag extends Gear implements Serializable {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
         Skeleton.LogReturn();
     }
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "Bag, capacity grow number: "+capacityGrow;
+    }
 
     /**
      * Handles a Virologist getting materials from a Warehouse

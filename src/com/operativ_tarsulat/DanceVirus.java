@@ -5,6 +5,13 @@ import java.util.List;
 import java.util.Random;
 
 public class DanceVirus extends Agent implements Serializable {
+
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "DanceVirus";
+    }
     /**
      * Calls the blank Agent constructor
      */

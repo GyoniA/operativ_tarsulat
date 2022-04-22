@@ -20,6 +20,18 @@ import java.util.List;
 
 public class City extends Field implements Serializable {
     private List<Building> buildings;
+
+	/**
+	 * @return The description of the class
+	 */
+	public String toString(){
+		String s = new String();
+		for (Building b:buildings){
+			s = s+b.toString()+" ";
+		}
+		return "City, buildings in the city: "+s;
+	}
+
     public City(List<Building> buildings)
     {
     	Skeleton.LogFunctionCall("City ctr");

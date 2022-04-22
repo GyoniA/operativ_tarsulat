@@ -3,6 +3,13 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public class DanceGeneticCode extends GeneticCode implements Serializable {
+
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "DanceGeneticCode";
+    }
     /**
      * Calls the GeneticCode blank constructor
      */

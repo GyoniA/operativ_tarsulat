@@ -3,6 +3,15 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public class AmnesiaVirus extends Agent implements Serializable {
+
+
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "AmnesiaVirus";
+    }
+
     /**
      * Calls the blank Agent constructor
      */
