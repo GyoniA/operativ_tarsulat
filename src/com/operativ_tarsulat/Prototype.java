@@ -222,7 +222,7 @@ public class Prototype {
 		Virologist player = Game.GetInstance().getCurrentVirologist();
 		// Possible targets
 		List<Virologist> avalibleVirologists = Arrays.asList(player.GetField().GetVirologists());
-		// remove the player, because cannot steal from themself
+		// remove the player, because they cannot steal from themself
 		avalibleVirologists.remove(player);
 		// make the user choose a target
 		int virologistIndex = choose("Kérem válasszon célpontot",avalibleVirologists.stream().map(x->x.getName()).toArray(String[]::new));
