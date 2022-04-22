@@ -96,7 +96,7 @@ public class BearVirus extends Agent implements Serializable {
     }
 
     /**
-     * Handles movement of a Virologist to a new Field
+     * Handles movement of a Virologist to a new Field, tries to infect virologists in the Field with BearVirus
      * @param v The Virologist who moves
      * @param f the Field, where the Virologist moves to
      */
@@ -108,7 +108,6 @@ public class BearVirus extends Agent implements Serializable {
                 v2.ReceiveAgentUse(new BearVirus(), v);
             }
         }
-
         Skeleton.LogReturn();
     }
 
