@@ -214,6 +214,7 @@ public class Virologist implements Steppable, Serializable {
         if(!hasMoved && this.checkMovement())
             if(field.Remove(this,f2)) {
                 f2.Accept(this);
+                field = f2;
                 for(Agent a : activeAgents) {
                     a.HandleMovedToField(this, f2);
                 }
