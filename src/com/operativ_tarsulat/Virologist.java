@@ -97,6 +97,14 @@ public class Virologist implements Steppable, Serializable {
     {
     	return gears;
     }
+
+    public int getAminoCount(){
+        return aminoCount;
+    }
+
+    public int getNucleoCount(){
+        return nucleoCount;
+    }
     
     /**
      * The function returns active agents.
