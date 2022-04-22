@@ -146,11 +146,12 @@ public class Tests {
 			v.AddAgent(new BearVirus());
 			System.out.println(name +" Megfertõzõdött medve vírussal");
 		}
-		
-		
-		
+
 	}
 
+	static void StealMaterialTest()  {
+
+	}
 
 	
 	

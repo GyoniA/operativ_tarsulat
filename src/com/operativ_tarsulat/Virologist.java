@@ -258,8 +258,11 @@ public class Virologist implements Steppable, Serializable {
         if(!this.checkMovement()){
             Gear g = v.GetGear(r);
             gears.remove(r);
-            gears.add(g);
+            if(g != null) {
+                gears.add(g);
+            }
         }
+        Skeleton.LogReturn("true");
         Skeleton.LogReturn("true");
         return true;
     }
