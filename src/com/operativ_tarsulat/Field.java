@@ -48,4 +48,12 @@ public abstract class Field implements Serializable {
     	Skeleton.LogReturn();
     	neighbours.add(f);
     }
+
+	public Virologist[] GetVirologists() {
+		return virologists.toArray(new Virologist[virologists.size()]);
+	}
+
+	public void Remove(Virologist v) {
+		virologists.remove(v);
+	}
 }
