@@ -373,9 +373,17 @@ public class Game implements Serializable {
     	Skeleton.LogReturn();
     }
     
+    /*
+     * Ends the game 
+     */
     public void ExitGame() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	System.exit(0);
     	Skeleton.LogReturn(); // probably will never be reached
     }
+    
+    /*
+     * Removes the virologist from the game
+     */
+    public void RemoveVirologist(Virologist v) {}
 }
