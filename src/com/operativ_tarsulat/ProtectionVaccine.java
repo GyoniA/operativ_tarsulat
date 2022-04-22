@@ -3,6 +3,13 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public class ProtectionVaccine extends Agent implements Serializable {
+
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "ProtectionVaccine "+ super.toString();
+    }
     /**
      * Calls the blank Agent constructor
      */

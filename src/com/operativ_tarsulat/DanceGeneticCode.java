@@ -8,7 +8,7 @@ public class DanceGeneticCode extends GeneticCode implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return "DanceGeneticCode";
+        return "DanceGeneticCode "+ super.toString();
     }
     /**
      * Calls the GeneticCode blank constructor

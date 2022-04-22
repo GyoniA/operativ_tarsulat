@@ -6,6 +6,13 @@ public class ProtectiveCape extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.ProtectiveCape;
 
     /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "ProtectiveCape";
+    }
+
+    /**
      *
      * @param v The Virologist who wants to reach another Virologist
      * @param i An Agent, which v wants to use

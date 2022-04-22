@@ -7,6 +7,13 @@ public class Gloves extends Gear implements Serializable {
     private int uses = 3;
 
     /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "Gloves, break after: "+uses+ "use";
+    }
+
+    /**
      *
      * @param v The Virologist who wants to reach another Virologist
      * @param i An Agent, which v wants to use

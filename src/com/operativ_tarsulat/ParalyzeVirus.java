@@ -3,6 +3,14 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public class ParalyzeVirus extends Agent implements Serializable {
+
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "ParalyzeVirus "+ super.toString();
+    }
+
     /**
      * Calls the blank Agent constructor
      */

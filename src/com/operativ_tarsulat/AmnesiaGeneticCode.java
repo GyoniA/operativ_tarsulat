@@ -8,7 +8,7 @@ public class AmnesiaGeneticCode extends GeneticCode implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return "AmnesiaGeneticCode";
+        return "AmnesiaGeneticCode "+super.toString();
     }
 
     /**

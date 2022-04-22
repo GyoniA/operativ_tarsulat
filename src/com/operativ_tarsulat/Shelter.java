@@ -4,6 +4,13 @@ import java.io.Serializable;
 
 public class Shelter implements Building, Serializable {
     private Gear localGear;
+
+	/**
+	 * @return The description of the class
+	 */
+	public String toString() {
+		return "Shelter, virologists on the field: " + super.toString() + "gear in the shelter: " + localGear;
+	}
     /**
      * The constructor of the Shelter class.
      * @param localG This gear will be stored here.

@@ -15,7 +15,7 @@ public abstract class Field implements Serializable {
 	public String toString(){
 		String s = new String();
 		for (Virologist v:virologists){
-			s = s+v.toString()+" ";
+			s = s+v.getName()+" ";
 		}
 		return s;
 	}

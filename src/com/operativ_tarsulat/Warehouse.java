@@ -7,6 +7,13 @@ public class Warehouse implements Building, Serializable {
 	
 	private int nucleo;
 	private int amino;
+
+	/**
+	 * @return The description of the class
+	 */
+	public String toString() {
+		return "Warehouse, virologists on the field: " + super.toString() + "nucleo: " + nucleo + "amino: " + amino;
+	}
 	/**
      * The constructor of the Warehouse class
      * @param nuc The amount of nucleo that will be stored 

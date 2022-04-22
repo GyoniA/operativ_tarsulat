@@ -9,7 +9,7 @@ public class AmnesiaVirus extends Agent implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return "AmnesiaVirus";
+        return "AmnesiaVirus "+super.toString();
     }
 
     /**

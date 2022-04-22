@@ -3,6 +3,13 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
+
+    /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "ParalyzeGeneticCode "+ super.toString();
+    }
     /**
      * Calls the GeneticCode blank constructor
      */

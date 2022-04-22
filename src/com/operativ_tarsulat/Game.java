@@ -95,8 +95,17 @@ public class Game implements Serializable {
      * stores the name of the file the game can be saved to
      */
     private String saveFile;
-    
-    
+
+	/**
+	 * @return The description of the class
+	 */
+	public String toString(){
+		String s = new String();
+		for (Virologist v:virologists){
+			s = s+v.getName()+" ";
+		}
+		return "Game, virologists in the game: "+s;
+	}
     
     private static Game instance;
     

@@ -10,7 +10,7 @@ public class BearVirus extends Agent implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return "BearVirus";
+        return "BearVirus "+super.toString();
     }
     /**
      * Calls the blank Agent constructor

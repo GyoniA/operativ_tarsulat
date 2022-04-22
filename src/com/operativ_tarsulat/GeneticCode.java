@@ -9,6 +9,13 @@ public abstract class GeneticCode implements Serializable {
     private int nucleoCost;
 
     /**
+     * @return The description of the class
+     */
+    public String toString(){
+        return "virologist, who has the genetic code: "+virologist.getName()+"amino cost: "+aminoCost+"nucleo cost: "+nucleoCost;
+    }
+
+    /**
      * Creates a new GeneticCode
      * @param v The virologist that this Agent belongs to
      * @param a The amino cost of this GeneticCode

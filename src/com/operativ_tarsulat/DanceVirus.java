@@ -10,7 +10,7 @@ public class DanceVirus extends Agent implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return "DanceVirus";
+        return "DanceVirus "+super.toString();
     }
     /**
      * Calls the blank Agent constructor

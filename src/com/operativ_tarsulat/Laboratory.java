@@ -5,6 +5,14 @@ import java.io.Serializable;
 public class Laboratory extends Field implements Serializable {
 	private boolean hasBearVirus = false;
 	private GeneticCode localGeneticCode;
+
+	/**
+	 * @return The description of the class
+	 */
+	public String toString(){
+		return "Laboratory, virologists on the field: "+super.toString()+"has BearVirus: "+hasBearVirus+"genetic code in the laboratory: "+localGeneticCode;
+	}
+
 	/**
 	 * The constructor of the Laboratory class 
 	 * @param gc This genetic code can be found here. 
