@@ -77,7 +77,8 @@ public class ProtectiveCape extends Gear implements Serializable {
      * @param v The Virologist, whose turn starts
      */
     public void HandleTurnStart(Virologist v) {
-
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn();
     }
 
     /**

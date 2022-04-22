@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Gloves extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.Glove;
+    private int uses = 3;
 
     /**
      *
@@ -14,6 +15,10 @@ public class Gloves extends Gear implements Serializable {
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
         Skeleton.LogFunctionCall("Gloves ctr", v.getClass().getName(), i.toString(), v2.getClass().getName());
+        uses--;
+        if (uses == 0) {
+            v.RemoveGear(this);
+        }
         Skeleton.LogReturn("true");
     	return true;
     }
@@ -68,7 +73,8 @@ public class Gloves extends Gear implements Serializable {
      * @param v The Virologist, whose turn starts
      */
     public void HandleTurnStart(Virologist v) {
-
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn();
     }
 
     /**
