@@ -174,8 +174,15 @@ public class Virologist implements Steppable, Serializable {
     public void Move(Field f2) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),f2.getClass().toString());
         if(this.checkMovement())
-            if(field.Remove(this,f2))
+            if(field.Remove(this,f2)) {
                 f2.Accept(this);
+                for(Agent a : activeAgents) {
+                    a.HandleMovedToField(this, f2);
+                }
+                for(Gear g : gears) {
+                    g.HandleMovedToField(this, f2);
+                }
+            }
         Skeleton.LogReturn();
     }
 
@@ -188,7 +195,6 @@ public class Virologist implements Steppable, Serializable {
             activeAgents.get(i).HandleTurnStart(this);
             activeAgents.get(i).Step();
         }
-
         Skeleton.LogReturn();
     }
 
@@ -463,9 +469,27 @@ public class Virologist implements Steppable, Serializable {
      */
     public void Attack(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
-
-
-
+        for (Agent a : activeAgents) {
+            if (a.HandleMove(this)){
+                Skeleton.LogReturn();
+                return;
+            }
+        }
+        for (Gear g : gears) {
+            if (g.HandleMove(this)){
+                Skeleton.LogReturn();
+                return;
+            }
+        }
+        Weapon w = null;
+        for (Gear g : gears) {
+            if (g.GetSlot() == GearSlot.Weapon) {
+                w = (Weapon) g;
+            }
+        }
+        if (w != null) {
+            w.Attack(v);
+        }
         Skeleton.LogReturn();
     }
 
@@ -474,9 +498,8 @@ public class Virologist implements Steppable, Serializable {
      */
     public void Attacked() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
-
-
-
+        field.Remove(this);
+        Game.GetInstance().RemoveVirologist(this);
         Skeleton.LogReturn();
     }
 }
