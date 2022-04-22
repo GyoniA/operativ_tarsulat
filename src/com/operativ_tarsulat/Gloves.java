@@ -80,4 +80,24 @@ public class Gloves extends Gear implements Serializable {
         Skeleton.LogReturn(slot.toString());
     	return slot;
     }
+
+    /**
+     * Handles movement of a Virologist to a new Field
+     * @param v The Virologist who moves
+     * @param f the Field, where the Virologist moves to
+     */
+    public void HandleMovedToField(Virologist v, Field f) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn();
+    }
+
+    /**
+     * Handles a Virologist getting materials from a Warehouse
+     * @param v The Virologist, who gets materials
+     */
+    public Boolean HandleGetMaterialFromWarehouse(Virologist v){
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn("false");
+        return false;
+    }
 }
