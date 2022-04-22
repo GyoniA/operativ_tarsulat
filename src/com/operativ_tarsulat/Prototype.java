@@ -237,6 +237,10 @@ public class Prototype {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
 		List<GeneticCode> geneticCodes = player.getGeneticCodes();
+		if(geneticCodes.size()==0) {
+			System.out.println("Nincs használható genetikai kód");
+			return;
+		}
 		int codeIndex = choose("Melyik genetikai kódot használja?",geneticCodes.stream().map(x->x.toString()).toArray(String[]::new));
 		player.CreateAgent(geneticCodes.get(codeIndex));
 	}
