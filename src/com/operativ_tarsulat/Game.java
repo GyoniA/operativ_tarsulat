@@ -73,7 +73,13 @@ public class Game implements Serializable {
      * Random object used for randomized decisions
      */
     private Random r;
-	
+
+	/**
+	 * Maximum number of extra neighbours of a field
+	 * The actual number of neighbour fields is generated randomly between 0 and the value of this variable.
+	 */
+	private final int MAX_EXTRA_NEIGHBOURS = 3;
+
 	
 	/**
 	 * Virologists that are on the field 
@@ -301,9 +307,27 @@ public class Game implements Serializable {
     		}
     	}
     	
-    	//TODO add extra connections if needed
-    	//TODO place virologists
-    	
+    	//add extra connections
+		for(int i = 0;i<fields.size();i++) {
+			int extraNeighbours = RandomInt(0, MAX_EXTRA_NEIGHBOURS);
+			int counter = 0;
+			int stopTry = 0;
+
+			while(counter < extraNeighbours) {
+				Field neighbourToAdd = fields.get(RandomInt(0, fields.size() - 1));
+				if (!fields.get(i).GetNeighbours().contains(neighbourToAdd) && neighbourToAdd != fields.get(i) && stopTry < 10) {
+					fields.get(i).AddNeighbour(neighbourToAdd);
+					counter++;
+				}
+				stopTry++;
+			}
+		}
+
+
+		// Place virologists
+    	for(int i = 0;i<virologists.size();i++){
+			fields.get(RandomInt(0,fields.size() - 1)).Accept(virologists.get(i));
+		}
     	
     	// Store created fields 
     	this.fields = createdFields;
