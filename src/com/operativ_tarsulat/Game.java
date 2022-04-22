@@ -383,6 +383,13 @@ public class Game implements Serializable {
     	Skeleton.LogReturn(); // probably will never be reached
     }
     
+    /*
+     * Returns the currently playing virologist
+     */
+    public Virologist getCurrnetVirologist() {
+    	return virologists.get(currentVirologistIndex);
+    }
+    
     /**
      * Removes the virologist from the game
      * @param v The virologist to be removed
