@@ -373,7 +373,7 @@ public class Game implements Serializable {
     	Skeleton.LogReturn();
     }
     
-    /*
+    /**
      * Ends the game 
      */
     public void ExitGame() {
@@ -382,8 +382,11 @@ public class Game implements Serializable {
     	Skeleton.LogReturn(); // probably will never be reached
     }
     
-    /*
+    /**
      * Removes the virologist from the game
+     * @param v The virologist to be removed
      */
-    public void RemoveVirologist(Virologist v) {}
+    public void RemoveVirologist(Virologist v) {
+		virologists.remove(v);
+	}
 }
