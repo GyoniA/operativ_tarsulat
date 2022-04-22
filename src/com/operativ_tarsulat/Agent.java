@@ -17,6 +17,10 @@ public abstract class Agent implements Steppable, Effect,Serializable {
         Skeleton.LogReturn();
     }
 
+    public String toString(){
+        return "Agent: duration: "+Duration+" Virologist: "+virologist.getName();
+    }
+
     /**
      *
      * @param d The duration of this Agent

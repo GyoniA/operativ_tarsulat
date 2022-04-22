@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class AmnesiaGeneticCode extends GeneticCode implements Serializable {
 
+    public String toString(){
+        return "AmnesiaGeneticCode";
+    }
+
     /**
      * Calls the GeneticCode blank constructor
      */
