@@ -30,7 +30,7 @@ public class Virologist implements Steppable, Serializable {
         this.name = n;
         Skeleton.LogReturn();
     }
-
+    
     /**
      *
      * @param n Name of the virologist.
@@ -66,6 +66,37 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), Integer.toString(amount));
         this.nucleoCount = amount;
         Skeleton.LogReturn();
+    }
+    /**
+     * The function returns active agents.
+     */
+    public List<Agent> getActiveAgent()
+    {
+    	return activeAgents;
+    }
+    
+    /**
+     * The function returns active agents.
+     */
+    public List<Agent> getAgentInventory()
+    {
+    	return agentInventory;
+    }
+    
+    /**
+     * The function returns active agents.
+     */
+    public List<Gear> getGears()
+    {
+    	return gears;
+    }
+    
+    /**
+     * The function returns active agents.
+     */
+    public List<GeneticCode> getGeneticCodes()
+    {
+    	return learnedGeneticCodes;
     }
 
     /**

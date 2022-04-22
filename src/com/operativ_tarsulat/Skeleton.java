@@ -99,7 +99,7 @@ public class Skeleton {
 	 * @param args Argumens of the call as strings
 	 */
 	public static void LogFunctionCall(String functionName, String... args) {
-		for(int i = 0;i<logTabCount;i++) // Indentation
+		/*for(int i = 0;i<logTabCount;i++) // Indentation
 			System.out.print("\t");
 		System.out.print(functionName+"(");
 		if(args!=null) { // Has arguments?
@@ -110,7 +110,7 @@ public class Skeleton {
 			}
 		}
 		System.out.println(")");
-		logTabCount++;
+		logTabCount++;*/
 	}
 	
 	/**
@@ -125,13 +125,13 @@ public class Skeleton {
 	 * @param value value returned
 	 */
 	public static void LogReturn(String value) {		
-		logTabCount--;
+		/*logTabCount--;
 		for(int i = 0;i<logTabCount;i++)
 			System.out.print("\t");
 		System.out.print("return");
 		if(value!=null)
 			System.out.print(": "+value);
-		System.out.println(""); //new line
+		System.out.println(""); //new line*/
 	}
 	
 	/**
