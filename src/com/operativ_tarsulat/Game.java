@@ -386,7 +386,7 @@ public class Game implements Serializable {
     /*
      * Returns the currently playing virologist
      */
-    public Virologist getCurrnetVirologist() {
+    public Virologist getCurrentVirologist() {
     	return virologists.get(currentVirologistIndex);
     }
     
