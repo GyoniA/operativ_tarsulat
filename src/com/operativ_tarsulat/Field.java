@@ -21,7 +21,7 @@ public abstract class Field implements Serializable {
 	}
 
 	/**
-	 * Constructor to create a new field
+	 * Constructor to create a new field\
 	 */
     public Field() {
     	Skeleton.LogFunctionCall("Field ctr");

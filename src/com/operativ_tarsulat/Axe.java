@@ -95,7 +95,8 @@ public class Axe extends Gear implements Serializable, Weapon{
      * @param v The Virologist, whose turn starts
      */
     public void HandleTurnStart(Virologist v) {
-
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+        Skeleton.LogReturn();
     }
 
     /**
