@@ -433,4 +433,34 @@ public class Virologist implements Steppable, Serializable {
         Skeleton.LogReturn("true");
         return true;
     }
+
+    /**
+     * Handles the act of getting material from a Warehouse
+     * @param amino the amino amount to get
+     * @param nucleo the nucleo amount to get
+     */
+    public void GetMaterialFromWarehouse(int amino,int nucleo) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), String.valueOf(amino), String.valueOf(nucleo));
+
+        Skeleton.LogReturn();
+    }
+
+    /**
+     * A virologist attacks another virologist
+     * @param v the virologist to attack
+     */
+    public void Attack(Virologist v) {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
+
+        Skeleton.LogReturn();
+    }
+
+    /**
+     * A virologist gets attacked by another virologist
+     */
+    public void Attacked() {
+        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+
+        Skeleton.LogReturn();
+    }
 }
