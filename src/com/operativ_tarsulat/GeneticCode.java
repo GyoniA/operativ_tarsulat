@@ -11,7 +11,7 @@ public abstract class GeneticCode implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return " amino cost: "+aminoCost+"nucleo cost: "+nucleoCost;
+        return " amino cost: "+aminoCost+" nucleo cost: "+nucleoCost;
     }
 
     /**
