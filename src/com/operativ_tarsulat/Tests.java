@@ -48,6 +48,9 @@ public class Tests {
 			case "stealGear":
 				StealGearTest();
 				break;
+			case "createAgent":
+				CreateAgentTest();
+				break;
 			
 				
 			
@@ -164,6 +167,7 @@ public class Tests {
 		{
 			System.out.println(name +" Megfertõzõdött medve vírussal");
 		}
+		else System.out.println("Nem volt medvevírus a laborban");
 		
 		
 		
@@ -286,10 +290,64 @@ public class Tests {
 				if(v2.GetGear(new Axe()) == null)
 					System.out.println("Nem sikerult felszerelest lopni.");
 		}
-
 	}
 
-	
+	static void CreateAgentTest()
+	{
+		BufferedReader lr = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Virológus neve: ");
+		String name = "";
+		try {
+			name = lr.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("(1)Amnesia agent (2)Dance agent (3)Paralyze agent (4)Protection agent");
+		int valasz =0;
+		try {
+			valasz = Integer.parseInt(lr.readLine());
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		 System.out.println( valasz);
+		Virologist v = new Virologist(name);
+		v.SetAmino(20);
+		v.SetNucleo(20);
+		v.AddGeneticCode(new AmnesiaGeneticCode());
+		v.AddGeneticCode(new DanceGeneticCode());
+		v.AddGeneticCode(new ParalyzeGeneticCode());
+		v.AddGeneticCode(new ProtectionGeneticCode());
+		int regiGcDB = v.getAgentInventory().size();
+		switch(valasz)
+		{
+		case 1:
+			v.CreateAgent(v.getGeneticCodes().get(0));
+			if(v.getAgentInventory().size()>regiGcDB) System.out.println("Sikerült Amnesia agent készíteni");
+			else System.out.println("Nem sikerült agent készíteni");
+			break;
+		case 2:
+			v.CreateAgent(v.getGeneticCodes().get(1));
+			if(v.getAgentInventory().size()>regiGcDB) System.out.println("Sikerült Dance agent készíteni");
+			else System.out.println("Nem sikerült agent készíteni");
+			break;
+		case 3:
+			v.CreateAgent(v.getGeneticCodes().get(2));
+			if(v.getAgentInventory().size()>regiGcDB) System.out.println("Sikerült Paralyze agent készíteni");
+			else System.out.println("Nem sikerült agent készíteni");
+			break;
+		case 4:
+			v.CreateAgent(v.getGeneticCodes().get(3));
+			if(v.getAgentInventory().size()>regiGcDB) System.out.println("Sikerült Protection agent készíteni");
+			else System.out.println("Nem sikerült agent készíteni");
+			break;
+		case 0: System.out.println("Nem jo valasz");
+			break;
+		}
+		
+	}
 	
 	
 }
