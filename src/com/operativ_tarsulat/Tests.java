@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,9 +12,9 @@ public class Tests {
 
 	public static void main(String[] args) {
 		
-		
+		int counter = 0;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		while(true) {
+		while(true&&counter<10) {
 			System.out.println("Adjon meg egy parancsot!");
 			String command = "";
 			try {
@@ -35,9 +36,24 @@ public class Tests {
 			case "playerSteps":
 				PlayerStepsTest();
 				break;
+			case "learnGeneticCode":
+				LearnGeneticCodeTest();
+				break;
+			case "dieVirologist":
+				PlayerDiesTest();
+				break;
+			case "pickUpMaterial":
+				PickUpMaterialTest();
+				break;
+			case "stealGear":
+				StealGearTest();
+				break;
+			
+				
+			
 			default: System.out.println("Nem ismert parancs!");
 			}
-			
+			counter++;
 		}
 		
 		
@@ -54,6 +70,7 @@ public class Tests {
 			e.printStackTrace();
 		}
 		Game.GetInstance().LoadGame(gameName);
+		
 	}
 	
 	static void ExitGameTest()
@@ -69,6 +86,8 @@ public class Tests {
 		if(answer.equals("I"))Game.GetInstance().SaveGame();
 		System.out.println("Sikeres kilépés!");
 		Game.GetInstance().ExitGame();
+		
+		
 	}	
 	
 	static void StartGameTest()
@@ -91,6 +110,7 @@ public class Tests {
 		}
 		Game.GetInstance().StartGame(fileName, Integer.parseInt(seed), players);
 		System.out.println("Sikeres pálya betöltés");
+		
 	}
 	
 	static void PlayerStepsTest()
@@ -106,7 +126,7 @@ public class Tests {
 		}
 		Virologist v = new Virologist(name);
 		Field f = new FreeField();
-		Field f2 = new Laboratory();
+		Laboratory f2 = new Laboratory();
 		Field f3 = new City();
 		v.SetField(f);
 		f.AddNeighbour(f2);
@@ -120,7 +140,7 @@ public class Tests {
 		int a = 1;
 		for(int i =0;i<neigh.size();i++)
 		{
-			System.out.print("("+a+")"+neigh.get(i).getClass()+",");
+			System.out.print("("+a+")"+neigh.get(i).toString()+",");
 			a++;
 			
 		}
@@ -140,10 +160,8 @@ public class Tests {
 		if(atment)System.out.println(name+" sikerült elmozdulnia");
 		else System.out.println(name+" nem sikerült elmozdulnia");
 		v.InteractWithField();
-		
-		if(a==1)
+		if(f2.getHasBearVirus())
 		{
-			v.AddAgent(new BearVirus());
 			System.out.println(name +" Megfertõzõdött medve vírussal");
 		}
 		
@@ -151,6 +169,125 @@ public class Tests {
 		
 	}
 
+	
+	static void PickUpMaterialTest()
+	{
+		BufferedReader lr = new BufferedReader(new InputStreamReader(System.in));
+		String name = "";
+		try {
+			System.out.println("Virológus: ");
+			name = lr.readLine();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Virologist v = new Virologist(name);
+		int regiAminoHely = v.GetVacantAmino();
+		int regiNucleoHely = v.GetVacantNucleo();
+		List<Building> buildings = new LinkedList<Building>();
+		buildings.add(new Warehouse(10,10));
+		City c = new City(buildings);
+		v.SetField(c);
+		v.InteractWithField();
+		int ujAminoHely = v.GetVacantAmino();
+		int ujNucleoHely = v.GetVacantNucleo();
+		if(ujAminoHely<regiAminoHely||ujNucleoHely<regiNucleoHely)
+		{
+			System.out.println("Sikerült felvenni: "+((regiAminoHely-ujAminoHely)+(regiNucleoHely-ujNucleoHely))+" anyagot");
+		}
+		
+	}
+	
+	static void LearnGeneticCodeTest()
+	{
+		BufferedReader lr = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Virológus: ");
+		String name = "";
+		try {
+			name = lr.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		Virologist v = new Virologist(name);
+		Laboratory l = new Laboratory(new AmnesiaGeneticCode(),false);
+		int geneticCodes = v.getGeneticCodes().size();
+		v.SetField(l);
+		v.InteractWithField();
+		if(v.getGeneticCodes().size()>geneticCodes)
+		{
+			System.out.println("Sikerült megtanulni!");
+			if(v.getGeneticCodes().size()==4) 
+			{
+				System.out.println(name+" megnyerte a játékot!");
+				Game.GetInstance().EndGame();
+			}	
+		}
+		else System.out.println("Nem sikerült megtanulni!");
+		
+	}
+	
+	static void PlayerDiesTest(){
+		Scanner scan = new Scanner(System.in);
+		String name;
+
+		Axe axe = new Axe();
+		Field f = new FreeField();
+		System.out.println("Virológus akin a fejszét használták: ");
+		name = scan.nextLine();
+		Virologist v = new Virologist(name);
+		v.SetField(f);
+
+		axe.Attack(v);
+
+		if(Arrays.asList(f.GetVirologists()).contains(v)) System.out.println(v.getName() + " nem tûnt el.");
+		else if(!Arrays.asList(f.GetVirologists()).contains(v)) System.out.println(v.getName() +" meghalt");
+
+	}
+	
+	static void StealGearTest(){
+		Scanner scan = new Scanner(System.in);
+		System.out.println("A lopast vegrehajto virologus neve: ");
+		String name1 = scan.nextLine();
+		
+		System.out.println("A lopast elszenvedo virologus neve: ");
+		String name2 = scan.nextLine();
+		
+
+		Virologist v1 = new Virologist(name1);
+		Virologist v2 = new Virologist(name2);
+		
+		Field f = new FreeField();
+
+		v1.SetField(f);
+		v2.SetField(f);
+
+		v2.AddAgent(new ParalyzeVirus());
+		v2.GetGear(new ProtectiveCape());
+
+		
+		System.out.println("Felszereles: (1)Glove (2)Bag (3)Cape (4)Axe");
+		int command = scan.nextInt();
+		switch (command){
+			case 1:
+				v1.Steal(v2, new Gloves());
+				if(v2.GetGear(new Gloves()) == null)
+					System.out.println("Nem sikerult felszerelest lopni.");
+			case 2:
+				v1.Steal(v2,new Bag());
+				if(v2.GetGear(new Bag()) == null)
+					System.out.println("Nem sikerult felszerelest lopni.");
+			case 3:
+				v1.Steal(v2,new ProtectiveCape());
+				if(v2.GetGear(new ProtectiveCape()) != null)
+					System.out.println("A virologus Cape felszerelest lopott" + v2.getName() + "nevu virologustol.");
+			case 4:
+				v1.Steal(v2, new Axe());
+				if(v2.GetGear(new Axe()) == null)
+					System.out.println("Nem sikerult felszerelest lopni.");
+		}
+
+	}
 
 	
 	

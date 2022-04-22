@@ -27,6 +27,10 @@ public class Laboratory extends Field implements Serializable {
 		Skeleton.LogFunctionCall("Laboratory ctr");
 		Skeleton.LogReturn();
 	}
+	public boolean getHasBearVirus()
+	{
+		return hasBearVirus;
+	}
 	/**
 	 * Set a new genetic code. 
 	 * @param gc This will be the new genetic code that can be found here.
