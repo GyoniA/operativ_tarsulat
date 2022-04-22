@@ -326,7 +326,7 @@ public class Game implements Serializable {
 
 		// Place virologists
     	for(int i = 0;i<virologists.size();i++){
-			fields.get(RandomInt(0,fields.size() - 1)).Accept(virologists.get(i));
+			virologists.get(i).SetField(fields.get(RandomInt(0,fields.size() - 1)));
 		}
     	
     	// Store created fields 
