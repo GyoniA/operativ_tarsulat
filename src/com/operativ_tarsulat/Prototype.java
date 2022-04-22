@@ -201,13 +201,17 @@ public class Prototype {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
 		// Possible targets
-		List<Virologist> avalibleVirologists = Arrays.asList(player.GetField().GetVirologists());
+		List<Virologist> avalibleVirologists = new LinkedList<Virologist>(Arrays.asList(player.GetField().GetVirologists()));
 		// remove the player, because cannot steal from themself
 		avalibleVirologists.remove(player);
 		// make the user choose a target
 		int virologistIndex = choose("Kérem válasszon célpontot",avalibleVirologists.stream().map(x->x.getName()).toArray(String[]::new));
 		// gears that can be stolen
 		List<Gear> gears = avalibleVirologists.get(virologistIndex).getGears();
+		if(gears.size()==0) {
+			System.out.println("Nincs a virológusnál semmilyen felszerelés");
+			return;
+		}
 		// make the user choose a target
 		int gearIndex = choose("Kérem válasszon célpontot", gears.stream().map(x->x.toString()).toArray(String[]::new));
 		player.Steal(avalibleVirologists.get(virologistIndex),gears.get(gearIndex));
