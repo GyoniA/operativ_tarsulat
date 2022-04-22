@@ -74,6 +74,30 @@ public class Virologist implements Steppable, Serializable {
     {
     	return activeAgents;
     }
+    
+    /**
+     * The function returns active agents.
+     */
+    public List<Agent> getAgentInventory()
+    {
+    	return agentInventory;
+    }
+    
+    /**
+     * The function returns active agents.
+     */
+    public List<Gear> getGears()
+    {
+    	return gears;
+    }
+    
+    /**
+     * The function returns active agents.
+     */
+    public List<GeneticCode> getGeneticCodes()
+    {
+    	return learnedGeneticCodes;
+    }
 
     /**
      * This virologist tries to use agent on another virologist
