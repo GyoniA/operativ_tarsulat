@@ -25,9 +25,9 @@ public class ProtectionGeneticCode extends GeneticCode implements Serializable {
      * @param a The amino cost of this GeneticCode
      * @param n The nucleo cost of this GeneticCode
      */
-    ProtectionGeneticCode(Virologist v, int a, int n) {
-        super(v, a, n);
-        Skeleton.LogFunctionCall("ProtectionGeneticCode ctr", v.getName(), String.valueOf(a), String.valueOf(n));
+    ProtectionGeneticCode(int a, int n) {
+        super(a, n);
+        Skeleton.LogFunctionCall("ProtectionGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();
     }
 

@@ -11,11 +11,15 @@ import java.util.List;
 import java.util.Random;
 
 public class Prototype {
-	
+	/*
+	 * Input stream used for inputs
+	 * can be console or file input stream 
+	 */
 	private static InputStream is;
-	///
-	/// Gets the next command either from console or from file depending 
-	///	
+	
+	/*
+	 * Gets the next command either from console or from file depending 
+	 */
 	private static String readLine() {
 		String parser = "";
 		int ch;
@@ -33,6 +37,10 @@ public class Prototype {
 		return parser.trim();
 	}
 	
+	/*
+	 * prompts the user for a choice
+	 * user can only choose an option from 
+	 */
 	private static int choose(String question, String[] options) {
 		Integer input = null;
 		while(input==null) {
@@ -98,11 +106,11 @@ public class Prototype {
 			System.out.println("Kérem adja meg a játék seedjét (hagy üresen randomért)");
 			try {
 				String input = readLine();
-				if(input == "") {
+				/*if(input == "") {
 					seed = new Random().nextInt();
-				}else {
+				}else {*/
 					seed = Integer.parseInt(input);
-				}
+				//}
 			}catch (NumberFormatException e) {
 				System.out.println("Kérem egész számot adjon meg");
 			}
@@ -237,6 +245,10 @@ public class Prototype {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
 		List<GeneticCode> geneticCodes = player.getGeneticCodes();
+		if(geneticCodes.size()==0) {
+			System.out.println("Nincs használható genetikai kód");
+			return;
+		}
 		int codeIndex = choose("Melyik genetikai kódot használja?",geneticCodes.stream().map(x->x.toString()).toArray(String[]::new));
 		player.CreateAgent(geneticCodes.get(codeIndex));
 	}

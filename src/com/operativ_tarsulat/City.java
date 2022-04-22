@@ -29,7 +29,7 @@ public class City extends Field implements Serializable {
 		for (Building b:buildings){
 			s = s+b.toString()+" ";
 		}
-		return "City, buildings in the city: "+s;
+		return "City, buildings in the city: "+s+"virologists in the city: "+super.toString();
 	}
 
     public City(List<Building> buildings)

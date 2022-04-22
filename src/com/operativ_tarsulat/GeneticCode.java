@@ -3,7 +3,6 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public abstract class GeneticCode implements Serializable {
-    private Virologist virologist;
     protected int duration;
     private int aminoCost;
     private int nucleoCost;
@@ -12,7 +11,7 @@ public abstract class GeneticCode implements Serializable {
      * @return The description of the class
      */
     public String toString(){
-        return "virologist, who has the genetic code: "+virologist.getName()+"amino cost: "+aminoCost+"nucleo cost: "+nucleoCost;
+        return " amino cost: "+aminoCost+" nucleo cost: "+nucleoCost;
     }
 
     /**
@@ -21,9 +20,8 @@ public abstract class GeneticCode implements Serializable {
      * @param a The amino cost of this GeneticCode
      * @param n The nucleo cost of this GeneticCode
      */
-    GeneticCode(Virologist v, int a, int n){
-        Skeleton.LogFunctionCall("GeneticCode ctr", v.getName() , String.valueOf(a), String.valueOf(n));
-        virologist = v;
+    GeneticCode(int a, int n){
+        Skeleton.LogFunctionCall("GeneticCode ctr", String.valueOf(a), String.valueOf(n));
         aminoCost = a;
         nucleoCost = n;
         Skeleton.LogReturn();
@@ -34,7 +32,6 @@ public abstract class GeneticCode implements Serializable {
      */
     GeneticCode() {
         Skeleton.LogFunctionCall("GeneticCode ctr");
-        virologist = null;
         aminoCost = 0;
         nucleoCost = 0;
         Skeleton.LogReturn();

@@ -306,6 +306,7 @@ public class Game implements Serializable {
     			connectedFields.add(disconnected);
     		}
     	}
+    	this.fields = createdFields;
     	
     	//add extra connections
 		for(int i = 0;i<fields.size();i++) {
@@ -326,11 +327,12 @@ public class Game implements Serializable {
 
 		// Place virologists
     	for(int i = 0;i<virologists.size();i++){
-			virologists.get(i).SetField(fields.get(RandomInt(0,fields.size() - 1)));
+    		Field field = fields.get(RandomInt(0,fields.size() - 1));
+			virologists.get(i).SetField(field);
+			field.Accept(virologists.get(i));
 		}
     	
     	// Store created fields 
-    	this.fields = createdFields;
     	Skeleton.LogReturn();
     }
     

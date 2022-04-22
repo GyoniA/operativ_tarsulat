@@ -10,7 +10,7 @@ public class Laboratory extends Field implements Serializable {
 	 * @return The description of the class
 	 */
 	public String toString(){
-		return "Laboratory, virologists on the field: "+super.toString()+"has BearVirus: "+hasBearVirus+"genetic code in the laboratory: "+localGeneticCode;
+		return "Laboratory, virologists on the field: "+super.toString()+" has BearVirus: "+hasBearVirus+" genetic code in the laboratory: "+localGeneticCode;
 	}
 
 	/**
@@ -26,6 +26,10 @@ public class Laboratory extends Field implements Serializable {
 	public Laboratory() {
 		Skeleton.LogFunctionCall("Laboratory ctr");
 		Skeleton.LogReturn();
+	}
+	public boolean getHasBearVirus()
+	{
+		return hasBearVirus;
 	}
 	/**
 	 * Set a new genetic code. 
