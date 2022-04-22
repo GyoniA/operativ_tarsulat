@@ -7,10 +7,16 @@ public class Virologist implements Steppable, Serializable {
     private String name;
     private Field field;
 
+    /**
+     * @return The description of the class
+     */
+    public String toString() {
+        return "Virologus, name: " + name;
+    }
     // Virologist can possess 3 gears
     private List<Gear> gears = new ArrayList<Gear>();
 
-    //ArrayLists that store active agents, agents in inventory and learnd genetic codes.
+    //ArrayLists that store active agents, agents in inventory and learned genetic codes.
     private List<Agent> activeAgents = new ArrayList<>();
     private List<Agent> agentInventory = new ArrayList<>();
     private List<GeneticCode> learnedGeneticCodes = new ArrayList<>();
