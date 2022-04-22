@@ -333,6 +333,7 @@ public class Game implements Serializable {
     	
     		try {
     			instance = (Game)ois.readObject();
+    			System.out.println("Sikeres betöltés!");
     		}finally { // stream is open but write failed so close stream
     			ois.close();
     			fis.close();
@@ -359,9 +360,9 @@ public class Game implements Serializable {
     		}
     		FileOutputStream fos = new FileOutputStream(new File(path+saveFile+".save"));
     		ObjectOutputStream oos = new ObjectOutputStream(fos);
-    	
     		try {
     			oos.writeObject(this);
+    			System.out.println("Sikeres mentés!");
     		}finally { // stream is open but write failed so close stream
     			oos.close();
     			fos.close();
