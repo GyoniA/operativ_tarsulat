@@ -98,10 +98,18 @@ public class Virologist implements Steppable, Serializable {
     	return gears;
     }
 
+    /**
+     * returns amino count for test purposes
+     * @return
+     */
     public int getAminoCount(){
         return aminoCount;
     }
 
+    /**
+     * return nucleo count for test purposes
+     * @return
+     */
     public int getNucleoCount(){
         return nucleoCount;
     }

@@ -416,35 +416,37 @@ public class Tests {
 			break;
 		}
 	}
-	
-	
+
 	static void StealMaterialTest(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("A lopast vegrehajto virologus neve: ");
-        String name1 = scan.nextLine();
+		Scanner scan = new Scanner(System.in);
+		System.out.println("A lopast vegrehajto virologus neve: ");
+		String name1 = scan.nextLine();
 
-        System.out.println("A lopast elszenvedo virologus neve: ");
-        String name2 = scan.nextLine();
+		System.out.println("A lopast elszenvedo virologus neve: ");
+		String name2 = scan.nextLine();
 
-        Virologist v1 = new Virologist(name1);
-        Virologist v2 = new Virologist(name2);
+		Virologist v1 = new Virologist(name1);
+		Virologist v2 = new Virologist(name2);
 
-        Field f = new FreeField();
+		Field f = new FreeField();
 
-        v1.SetField(f);
-        v2.SetField(f);
-        v2.AddAgent(new ParalyzeVirus());
+		v1.SetField(f);
+		v2.SetField(f);
+		v2.AddAgent(new ParalyzeVirus());
 
-        v1.SetAmino(0);
-        v1.SetNucleo(0);
+		v1.SetAmino(0);
+		v1.SetNucleo(0);
 
-        v2.SetAmino(5);
-        v2.SetNucleo(0);
+		v2.SetAmino(5);
+		v2.SetNucleo(0);
 
-        v1.StealMaterials(v2);
+		v1.StealMaterials(v2);
 
-        if(v1.getAminoCount() + v1.getNucleoCount() == 5)
-            System.out.println("A virologus " + (v1.getAminoCount() + v1.getNucleoCount()) + " anyagot lopott a " + v2.getName()+ "nevu virologustol.");
+		if(v1.getAminoCount() + v1.getNucleoCount() == 5)
+			System.out.println("A virologus" + v1.getAminoCount() + v1.getNucleoCount() + "anyagot lopott a " + v2.getName()+ "nevu virologustol.");
 
-    }
+	}
+	
+	
+
 }
