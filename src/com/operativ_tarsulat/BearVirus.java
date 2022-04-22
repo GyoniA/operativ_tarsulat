@@ -11,6 +11,7 @@ public class BearVirus extends Agent implements Serializable {
     BearVirus() {
         super();
         Skeleton.LogFunctionCall("BearVirus ctr");
+        this.SetDuration(-1);
         Skeleton.LogReturn();
     }
 
@@ -101,7 +102,12 @@ public class BearVirus extends Agent implements Serializable {
      */
     public void HandleMovedToField(Virologist v, Field f) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
-        
+        Virologist[] virologists = f.GetVirologists();
+        for (Virologist v2 : virologists) {
+            if (v2 != null) {
+                v2.ReceiveAgentUse(new BearVirus(), v);
+            }
+        }
 
         Skeleton.LogReturn();
     }

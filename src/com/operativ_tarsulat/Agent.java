@@ -67,7 +67,7 @@ public abstract class Agent implements Steppable, Effect,Serializable {
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
         DecreaseDuration();
-        if(Duration <= 0) {
+        if(Duration == 0) {
             virologist.RemoveAgent(this);
         }
         Skeleton.LogReturn();
