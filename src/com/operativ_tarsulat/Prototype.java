@@ -24,10 +24,15 @@ public class Prototype {
 		String parser = "";
 		int ch;
 		try {
+			boolean hadChar = false;
 			while((ch = is.read()) != -1) {
+				hadChar = true;
 				if(ch=='\n')
 					break;
 				parser += (char)ch;
+			}
+			if(!hadChar) {
+				System.exit(0);
 			}
 		} catch (IOException e) {
 			System.out.println("Hiba történt olvasás során");
