@@ -381,8 +381,8 @@ public class Skeleton {
 		g.SetSaveFile("sampleGame");
 		g.AddVirologist(new Virologist("v1"));
 		g.AddVirologist(new Virologist("v2"));
-		g.AddField(new Laboratory(new ParalyzeGeneticCode()));
-		g.AddField(new Laboratory(new AmnesiaGeneticCode()));
+		g.AddField(new Laboratory(new ParalyzeGeneticCode(), false));
+		g.AddField(new Laboratory(new AmnesiaGeneticCode(), false));
 		g.AddField(new FreeField());		
 		g.SaveGame();		
 	}

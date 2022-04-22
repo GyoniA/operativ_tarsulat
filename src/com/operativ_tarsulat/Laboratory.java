@@ -3,17 +3,16 @@ package com.operativ_tarsulat;
 import java.io.Serializable;
 
 public class Laboratory extends Field implements Serializable {
-	
-	
+	private boolean hasBearVirus = false;
 	private GeneticCode localGeneticCode;
 	/**
 	 * The constructor of the Laboratory class 
 	 * @param gc This genetic code can be found here. 
 	 */
-	public Laboratory(GeneticCode gc)
-	{
+	public Laboratory(GeneticCode gc, boolean hasBearVirus) {
 		Skeleton.LogFunctionCall("Laboratory ctr");
 		localGeneticCode = gc;
+		this.hasBearVirus = hasBearVirus;
 		Skeleton.LogReturn();
 	}
 	public Laboratory() {
@@ -37,6 +36,9 @@ public class Laboratory extends Field implements Serializable {
     public void Interact(Virologist v) {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
     	v.LearnGeneticCode(localGeneticCode);
+		if (hasBearVirus) {
+			v.ReceiveAgentUse(new BearVirus(), new Virologist());
+		}
     	Skeleton.LogReturn();
     }
 }
