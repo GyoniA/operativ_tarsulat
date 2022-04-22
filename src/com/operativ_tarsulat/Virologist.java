@@ -441,7 +441,19 @@ public class Virologist implements Steppable, Serializable {
      */
     public void GetMaterialFromWarehouse(int amino,int nucleo) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), String.valueOf(amino), String.valueOf(nucleo));
-
+        for (Agent a : activeAgents) {
+            if (a.HandleGetMaterialFromWarehouse(this)){
+                Skeleton.LogReturn();
+                return;
+            }
+        }
+        for (Gear g : gears) {
+            if (g.HandleGetMaterialFromWarehouse(this)){
+                Skeleton.LogReturn();
+                return;
+            }
+        }
+        GetMaterial(amino,nucleo);
         Skeleton.LogReturn();
     }
 
@@ -452,6 +464,8 @@ public class Virologist implements Steppable, Serializable {
     public void Attack(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
 
+
+
         Skeleton.LogReturn();
     }
 
@@ -460,6 +474,8 @@ public class Virologist implements Steppable, Serializable {
      */
     public void Attacked() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+
+
 
         Skeleton.LogReturn();
     }

@@ -53,7 +53,7 @@ public class Warehouse implements Building, Serializable {
     	if(nucleoNeed>nucleo) nucleoNeed = nucleo;
     	nucleo -= nucleoNeed;
     	amino -= aminoNeed;
-    	v.GetMaterial(aminoNeed, nucleoNeed);
+		v.GetMaterialFromWarehouse(aminoNeed,nucleoNeed);
     	Skeleton.LogReturn();
     }
 }
