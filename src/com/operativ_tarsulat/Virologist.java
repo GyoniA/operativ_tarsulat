@@ -273,7 +273,7 @@ public class Virologist implements Steppable, Serializable {
             int nucleoToGiveAway = v.GetVacantNucleo();
 
             if(aminoToGiveAway > this.aminoCount)
-                aminoToGiveAway = this.aminoCount;
+                aminoToGiveAway = this.aminoCount; 
             if(nucleoToGiveAway > this.nucleoCount)
                 nucleoToGiveAway = this.nucleoCount;
 
