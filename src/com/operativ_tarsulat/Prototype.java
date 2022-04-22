@@ -88,6 +88,9 @@ public class Prototype {
 		runGame();
 	}
 	
+	/*
+	 * returns true, if the input is a valid filename
+	 */
 	private static boolean validFilename(String fileName) {
 		if (fileName == null || fileName.isEmpty() || fileName.length() > 255) {
 	        return false;
@@ -95,6 +98,10 @@ public class Prototype {
 		return Arrays.stream(new Character[] {'"', '*', ':', '<', '>', '?', '\\', '|', 0x7F,'\000'}).noneMatch(ch->fileName.contains(ch.toString()));
 	}
 	
+	/*
+	 * runs the startGame command
+	 * asks for world name, seed, and character names, then generates a world based on these inputs
+	 */
 	public static void startGame() {
 		System.out.println("Kérem adja meg a játék file nevét");
 		String saveFile = readLine();
@@ -106,11 +113,11 @@ public class Prototype {
 			System.out.println("Kérem adja meg a játék seedjét (hagy üresen randomért)");
 			try {
 				String input = readLine();
-				/*if(input == "") {
+				if(input == "") {
 					seed = new Random().nextInt();
-				}else {*/
+				}else {
 					seed = Integer.parseInt(input);
-				//}
+				}
 			}catch (NumberFormatException e) {
 				System.out.println("Kérem egész számot adjon meg");
 			}
@@ -171,12 +178,19 @@ public class Prototype {
 		Game.GetInstance().ExitGame();
 	}
 	
+	/*
+	 * prints all accepted commands listed in the commands argument
+	 */
 	public static void printCommands(String... commands) {
 		System.out.println("Elfogadható parancsok:");
 		for(String command : commands)
 			System.out.println("\t"+command);
 	}
 	
+	/*
+	 * runs the playerStepsCommand
+	 * asks the user where should the virologist move
+	 */
 	public static void playerSteps() {
 		Virologist player = Game.GetInstance().getCurrentVirologist();
 		List<Field> neighbours = player.GetField().GetNeighbours();
@@ -193,10 +207,18 @@ public class Prototype {
 		Game.GetInstance().getCurrentVirologist().InteractWithField();		
 	}
 	
+	/*
+	 * runs the endTurn command
+	 * ends the current turn, so the next one can begin
+	 */
 	private static void endTurn() {
 		Game.GetInstance().NextTurn();		
 	}
-
+	
+	/*
+	 * runs the stealGear command
+	 * asks the user who they should steal from and what gear
+	 */
 	private static void stealGear() {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
@@ -217,6 +239,10 @@ public class Prototype {
 		player.Steal(avalibleVirologists.get(virologistIndex),gears.get(gearIndex));
 	}
 
+	/*
+	 * runs the stealMaterial command
+	 * asks the user who they should steal from
+	 */
 	private static void stealMaterial() {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
@@ -229,6 +255,10 @@ public class Prototype {
 		player.StealMaterials(avalibleVirologists.get(virologistIndex));
 	}
 
+	/*
+	 * runs the useAgent command
+	 * asks the user, what agent should be used and who should the target be
+	 */
 	private static void useAgent() {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
@@ -245,6 +275,10 @@ public class Prototype {
 		player.UseAgent(avalibleVirologists[virologistIndex], agents.get(agentIndex));
 	}
 
+	/*
+	 * runs the createAgent command
+	 * asks the user, genetic code to use for creation
+	 */
 	private static void createAgent() {
 		// Currently playing virologist
 		Virologist player = Game.GetInstance().getCurrentVirologist();
@@ -257,7 +291,10 @@ public class Prototype {
 		player.CreateAgent(geneticCodes.get(codeIndex));
 	}
 	
-	
+	/*
+	 * runs the game
+	 * starts in the menu, then progresses into gameplay
+	 */
 	public static void runGame() {
 		// store if we got out of menu
 		boolean outOfMenu = false;
