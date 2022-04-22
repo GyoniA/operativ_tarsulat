@@ -9,7 +9,7 @@ public class Shelter implements Building, Serializable {
 	 * @return The description of the class
 	 */
 	public String toString() {
-		return "Shelter, virologists on the field: " + super.toString() + " gear in the shelter: " + localGear;
+		return "Shelter "+" gear in the shelter: " + localGear;
 	}
     /**
      * The constructor of the Shelter class.

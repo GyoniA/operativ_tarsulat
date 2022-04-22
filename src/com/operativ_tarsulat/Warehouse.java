@@ -12,7 +12,7 @@ public class Warehouse implements Building, Serializable {
 	 * @return The description of the class
 	 */
 	public String toString() {
-		return "Warehouse, virologists on the field: " + super.toString() + " nucleo: " + nucleo + " amino: " + amino;
+		return "Warehouse"+ " nucleo: " + nucleo + " amino: " + amino;
 	}
 	/**
      * The constructor of the Warehouse class
