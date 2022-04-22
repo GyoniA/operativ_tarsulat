@@ -6,6 +6,7 @@ import java.util.List;
 public class Virologist implements Steppable, Serializable {
     private String name;
     private Field field;
+    private boolean hasMoved = false;
 
     /**
      * @return The description of the class
@@ -210,7 +211,7 @@ public class Virologist implements Steppable, Serializable {
      */
     public void Move(Field f2) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),f2.getClass().toString());
-        if(this.checkMovement())
+        if(!hasMoved && this.checkMovement())
             if(field.Remove(this,f2)) {
                 f2.Accept(this);
                 for(Agent a : activeAgents) {
@@ -220,7 +221,9 @@ public class Virologist implements Steppable, Serializable {
                     g.HandleMovedToField(this, f2);
                 }
             }
+        hasMoved = true;
         Skeleton.LogReturn();
+        
     }
 
     /**
@@ -228,6 +231,7 @@ public class Virologist implements Steppable, Serializable {
      */
     public void Step() {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
+        hasMoved = false;
         for(int i = 0;i<activeAgents.size();i++) {
             activeAgents.get(i).HandleTurnStart(this);
             activeAgents.get(i).Step();
