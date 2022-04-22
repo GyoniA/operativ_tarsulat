@@ -215,10 +215,10 @@ public class Game implements Serializable {
     	List<Field> createdFields = new LinkedList<Field>();
     	
     	// Create 4 laboratories
-    	createdFields.add(new Laboratory(new ProtectionGeneticCode(), RandomInt(0, 4) == 1));
-    	createdFields.add(new Laboratory(new AmnesiaGeneticCode(), RandomInt(0, 4) == 1));
-    	createdFields.add(new Laboratory(new ParalyzeGeneticCode(), RandomInt(0, 4) == 1));
-    	createdFields.add(new Laboratory(new DanceGeneticCode(), RandomInt(0, 4) == 1));
+    	createdFields.add(new Laboratory(new ProtectionGeneticCode(10,25), RandomInt(0, 4) == 1));
+    	createdFields.add(new Laboratory(new AmnesiaGeneticCode(30,42), RandomInt(0, 4) == 1));
+    	createdFields.add(new Laboratory(new ParalyzeGeneticCode(26,18), RandomInt(0, 4) == 1));
+    	createdFields.add(new Laboratory(new DanceGeneticCode(12,6), RandomInt(0, 4) == 1));
     	
     	int warehouseCount = RandomInt(MIN_WAREHOUSES,MAX_WAREHOUSES+1); // count of warehouses to be generated
     	int shelterCount = RandomInt(MIN_SHELTERS,MAX_SHELTERS+1); // count of shelters to be generated
