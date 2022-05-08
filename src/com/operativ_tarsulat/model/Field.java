@@ -9,6 +9,10 @@ public abstract class Field extends Observable implements Serializable {
     private LinkedList<Virologist> virologists;
     private List<Field> neighbours;
 
+    /*
+     * Display position of the field on the map
+     * */
+    private int posX, posY;
 	/**
 	 * @return The description of the class
 	 */
@@ -28,6 +32,27 @@ public abstract class Field extends Observable implements Serializable {
     	neighbours = new LinkedList<Field>();
     	virologists = new LinkedList<Virologist>();
     	Skeleton.LogReturn();
+    }
+    
+    /*
+     * Sets the position of the field on the map
+     */
+    public void setPos(int x, int y) {
+    	posX = x;
+    	posY = y;
+    }
+    
+    /*
+     * Returns the X coordinate of the field on the map
+     */
+    public int getPosX() {
+    	return posX;
+    }
+    /*
+     * Returns the Y coordinate of the field on the map
+     */
+    public int getPosY() {
+    	return posY;
     }
 
 	/**

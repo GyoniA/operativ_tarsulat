@@ -179,7 +179,11 @@ public class Game implements Serializable {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),f.getClass().getName());
     	fields.add(f);
     	Skeleton.LogReturn();
-    }  
+    }
+    
+    public Field[] GetFields() {
+    	return fields.toArray(new Field[fields.size()]);
+    }
     
     /**
      * For testing purposes, sets the saveFile
@@ -307,6 +311,11 @@ public class Game implements Serializable {
     		}
     	}
     	this.fields = createdFields;
+    	
+    	//TODO generate valid positions
+    	for(Field field : fields) {
+    		field.setPos(r.nextInt(1000), r.nextInt(300));
+    	}
     	
     	//add extra connections
 		for(int i = 0;i<fields.size();i++) {
