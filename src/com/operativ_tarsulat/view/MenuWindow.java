@@ -23,6 +23,7 @@ public class MenuWindow extends JFrame {
 	public MenuWindow() {
 		super("Menü");
 		this.setSize(600,600);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Container content = getContentPane();		
 		content.setLayout(new FlowLayout());
 		loadGameName = new JTextField();
