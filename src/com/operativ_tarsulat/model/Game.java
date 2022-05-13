@@ -351,7 +351,8 @@ public class Game implements Serializable {
      */
     public void EndGame() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
-    	System.out.println("A játék véget ért, az összes genetikai kódot megtanulta "+virologists.get(currentVirologistIndex).getName()); 
+    	System.out.println("A játék véget ért, az összes genetikai kódot megtanulta "+virologists.get(currentVirologistIndex).getName());
+    	System.exit(0);
     	Skeleton.LogReturn();
     }
     

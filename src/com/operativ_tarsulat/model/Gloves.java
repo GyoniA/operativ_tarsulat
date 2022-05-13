@@ -30,13 +30,12 @@ public class Gloves extends Gear implements Serializable {
      * @return true, because v can't reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall("Gloves ctr", v.getClass().getName(), i.toString(), v2.getClass().getName());
         uses--;
         if (uses == 0) {
             v.RemoveGear(this);
         }
-        v2.AddAgent(i);
-        Skeleton.LogReturn("true");
+        if(v2!=null)
+        	v2.AddAgent(i);
     	return true;
     }
 

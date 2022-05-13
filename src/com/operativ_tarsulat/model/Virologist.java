@@ -161,14 +161,14 @@ public class Virologist extends Observable implements Steppable, Serializable {
      * @param v The other virologist
      */
     public void ReceiveAgentUse(Agent a, Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), a.getClass().toString(), v.getName());
+        //Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), a.getClass().toString(), v.getName());
         boolean allowtouch = checkTouch(a,v);
         if(allowtouch) {
         	a.RemoveObservers();
         	a.AddObserver(a.CreateActiveObserver());
             this.AddAgent(a);            
         }
-        Skeleton.LogReturn();
+        //Skeleton.LogReturn();
     }
 
     /**
@@ -504,7 +504,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
      * @return
      */
     private boolean checkTouch(Agent a, Virologist v) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString(),v.getName());
+        //Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString(),v.getName());
         for (int i = 0; i < activeAgents.size(); i++)
             if (activeAgents.get(i).HandleTouch(this, a, v)){
                 Skeleton.LogReturn("false");
@@ -515,7 +515,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
                 Skeleton.LogReturn("false");
                 return false;
             }
-        Skeleton.LogReturn("true");
+        //Skeleton.LogReturn("true");
         return true;
     }
 

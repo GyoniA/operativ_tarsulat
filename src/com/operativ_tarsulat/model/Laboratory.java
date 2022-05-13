@@ -53,7 +53,7 @@ public class Laboratory extends Field implements Serializable {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName());
     	v.LearnGeneticCode(localGeneticCode);
 		if (hasBearVirus) {
-			v.ReceiveAgentUse(new BearVirus(), new Virologist());
+			v.ReceiveAgentUse(new BearVirus(), null);
 		}
     	Skeleton.LogReturn();
     }
