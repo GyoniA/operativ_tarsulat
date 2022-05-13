@@ -1,7 +1,9 @@
 package com.operativ_tarsulat.view;
 
-public class AxeObserver implements Observer{
+import com.operativ_tarsulat.model.Axe;
 
+public class AxeObserver implements Observer{
+    private Axe subject;
     public void Update(){
 
     }
