@@ -21,7 +21,6 @@ public class DanceGeneticCode extends GeneticCode implements Serializable {
 
     /**
      *
-     * @param v The virologist that this Agent belongs to
      * @param a The amino cost of this GeneticCode
      * @param n The nucleo cost of this GeneticCode
      */
