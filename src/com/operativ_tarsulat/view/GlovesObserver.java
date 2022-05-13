@@ -22,7 +22,7 @@ public class GlovesObserver implements Observer{
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("gloves.png"));
-        MainWindow.getInstance().getAmnesiaLabel().revalidate();
+        MainWindow.getInstance().getGotGlovesLabel().setIcon(new ImageIcon("gloves.png"));
+        MainWindow.getInstance().getGotGlovesLabel().revalidate();
     }
 }
