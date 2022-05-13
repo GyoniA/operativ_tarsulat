@@ -13,6 +13,9 @@ public class FieldPanel extends JPanel {
     public FieldPanel(){
         this.add(imageLabel);
         this.add(namesLabel);
+        imageLabel.setBounds(0,0,40,40);
+        namesLabel.setBounds(0,50,40,60);
+        this.setBounds(posX,posY,40,100);
     }
 
     public void setImage(String img){
