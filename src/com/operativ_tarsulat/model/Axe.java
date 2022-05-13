@@ -6,6 +6,14 @@ public class Axe extends Gear implements Serializable, Weapon{
     private final GearSlot slot = GearSlot.Weapon;
     private Boolean hasAttacked = false;
 
+
+    /**
+     *
+     */
+    Axe() {
+        super();
+
+    }
     /**
      * @return The description of the class
      */
