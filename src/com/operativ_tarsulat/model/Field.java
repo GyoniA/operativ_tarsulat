@@ -123,5 +123,6 @@ public abstract class Field extends Observable implements Serializable {
 	 */
 	public void Remove(Virologist v) {
 		virologists.remove(v);
+		this.NotifyAll();
 	}
 }

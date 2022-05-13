@@ -99,17 +99,22 @@ public class MenuWindow extends JFrame {
 		content.add(loadGameButton);
 	
 		startGameButton.addActionListener((e)->{
-			if(!playersArea.getText().isEmpty()&&!nameOfgameField.getText().isEmpty()&&!seed.getText().isEmpty())
-			{
-				String s = playersArea.getText();
-				String [] names = s.split("\n");
-				Game.GetInstance().StartGame(nameOfgameField.getText(),Integer.parseInt(seed.getText()),names);
-			}
-			else Game.GetInstance().StartGame("game",1,new String[]{"Player1","Player2"});
+			try {
+				Integer.parseInt(seed.getText());
+				if(!playersArea.getText().isEmpty()&&!nameOfgameField.getText().isEmpty()&&!seed.getText().isEmpty())
+				{
+					String s = playersArea.getText();
+					String [] names = s.split("\n");
+					Game.GetInstance().StartGame(nameOfgameField.getText(),Integer.parseInt(seed.getText()),names);
+				}
+				else Game.GetInstance().StartGame("game",1,new String[]{"Player1","Player2"});
+					
 				
-			
-			MainWindow.getInstance().setVisible(true);
-			setVisible(false);
+				MainWindow.getInstance().setVisible(true);
+				setVisible(false);
+			}catch(NumberFormatException ex) {
+				ex.printStackTrace();
+			}
 		});
 		
 		loadGameButton.addActionListener((e)->{

@@ -14,8 +14,10 @@ import com.operativ_tarsulat.model.Agent;
 import com.operativ_tarsulat.model.Field;
 import com.operativ_tarsulat.model.Game;
 import com.operativ_tarsulat.model.Gear;
+import com.operativ_tarsulat.model.GearSlot;
 import com.operativ_tarsulat.model.GeneticCode;
 import com.operativ_tarsulat.model.Virologist;
+import com.operativ_tarsulat.model.Weapon;
 
 public class Menu {
 	private class MenuItem<T>{
@@ -244,9 +246,42 @@ public class Menu {
 		player.CreateAgent(geneticCodes.get(codeIndex));
 	}
 	
+	/*
+	 * runs the attacj command
+	 * asks the user, for a target to attack
+	 */
+	private void attack() {
+		// Currently playing virologist
+		Virologist player = Game.GetInstance().getCurrentVirologist();
+		// Possible targets
+		List<Virologist> avalibleVirologists = new LinkedList<Virologist>(Arrays.asList(player.GetField().GetVirologists()));
+		// remove the player, because cannot attack themself
+		avalibleVirologists.remove(player);
+		// make the user choose a target
+		SwingUtilities.invokeLater(()->{
+			menuItems.clear();
+			for(Virologist v : avalibleVirologists)
+				menuItems.addElement(new MenuItem(v,v.getName()));
+			menuItems.addElement(new MenuItem(null,"Mégse"));
+		});
+		int virologistIndex = waitInput();
+		if(virologistIndex == menuItems.getSize()-1)
+			return; // cancel called
+		List<Gear> gears = player.getGears();
+		for(Gear g : gears) {
+			if(g.GetSlot() == GearSlot.Weapon)
+				((Weapon)g).Attack(avalibleVirologists.get(virologistIndex));
+		}
+		
+	}
+	
+	/*
+	 * main function of the thread that is responsible for menu interactions
+	 * in an infinite loop checks for inputs and handles that input
+	 */
 	private void menuThread() {
 		while(true) {
-			showCommands(new MenuItem("playerSteps","Játékos léptetése"),new MenuItem("interact","Interakció a mezõvel"), new MenuItem("createAgent","Ágens létrehozása"),new MenuItem("useAgent","Ágens használata"),new MenuItem("stealMaterial","Anyag lopása"),new MenuItem("stealGear","Felszerelés lopása"),new MenuItem("endTurn","Kör befejezése"));
+			showCommands(new MenuItem("playerSteps","Játékos léptetése"),new MenuItem("interact","Interakció a mezõvel"), new MenuItem("createAgent","Ágens létrehozása"),new MenuItem("useAgent","Ágens használata"),new MenuItem("stealMaterial","Anyag lopása"),new MenuItem("stealGear","Felszerelés lopása"),new MenuItem("attack","Támadás"),new MenuItem("endTurn","Kör befejezése"));
 			// get the next command
 			int input = waitInput();
 			// evaluate the command
@@ -268,6 +303,9 @@ public class Menu {
 				break;
 			case "stealGear":
 				stealGear();
+				break;
+			case "attack":
+				attack();
 				break;
 			case "endTurn":
 				endTurn();
