@@ -370,7 +370,9 @@ public class MainWindow extends JFrame implements ActionListener{
 	}
 	
 	
-	
+	public MapPanel getMapPanel(){
+		return mapPanel;
+	}
 	
 
 

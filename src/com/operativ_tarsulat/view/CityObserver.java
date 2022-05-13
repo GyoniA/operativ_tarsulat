@@ -17,6 +17,7 @@ public class CityObserver implements Observer{
     @Override
     public void Update() {
         panel.setNames(updateNames());
+
     }
 
     private String[] updateNames(){
