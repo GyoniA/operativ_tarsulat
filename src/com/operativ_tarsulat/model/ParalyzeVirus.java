@@ -1,6 +1,6 @@
 package com.operativ_tarsulat.model;
 
-import com.operativ_tarsulat.view.ActiveParalyzeVirusObserver;
+import com.operativ_tarsulat.view.InventoryParalyzeVirusObserver;
 
 import java.io.Serializable;
 
@@ -18,7 +18,7 @@ public class ParalyzeVirus extends Agent implements Serializable {
      */
     ParalyzeVirus() {
         super();
-        AddObserver(new ActiveParalyzeVirusObserver(this));
+        AddObserver(new InventoryParalyzeVirusObserver(this));
         Skeleton.LogFunctionCall("ParalyzeVirus ctr");
         Skeleton.LogReturn();
     }
@@ -30,7 +30,7 @@ public class ParalyzeVirus extends Agent implements Serializable {
      */
     ParalyzeVirus(int d, Virologist v) {
         super(d, v);
-        AddObserver(new ActiveParalyzeVirusObserver(this));
+        AddObserver(new InventoryParalyzeVirusObserver(this));
         Skeleton.LogFunctionCall("ParalyzeVirus ctr", String.valueOf(d), v.getName());
         Skeleton.LogReturn();
     }
