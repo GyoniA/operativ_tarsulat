@@ -36,10 +36,8 @@ public class MainWindow extends JFrame implements ActionListener{
 	JMenuBar menuBar;
 	MapPanel mapPanel;
 	JList listView;
-	JMenuItem loadItem;
 	JMenuItem saveItem;
 	JMenuItem exitItem;
-	LoadWindow loadWindow;
 	/**
 	 * JLabels for showing icons in the main window
 	 */
@@ -241,14 +239,11 @@ public class MainWindow extends JFrame implements ActionListener{
 		
 		menuBar = new JMenuBar();
 		JMenu fileMenu = new JMenu("File");
-		loadItem = new JMenuItem("Load");
-		loadItem.addActionListener(this);
 		saveItem = new JMenuItem("Save");
 		saveItem.addActionListener(this);
 		exitItem = new JMenuItem("Exit");
 		exitItem.addActionListener(this);
 		fileMenu.add(saveItem);
-		fileMenu.add(loadItem);
 		fileMenu.add(exitItem);
 		menuBar.add(fileMenu);
 		this.setJMenuBar(menuBar);
@@ -435,12 +430,6 @@ public class MainWindow extends JFrame implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==loadItem)
-		{
-			 loadWindow = new LoadWindow();
-			 loadWindow.setVisible(true);
-			 
-		}
 		if(e.getSource()==saveItem)
 		{
 			 Game.GetInstance().SaveGame();
