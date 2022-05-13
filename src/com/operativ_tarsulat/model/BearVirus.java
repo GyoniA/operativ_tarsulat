@@ -69,8 +69,8 @@ public class BearVirus extends Agent implements Serializable {
      */
     public Boolean HandleMove(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
-        Skeleton.LogReturn("true");
-        return true;
+        Skeleton.LogReturn("false");
+        return false;
     }
 
     /**
@@ -121,7 +121,7 @@ public class BearVirus extends Agent implements Serializable {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
         Virologist[] virologists = f.GetVirologists();
         for (Virologist v2 : virologists) {
-            if (v2 != null) {
+            if (v2 != null && v2 != v) {
                 v2.ReceiveAgentUse(new BearVirus(), v);
             }
         }
