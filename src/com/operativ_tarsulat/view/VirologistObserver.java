@@ -22,16 +22,6 @@ public class VirologistObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        //TODO: Fix first round name and material counts not appearing.
-        MainWindow.getInstance().getActualPlayerLabel().setText(subject.getName());
-        MainWindow.getInstance().getActualPlayerLabel().revalidate();
-
-        MainWindow.getInstance().getAminoLabel().setText(Integer.toString(subject.getAminoCount()));
-        MainWindow.getInstance().getAminoLabel().revalidate();
-
-        MainWindow.getInstance().getNucleoLabel().setText(Integer.toString(subject.getNucleoCount()));
-        MainWindow.getInstance().getNucleoLabel().revalidate();
-
         MainWindow.getInstance().getDanceLabel().setIcon(null);
         MainWindow.getInstance().getDanceLabel().revalidate();
 
@@ -75,10 +65,20 @@ public class VirologistObserver implements Observer {
             a.NotifyAll();
         }
         for (Agent a : subject.getAgentInventory()) {
-                a.NotifyAll();
+            a.NotifyAll();
         }
         for (GeneticCode g : subject.getGeneticCodes()) {
             g.NotifyAll();
         }
+
+        //TODO: Fix first round name and material counts not appearing.
+        MainWindow.getInstance().getActualPlayerLabel().setText(subject.getName());
+        MainWindow.getInstance().getActualPlayerLabel().revalidate();
+
+        MainWindow.getInstance().getAminoLabel().setText(Integer.toString(subject.getAminoCount()));
+        MainWindow.getInstance().getAminoLabel().revalidate();
+
+        MainWindow.getInstance().getNucleoLabel().setText(Integer.toString(subject.getNucleoCount()));
+        MainWindow.getInstance().getNucleoLabel().revalidate();
     }
 }
