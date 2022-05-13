@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.Gloves;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class GlovesObserver implements Observer{
+public class GlovesObserver implements Observer, Serializable{
     /**
      * Observed object.
      */

@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.Axe;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class AxeObserver implements Observer{
+public class AxeObserver implements Observer, Serializable{
     /**
      * Observed object.
      */

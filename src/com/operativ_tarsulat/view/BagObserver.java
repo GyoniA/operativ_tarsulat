@@ -3,9 +3,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.Bag;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class BagObserver implements Observer{
+public class BagObserver implements Observer, Serializable{
     /**
      * Observed object.
      */

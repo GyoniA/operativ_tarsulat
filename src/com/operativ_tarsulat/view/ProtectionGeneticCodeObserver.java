@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.ProtectionGeneticCode;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class ProtectionGeneticCodeObserver implements Observer {
+public class ProtectionGeneticCodeObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

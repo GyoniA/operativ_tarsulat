@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.BearVirus;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class ActiveBearVirusObserver implements Observer {
+public class ActiveBearVirusObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

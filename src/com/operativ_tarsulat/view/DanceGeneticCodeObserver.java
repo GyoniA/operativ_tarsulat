@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.DanceGeneticCode;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class DanceGeneticCodeObserver implements Observer {
+public class DanceGeneticCodeObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

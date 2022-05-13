@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.ProtectionVaccine;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class ActiveProtectionVaccineObserver implements Observer {
+public class ActiveProtectionVaccineObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

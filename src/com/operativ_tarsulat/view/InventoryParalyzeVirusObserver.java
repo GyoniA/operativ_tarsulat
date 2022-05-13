@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.ParalyzeVirus;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class InventoryParalyzeVirusObserver implements Observer {
+public class InventoryParalyzeVirusObserver implements Observer, Serializable {
     /**
      * Observed object.
      */
