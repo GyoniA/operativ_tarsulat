@@ -71,7 +71,6 @@ public class VirologistObserver implements Observer {
             g.NotifyAll();
         }
 
-        //TODO: Fix first round name and material counts not appearing.
         MainWindow.getInstance().getActualPlayerLabel().setText(subject.getName());
         MainWindow.getInstance().getActualPlayerLabel().revalidate();
 
