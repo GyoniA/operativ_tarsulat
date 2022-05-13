@@ -1,6 +1,6 @@
 package com.operativ_tarsulat.model;
 
-import com.operativ_tarsulat.view.ActiveProtectionVaccineObserver;
+import com.operativ_tarsulat.view.InventoryProtectionVaccineObserver;
 
 import java.io.Serializable;
 
@@ -17,7 +17,7 @@ public class ProtectionVaccine extends Agent implements Serializable {
      */
     ProtectionVaccine() {
         super();
-        AddObserver(new ActiveProtectionVaccineObserver(this));
+        AddObserver(new InventoryProtectionVaccineObserver(this));
         Skeleton.LogFunctionCall("ProtectionVaccine ctr");
         Skeleton.LogReturn();
     }
@@ -29,7 +29,7 @@ public class ProtectionVaccine extends Agent implements Serializable {
      */
     ProtectionVaccine(int d, Virologist v) {
         super(d, v);
-        AddObserver(new ActiveProtectionVaccineObserver(this));
+        AddObserver(new InventoryProtectionVaccineObserver(this));
         Skeleton.LogFunctionCall("ProtectionVaccine ctr", v.getName());
         Skeleton.LogReturn();
     }
