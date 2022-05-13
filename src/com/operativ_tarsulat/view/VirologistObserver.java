@@ -1,5 +1,8 @@
 package com.operativ_tarsulat.view;
 
+import com.operativ_tarsulat.model.Agent;
+import com.operativ_tarsulat.model.Gear;
+import com.operativ_tarsulat.model.GeneticCode;
 import com.operativ_tarsulat.model.Virologist;
 
 import javax.swing.*;
@@ -57,5 +60,18 @@ public class VirologistObserver implements Observer {
 
         MainWindow.getInstance().getGotAxeLabel().setIcon(null);
         MainWindow.getInstance().getGotAxeLabel().revalidate();
+
+        for (Gear g : subject.getGears()) {
+            g.NotifyAll();
+        }
+        for (Agent a : subject.getActiveAgent()) {
+            a.NotifyAll();
+        }
+        for (Agent a : subject.getAgentInventory()) {
+                a.NotifyAll();
+        }
+        for (GeneticCode g : subject.getGeneticCodes()) {
+            g.NotifyAll();
+        }
     }
 }
