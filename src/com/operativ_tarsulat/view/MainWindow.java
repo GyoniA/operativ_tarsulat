@@ -141,52 +141,33 @@ public class MainWindow extends JFrame implements ActionListener{
 		JLabel vLabel = new JLabel("Vaccine:");
 		vLabel.setBounds(10,455,70,20);
 		getContentPane().add(vLabel);
-		
-		JLabel pLabel = new JLabel();
-		pLabel.setIcon(protectionEmblem);
-		pLabel.setBounds(80,435,25,25);
-		getContentPane().add(pLabel);
-		
-		gotProtectionLabel = new JLabel("pipa");//ezt a sort majd ki kell venni.
-		gotProtectionLabel.setBounds(80,465,25,25);
+
+		//TODO start of labels
+
+		gotProtectionLabel = new JLabel("");
+		gotProtectionLabel.setBounds(80,455,25,25);
 		getContentPane().add(gotProtectionLabel);
 		
 		JLabel vPanel = new JLabel("Virus:");
 		vPanel.setBounds(10,520,70,20);
 		getContentPane().add(vPanel);
-		
-		JLabel paLabel = new JLabel();
-		paLabel.setIcon(paralyzeEmblem);
-		paLabel.setBounds(80,505,24,24);
-		getContentPane().add(paLabel);
-		gotParalyzeLabel = new JLabel("pipa");//ezt a sort majd ki kell venni.
-		gotParalyzeLabel.setBounds(80,535,25,25);
+
+		gotParalyzeLabel = new JLabel("");
+		gotParalyzeLabel.setBounds(80,520,25,25);
 		getContentPane().add(gotParalyzeLabel);
-		
-		JLabel dLabel = new JLabel();
-		dLabel.setIcon(danceEmblem);
-		dLabel.setBounds(114,505,25,25);
-		getContentPane().add(dLabel);
-		gotDanceLabel = new JLabel("pipa");//ezt a sort majd ki kell venni.
-		gotDanceLabel.setBounds(114,535,25,25);
+
+		gotDanceLabel = new JLabel("");
+		gotDanceLabel.setBounds(114,520,25,25);
 		getContentPane().add(gotDanceLabel);
-		
-		JLabel bLabel = new JLabel();
-		bLabel.setIcon(bearEmblem);
-		bLabel.setBounds(149,505,25,25);
-		getContentPane().add(bLabel);
-		gotBearLabel = new JLabel("pipa");//ezt a sort majd ki kell venni.
-		gotBearLabel.setBounds(149,535,25,25);
+
+		gotBearLabel = new JLabel("");
+		gotBearLabel.setBounds(149,520,25,25);
 		getContentPane().add(gotBearLabel);
-		
-		JLabel amLabel = new JLabel();
-		amLabel.setIcon(amnesiaEmblem);
-		amLabel.setBounds(184,505,25,25);
-		getContentPane().add(amLabel);
-		gotAmnesiaLabel = new JLabel("pipa");//ezt a sort majd ki kell venni.
-		gotAmnesiaLabel.setBounds(184,535,25,25);
+
+		gotAmnesiaLabel = new JLabel("");
+		gotAmnesiaLabel.setBounds(184,520,25,25);
 		getContentPane().add(gotAmnesiaLabel);
-		
+		//TODO end of labels
 		
 		JLabel eqLabel = new JLabel("Equipment:");
 		eqLabel.setBounds(780,370,100,25);
