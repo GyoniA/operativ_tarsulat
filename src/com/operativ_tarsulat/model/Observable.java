@@ -1,5 +1,6 @@
 package com.operativ_tarsulat.model;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import com.operativ_tarsulat.view.Observer;
 /*
  * Common parent class for all observable classes. Used for notifying observers.
  */
-public class Observable {
+public class Observable implements Serializable {
 	/*
 	 * List for storing registered observers
 	 */

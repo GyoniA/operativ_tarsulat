@@ -1,5 +1,6 @@
 package com.operativ_tarsulat.view;
 
+import java.awt.Component;
 import java.io.Serializable;
 
 import com.operativ_tarsulat.model.City;
@@ -25,6 +26,16 @@ public class CityObserver implements Observer, Serializable{
      */
     @Override
     public void Update() {
+    	MapPanel map = MainWindow.getInstance().getMapPanel();
+    	for(Component c : map.getComponents())
+    	{
+    		if(c == panel) {
+    			map.remove(panel);
+    		}
+    	}
+    	panel = new FieldPanel();
+    	map.add(panel);
+    	panel.setImage("city.png");
         panel.setNames(updateNames());
         panel.setPosX(subject.getPosX());
         panel.setPosY(subject.getPosY());

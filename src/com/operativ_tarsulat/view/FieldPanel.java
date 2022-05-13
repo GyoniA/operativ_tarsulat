@@ -2,8 +2,9 @@ package com.operativ_tarsulat.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 
-public class FieldPanel extends JPanel {
+public class FieldPanel extends JPanel implements Serializable {
     private String image;
     private JLabel imageLabel = new JLabel();
     private JLabel namesLabel = new JLabel();
