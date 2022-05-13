@@ -36,7 +36,7 @@ public class MainWindow extends JFrame implements ActionListener{
 	JMenuItem saveItem;
 	JMenuItem exitItem;
 	
-	JLabel danceLabel,amnesiaLabel,paralyzeLabel,protectionLabel,actualPlayer, nucleoLabel, aminoLabel,gotProtectionLabel,gotParalyzeLabel,gotAmnesiaLabel,gotDanceLabel,gotBearLabel,gotBagLabel,gotCloakLabel,gotGlovesLabel,gotAxeLabel;
+	JLabel danceLabel,amnesiaLabel,paralyzeLabel,protectionLabel,actualPlayer, nucleoLabel, aminoLabel,gotProtectionLabel,gotParalyzeLabel,gotAmnesiaLabel,gotDanceLabel,gotBearLabel,gotBagLabel,gotProtectiveCapeLabel,gotGlovesLabel,gotAxeLabel;
 	private MainWindow() {
 		super("Vak virológusok földje...");
 		setSize(1000,630);
@@ -192,12 +192,12 @@ public class MainWindow extends JFrame implements ActionListener{
 		eqLabel.setBounds(780,370,100,25);
 		getContentPane().add(eqLabel);
 		
-		JLabel ckLabel = new JLabel("Cloak:");
+		JLabel ckLabel = new JLabel("ProtectiveCape:");
 		ckLabel.setBounds(780,420,100,25);
 		getContentPane().add(ckLabel);
-		gotCloakLabel = new JLabel("KEPECS");//ezt a sort majd ki kell venni.
-		gotCloakLabel.setBounds(820,420,40,40);
-		getContentPane().add(gotCloakLabel);
+		gotProtectiveCapeLabel = new JLabel("KEPECS");//ezt a sort majd ki kell venni.
+		gotProtectiveCapeLabel.setBounds(820,420,40,40);
+		getContentPane().add(gotProtectiveCapeLabel);
 		
 		JLabel gLabel = new JLabel("Gloves:");
 		gLabel.setBounds(885,420,100,25);
@@ -364,13 +364,13 @@ public class MainWindow extends JFrame implements ActionListener{
 		gotBagLabel = label;
 	}
 	
-	public JLabel getGotCloakLabel ()
+	public JLabel getGotProtectiveCapeLabel ()
 	{
-		return gotCloakLabel;
+		return gotProtectiveCapeLabel;
 	}
-	public void setGotCloakLabel (JLabel label)
+	public void setGotProtectiveCapeLabel (JLabel label)
 	{
-		gotCloakLabel = label;
+		gotProtectiveCapeLabel = label;
 	}
 	
 	public JLabel getGotGlovesLabel ()
