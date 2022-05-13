@@ -204,6 +204,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
                 return temp;
             }
         gears.add(g);
+        g.NotifyAll();
         Skeleton.LogReturn(null);
         return null;
     }
@@ -225,6 +226,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
     public void AddGeneticCode(GeneticCode gc) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),gc.getClass().toString());
         learnedGeneticCodes.add(gc);
+        gc.NotifyAll();
         Skeleton.LogReturn();
     }
 
@@ -289,6 +291,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
             gears.remove(r);
             if(g != null) {
                 gears.add(g);
+                g.NotifyAll();
             }
         }
         Skeleton.LogReturn("true");
@@ -408,7 +411,8 @@ public class Virologist extends Observable implements Steppable, Serializable {
         		aminoCount-=amino;
         		nucleoCount-=nucleo;
         		Agent createdAgent = code.CreateInstance(this);
-    	        agentInventory.add(createdAgent);	
+    	        agentInventory.add(createdAgent);
+                createdAgent.notifyAll();
         	}	        
         }
         Skeleton.LogReturn();
@@ -431,6 +435,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
     public void AddAgent(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
         activeAgents.add(a);
+        a.NotifyAll();
         a.setVirologist(this);
         Skeleton.LogReturn();
     }
@@ -442,6 +447,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
     public void AddAgentToInventory(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
         agentInventory.add(a);
+        a.notifyAll();
         a.setVirologist(this);
         Skeleton.LogReturn();
     }

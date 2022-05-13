@@ -130,11 +130,11 @@ public class MainWindow extends JFrame implements ActionListener{
 		nLabel.setBounds(190,415,70,20);
 		getContentPane().add(nLabel);
 		
-		aminoLabel = new JLabel("szam");//ezt a sort majd ki kell venni.
+		aminoLabel = new JLabel("");
 		aminoLabel.setBounds(140,415,60,20);
 		getContentPane().add(aminoLabel);
 		
-		nucleoLabel = new JLabel("szam");//ezt a sort majd ki kell venni.
+		nucleoLabel = new JLabel("");
 		nucleoLabel.setBounds(240,415,60,20);
 		getContentPane().add(nucleoLabel);
 		
