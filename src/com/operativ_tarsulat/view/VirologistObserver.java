@@ -1,9 +1,6 @@
 package com.operativ_tarsulat.view;
 
-import com.operativ_tarsulat.model.Agent;
-import com.operativ_tarsulat.model.Gear;
-import com.operativ_tarsulat.model.GeneticCode;
-import com.operativ_tarsulat.model.Virologist;
+import com.operativ_tarsulat.model.*;
 
 import javax.swing.*;
 
@@ -25,6 +22,10 @@ public class VirologistObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
+        //TODO: Fix first round.
+        MainWindow.getInstance().getActualPlayerLabel().setText(subject.getName());
+        MainWindow.getInstance().getActualPlayerLabel().revalidate();
+
         MainWindow.getInstance().getDanceLabel().setIcon(null);
         MainWindow.getInstance().getDanceLabel().revalidate();
 

@@ -75,8 +75,8 @@ public class MainWindow extends JFrame implements ActionListener{
 		JLabel aktJatekos = new JLabel("Actual player: ");
 		aktJatekos.setBounds(300,365,200,30);
 		getContentPane().add(aktJatekos);
-		
-		actualPlayer = new JLabel("vmi");//ezt a sort majd ki kell venni. 
+
+		actualPlayer = new JLabel("");
 		actualPlayer.setBounds(400,365,200,30);
 		getContentPane().add(actualPlayer);
 		
