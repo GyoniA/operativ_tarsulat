@@ -12,6 +12,7 @@ public class FreeFieldObserver implements Observer{
         panel.setPosY(freeField.getPosY());
         panel.setNames(updateNames());
         panel.setImage("freeField.png");
+
     }
 
     @Override
