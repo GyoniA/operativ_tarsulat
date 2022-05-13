@@ -15,6 +15,10 @@ public class LoadWindow extends JFrame implements ActionListener{
 	
 	private JTextField loadFileName;
 	private JButton button;
+
+	/**
+	 * Constructor for LoadWindow
+	 */
 	public LoadWindow()
 	{
 		this.setSize(300,150);

@@ -6,6 +6,10 @@ public class CityObserver implements Observer{
     private City subject;
     private FieldPanel panel;
 
+    /**
+     * Constructor for the CityObserver
+     * @param city subject of the observer
+     */
     public CityObserver(City city){
         subject = city;
         panel = new FieldPanel();
@@ -14,6 +18,9 @@ public class CityObserver implements Observer{
         MainWindow.getInstance().getMapPanel().add(panel);
     }
 
+    /**
+     * Function that is called when the subject is changed.
+     */
     @Override
     public void Update() {
         panel.setNames(updateNames());
@@ -22,6 +29,10 @@ public class CityObserver implements Observer{
         panel.UpdateBounds();
     }
 
+    /**
+     * Function that updates the names of the fields
+     * @return the names of the fields
+     */
     private String[] updateNames(){
         String[] names = new String[subject.GetVirologists().length];
         for(int i = 0; i<subject.GetVirologists().length;i++)

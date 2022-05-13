@@ -7,6 +7,10 @@ public class LaboratoryObserver implements Observer{
     private Laboratory subject;
     private FieldPanel panel;
 
+    /**
+     * Constructor for the class LaboratoryObserver
+     * @param lab the laboratory that will be observed
+     */
     public LaboratoryObserver(Laboratory lab){
     	subject = lab;
     	panel = new FieldPanel();
@@ -15,6 +19,9 @@ public class LaboratoryObserver implements Observer{
         MainWindow.getInstance().getMapPanel().add(panel);
     }
 
+    /**
+     *  Function that is called when the subject is changed.
+     */
     @Override
     public void Update() {
         panel.setNames(updateNames());
@@ -23,6 +30,10 @@ public class LaboratoryObserver implements Observer{
         panel.UpdateBounds();
     }
 
+    /**
+     * Function that updates the names of the fields
+     * @return the names of the fields
+     */
     private String[] updateNames(){
         String[] names = new String[subject.GetVirologists().length];
         for(int i = 0; i<subject.GetVirologists().length;i++)

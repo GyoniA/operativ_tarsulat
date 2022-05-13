@@ -10,6 +10,9 @@ public class FieldPanel extends JPanel {
     private int posX;
     private int posY;
 
+    /**
+     * Constructor for the class FieldPanel
+     */
     public FieldPanel(){
         this.add(imageLabel);
         this.add(namesLabel);
@@ -22,15 +25,27 @@ public class FieldPanel extends JPanel {
         this.setOpaque(false);
 
     }
-    
+
+    /**
+     * Updates the position of the field
+     */
     public void UpdateBounds() {
     	this.setBounds(posX-20,posY-40,40,100);
     }
 
+    /**
+     * Sets the image of the field
+     * @param img to set
+     */
     public void setImage(String img){
         image = img;
         imageLabel.setIcon(new ImageIcon(image));
     }
+
+    /**
+     * Sets the names of the field
+     * @param nameArray names to set
+     */
     public void setNames(String[] nameArray){
         String names ="<html>";
 
@@ -39,10 +54,19 @@ public class FieldPanel extends JPanel {
 
         namesLabel.setText(names);
     }
+
+    /**
+     * Sets the X position of the field
+     * @param pos to set
+     */
     public void setPosX(int pos){
         posX = pos;
     }
 
+    /**
+     * Sets the Y position of the field
+     * @param pos to set
+     */
     public void setPosY(int pos){
         posY = pos;        
     }
