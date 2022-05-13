@@ -369,6 +369,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), Integer.toString(amino), Integer.toString(nucleo));
         this.aminoCount += amino;
         this.nucleoCount += nucleo;
+        this.NotifyAll();
         Skeleton.LogReturn();
     }
 
