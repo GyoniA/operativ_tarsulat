@@ -174,6 +174,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
             GeneticCodeCheckList gcc = new GeneticCodeCheckList();
             for(int i = 0; i<learnedGeneticCodes.size();i++)
                 learnedGeneticCodes.get(i).CheckList(gcc);
+            s.NotifyAll();
             gcc.CheckEndCondition();
         }
         Skeleton.LogReturn();
@@ -193,6 +194,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
                 temp = gears.get(i);
                 gears.remove(gears.get(i));
                 gears.add(g);
+                g.NotifyAll();
                 Skeleton.LogReturn(temp.getClass().toString());
                 return temp;
             }
