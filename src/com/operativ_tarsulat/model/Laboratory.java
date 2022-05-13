@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.LaboratoryObserver;
+
 import java.io.Serializable;
 
 public class Laboratory extends Field implements Serializable {
@@ -21,10 +23,12 @@ public class Laboratory extends Field implements Serializable {
 		Skeleton.LogFunctionCall("Laboratory ctr");
 		localGeneticCode = gc;
 		this.hasBearVirus = hasBearVirus;
+		AddObserver(new LaboratoryObserver(this));
 		Skeleton.LogReturn();
 	}
 	public Laboratory() {
 		Skeleton.LogFunctionCall("Laboratory ctr");
+		AddObserver(new LaboratoryObserver(this));
 		Skeleton.LogReturn();
 	}
 	public boolean getHasBearVirus()

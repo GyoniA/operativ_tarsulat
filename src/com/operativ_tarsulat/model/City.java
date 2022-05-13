@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.CityObserver;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,11 +38,13 @@ public class City extends Field implements Serializable {
     {
     	Skeleton.LogFunctionCall("City ctr");
     	this.buildings = buildings;
+		AddObserver(new CityObserver(this));
     	Skeleton.LogReturn();
     }
     public City() {
-    	buildings = new LinkedList<>();
-    }
+		buildings = new LinkedList<>();
+		AddObserver(new CityObserver(this));
+	}
     public List<Building> GetBuildings() {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName());
     	Skeleton.LogReturn(buildings.toString());
