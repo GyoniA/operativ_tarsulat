@@ -11,7 +11,7 @@ public class FieldPanel {
 
     }
     public void setNames(String[] nameArray){
-        System.arraycopy(nameArray, 0, names, 0, nameArray.length);
+        names = nameArray;
     }
 
     public void setPosX(int pos){
