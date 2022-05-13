@@ -1,6 +1,8 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ActiveAmnesiaVirusObserver;
 import com.operativ_tarsulat.view.ActiveBearVirusObserver;
+import com.operativ_tarsulat.view.Observer;
 
 import java.io.Serializable;
 import java.util.List;
@@ -131,4 +133,8 @@ public class BearVirus extends Agent implements Serializable {
         Skeleton.LogReturn("true");
         return true;
     }
+	@Override
+	protected Observer CreateActiveObserver() {
+		return new ActiveBearVirusObserver(this);
+	}
 }

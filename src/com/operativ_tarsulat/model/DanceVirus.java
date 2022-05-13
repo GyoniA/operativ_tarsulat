@@ -1,6 +1,9 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ActiveAmnesiaVirusObserver;
+import com.operativ_tarsulat.view.ActiveDanceVirusObserver;
 import com.operativ_tarsulat.view.InventoryDanceVirusObserver;
+import com.operativ_tarsulat.view.Observer;
 
 import java.io.Serializable;
 import java.util.List;
@@ -124,4 +127,8 @@ public class DanceVirus extends Agent implements Serializable {
         Skeleton.LogReturn("false");
         return false;
     }
+	@Override
+	protected Observer CreateActiveObserver() {
+		return new ActiveDanceVirusObserver(this);
+	}
 }

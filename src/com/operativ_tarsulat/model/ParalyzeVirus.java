@@ -1,6 +1,9 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ActiveAmnesiaVirusObserver;
+import com.operativ_tarsulat.view.ActiveParalyzeVirusObserver;
 import com.operativ_tarsulat.view.InventoryParalyzeVirusObserver;
+import com.operativ_tarsulat.view.Observer;
 
 import java.io.Serializable;
 
@@ -121,4 +124,9 @@ public class ParalyzeVirus extends Agent implements Serializable {
         Skeleton.LogReturn("false");
         return false;
     }
+
+	@Override
+	protected Observer CreateActiveObserver() {
+		return new ActiveParalyzeVirusObserver(this);
+	}
 }

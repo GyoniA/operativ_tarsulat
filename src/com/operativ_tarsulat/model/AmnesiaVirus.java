@@ -1,7 +1,10 @@
 package com.operativ_tarsulat.model;
 
 import java.io.Serializable;
+
+import com.operativ_tarsulat.view.ActiveAmnesiaVirusObserver;
 import com.operativ_tarsulat.view.InventoryAmnesiaVirusObserver;
+import com.operativ_tarsulat.view.Observer;
 
 public class AmnesiaVirus extends Agent implements Serializable {
 
@@ -121,4 +124,9 @@ public class AmnesiaVirus extends Agent implements Serializable {
         Skeleton.LogReturn("false");
         return false;
     }
+
+	@Override
+	protected Observer CreateActiveObserver() {		
+		return new ActiveAmnesiaVirusObserver(this);
+	}
 }

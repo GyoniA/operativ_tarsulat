@@ -3,6 +3,8 @@ package com.operativ_tarsulat.model;
 import java.io.Console;
 import java.io.Serializable;
 
+import com.operativ_tarsulat.view.Observer;
+
 public abstract class Agent extends Observable implements Steppable, Effect,Serializable {
     public int Duration;
     private Virologist virologist;
@@ -89,4 +91,6 @@ public abstract class Agent extends Observable implements Steppable, Effect,Seri
         Duration = length;
         Skeleton.LogReturn();
     }
+
+	protected abstract Observer CreateActiveObserver();
 }

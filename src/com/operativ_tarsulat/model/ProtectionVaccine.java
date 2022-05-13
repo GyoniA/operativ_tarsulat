@@ -1,6 +1,9 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ActiveAmnesiaVirusObserver;
+import com.operativ_tarsulat.view.ActiveProtectionVaccineObserver;
 import com.operativ_tarsulat.view.InventoryProtectionVaccineObserver;
+import com.operativ_tarsulat.view.Observer;
 
 import java.io.Serializable;
 
@@ -120,4 +123,8 @@ public class ProtectionVaccine extends Agent implements Serializable {
         Skeleton.LogReturn("false");
         return false;
     }
+	@Override
+	protected Observer CreateActiveObserver() {
+		return new ActiveProtectionVaccineObserver(this);
+	}
 }
