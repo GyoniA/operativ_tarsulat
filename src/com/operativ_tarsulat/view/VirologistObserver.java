@@ -22,7 +22,40 @@ public class VirologistObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getProtectionLabel().setIcon(new ImageIcon("protectionEmblem.png"));
+        MainWindow.getInstance().getDanceLabel().setIcon(null);
+        MainWindow.getInstance().getDanceLabel().revalidate();
+
+        MainWindow.getInstance().getAmnesiaLabel().setIcon(null);
+        MainWindow.getInstance().getAmnesiaLabel().revalidate();
+
+        MainWindow.getInstance().getParalyzeLabel().setIcon(null);
+        MainWindow.getInstance().getParalyzeLabel().revalidate();
+
+        MainWindow.getInstance().getProtectionLabel().setIcon(null);
         MainWindow.getInstance().getProtectionLabel().revalidate();
+
+        MainWindow.getInstance().getGotParalyzeLabel().setIcon(null);
+        MainWindow.getInstance().getGotParalyzeLabel().revalidate();
+
+        MainWindow.getInstance().getGotAmnesiaLabel().setIcon(null);
+        MainWindow.getInstance().getGotAmnesiaLabel().revalidate();
+
+        MainWindow.getInstance().getGotDanceLabel().setIcon(null);
+        MainWindow.getInstance().getGotDanceLabel().revalidate();
+
+        MainWindow.getInstance().getGotBearLabel().setIcon(null);
+        MainWindow.getInstance().getGotBearLabel().revalidate();
+
+        MainWindow.getInstance().getGotBagLabel().setIcon(null);
+        MainWindow.getInstance().getGotBagLabel().revalidate();
+
+        MainWindow.getInstance().getGotProtectiveCapeLabel().setIcon(null);
+        MainWindow.getInstance().getGotProtectiveCapeLabel().revalidate();
+
+        MainWindow.getInstance().getGotGlovesLabel().setIcon(null);
+        MainWindow.getInstance().getGotGlovesLabel().revalidate();
+
+        MainWindow.getInstance().getGotAxeLabel().setIcon(null);
+        MainWindow.getInstance().getGotAxeLabel().revalidate();
     }
 }
