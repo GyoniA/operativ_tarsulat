@@ -24,7 +24,7 @@ public class FieldPanel extends JPanel {
     }
     
     public void UpdateBounds() {
-    	this.setBounds(posX - 20,posY - 50,40,100);
+    	this.setBounds(posX-20,posY-40,40,100);
     }
 
     public void setImage(String img){
