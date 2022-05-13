@@ -36,7 +36,7 @@ public class MainWindow extends JFrame implements ActionListener{
 	JMenuItem saveItem;
 	JMenuItem exitItem;
 	
-	JLabel danceLabel,amnesiaLabel,paralyzeLabel,protectionLabel,actualPlayer, nucleoLabel, aminoLabel,gotProtectionLabel,gotParalyzeLabel,gotAmnesiaLabel,gotDanceLabel,gotBearLabel,gotBagLabel,gotProtectiveCapeLabel,gotGlovesLabel,gotAxeLabel;
+	JLabel danceLabel,amnesiaLabel,paralyzeLabel,protectionLabel,actualPlayer, nucleoLabel, aminoLabel,gotProtectionLabel,gotParalyzeLabel,gotAmnesiaLabel,gotDanceLabel,gotBearLabel,gotBagLabel,gotProtectiveCapeLabel,gotGlovesLabel,gotAxeLabel,activeParalyzeLabel,activeDanceLabel,activeAmnesiaLabel,activeBearLabel,activeProtectionLabel;
 	private MainWindow() {
 		super("Vak virológusok földje...");
 		setSize(1000,630);
@@ -146,25 +146,45 @@ public class MainWindow extends JFrame implements ActionListener{
 		gotProtectionLabel.setBounds(80,455,25,25);
 		getContentPane().add(gotProtectionLabel);
 		
+		gotAmnesiaLabel = new JLabel("");
+		gotAmnesiaLabel.setBounds(114,455,25,25);
+		getContentPane().add(gotAmnesiaLabel);
+		
+		gotParalyzeLabel = new JLabel("");
+		gotParalyzeLabel.setBounds(149,455,25,25);
+		getContentPane().add(gotParalyzeLabel);
+		
+		gotDanceLabel = new JLabel("");
+		gotDanceLabel.setBounds(184,455,25,25);
+		getContentPane().add(gotDanceLabel);
+		
+		gotBearLabel = new JLabel("");
+		gotBearLabel.setBounds(219,455,25,25);
+		getContentPane().add(gotBearLabel);
+		
 		JLabel vPanel = new JLabel("Active:");
 		vPanel.setBounds(10,520,70,20);
 		getContentPane().add(vPanel);
 
-		gotParalyzeLabel = new JLabel("");
-		gotParalyzeLabel.setBounds(80,520,25,25);
-		getContentPane().add(gotParalyzeLabel);
+		activeParalyzeLabel = new JLabel("");
+		activeParalyzeLabel.setBounds(80,520,25,25);
+		getContentPane().add(activeParalyzeLabel);
 
-		gotDanceLabel = new JLabel("");
-		gotDanceLabel.setBounds(114,520,25,25);
-		getContentPane().add(gotDanceLabel);
+		activeDanceLabel = new JLabel("");
+		activeDanceLabel.setBounds(114,520,25,25);
+		getContentPane().add(activeDanceLabel);
 
-		gotBearLabel = new JLabel("");
-		gotBearLabel.setBounds(149,520,25,25);
-		getContentPane().add(gotBearLabel);
+		activeBearLabel = new JLabel("");
+		activeBearLabel.setBounds(149,520,25,25);
+		getContentPane().add(activeBearLabel);
 
-		gotAmnesiaLabel = new JLabel("");
-		gotAmnesiaLabel.setBounds(184,520,25,25);
-		getContentPane().add(gotAmnesiaLabel);
+		activeAmnesiaLabel = new JLabel("");
+		activeAmnesiaLabel.setBounds(184,520,25,25);
+		getContentPane().add(activeAmnesiaLabel);
+		
+		activeProtectionLabel = new JLabel("");
+		activeProtectionLabel.setBounds(219,520,25,25);
+		getContentPane().add(activeProtectionLabel);
 		
 		JLabel eqLabel = new JLabel("Equipment:");
 		eqLabel.setBounds(780,370,100,25);
@@ -358,6 +378,26 @@ public class MainWindow extends JFrame implements ActionListener{
 	public void setGotGlovesLabel (JLabel label)
 	{
 		gotGlovesLabel = label;
+	}
+	public JLabel getActiveDanceLabel()
+	{
+		return activeDanceLabel;
+	}
+	public JLabel getActiveProtectionLabel()
+	{
+		return activeProtectionLabel;
+	}
+	public JLabel getActiveAmnesiaLabel()
+	{
+		return activeAmnesiaLabel;
+	}
+	public JLabel getActiveBearLabel()
+	{
+		return activeBearLabel;
+	}
+	public JLabel getActiveParalyzeLabel()
+	{
+		return activeParalyzeLabel;
 	}
 	
 	public JLabel getGotAxeLabel ()
