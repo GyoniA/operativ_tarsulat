@@ -11,6 +11,7 @@ public class CityObserver implements Observer{
         panel.setPosX(city.getPosX());
         panel.setPosY(city.getPosY());
         panel.setNames(updateNames());
+        panel.setImage("city.png");
     }
 
     @Override

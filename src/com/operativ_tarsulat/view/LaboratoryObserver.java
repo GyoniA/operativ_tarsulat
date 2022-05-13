@@ -12,10 +12,12 @@ public class LaboratoryObserver implements Observer{
         panel.setPosX(lab.getPosX());
         panel.setPosY(lab.getPosY());
         panel.setNames(updateNames());
+        panel.setImage("lab.png");
     }
 
     @Override
     public void Update() {
+
         panel.setNames(updateNames());
     }
 
