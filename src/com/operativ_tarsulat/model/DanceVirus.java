@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ActiveDanceVirusObserver;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
@@ -17,6 +19,7 @@ public class DanceVirus extends Agent implements Serializable {
      */
     DanceVirus() {
         super();
+        AddObserver(new ActiveDanceVirusObserver(this));
         Skeleton.LogFunctionCall("DanceVirus ctr");
         Skeleton.LogReturn();
     }
@@ -28,6 +31,7 @@ public class DanceVirus extends Agent implements Serializable {
      */
     DanceVirus(int d, Virologist v) {
         super(d, v);
+        AddObserver(new ActiveDanceVirusObserver(this));
         Skeleton.LogFunctionCall("DanceVirus ctr", String.valueOf(d), v.getName());
         Skeleton.LogReturn();
     }
