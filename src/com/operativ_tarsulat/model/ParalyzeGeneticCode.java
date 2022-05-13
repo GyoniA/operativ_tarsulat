@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ParalyzeGeneticCodeObserver;
+
 import java.io.Serializable;
 
 public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
@@ -15,18 +17,19 @@ public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
      */
     ParalyzeGeneticCode() {
         super();
+        AddObserver(new ParalyzeGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("ParalyzeGeneticCode ctr");
         Skeleton.LogReturn();
     }
 
     /**
      *
-     * @param v The virologist that this Agent belongs to
      * @param a The amino cost of this GeneticCode
      * @param n The nucleo cost of this GeneticCode
      */
     ParalyzeGeneticCode( int a, int n) {
         super(a, n);
+        AddObserver(new ParalyzeGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("ParalyzeGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();
     }
