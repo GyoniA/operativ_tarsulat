@@ -104,7 +104,11 @@ public class BearVirus extends Agent implements Serializable {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
         List<Field> neighbours = v.GetField().GetNeighbours();
         Random rand = new Random();
-        v.Move(neighbours.get(rand.nextInt(neighbours.size()-1)));
+        if (neighbours.size() == 1) {
+            v.Move(neighbours.get(0));
+        } else {
+            v.Move(neighbours.get(rand.nextInt(neighbours.size()-1)));
+        }
         Skeleton.LogReturn();
     }
 
