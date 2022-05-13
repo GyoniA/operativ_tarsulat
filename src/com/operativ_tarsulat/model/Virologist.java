@@ -412,7 +412,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
         		nucleoCount-=nucleo;
         		Agent createdAgent = code.CreateInstance(this);
     	        agentInventory.add(createdAgent);
-                createdAgent.notifyAll();
+                createdAgent.NotifyAll();
         	}	        
         }
         Skeleton.LogReturn();
@@ -447,7 +447,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
     public void AddAgentToInventory(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
         agentInventory.add(a);
-        a.notifyAll();
+        a.NotifyAll();
         a.setVirologist(this);
         Skeleton.LogReturn();
     }

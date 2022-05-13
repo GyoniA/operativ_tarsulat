@@ -341,7 +341,7 @@ public class Game implements Serializable {
 			virologists.get(i).SetField(field);
 			field.Accept(virologists.get(i));
 		}
-    	
+    	virologists.get(currentVirologistIndex).NotifyAll();
     	// Store created fields 
     	Skeleton.LogReturn();
     }
