@@ -1,11 +1,20 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.GlovesObserver;
+
 import java.io.Serializable;
 
 public class Gloves extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.Glove;
     private int uses = 3;
 
+    /**
+     * Calls the blank Gloves constructor
+     */
+    Gloves() {
+        AddObserver(new GlovesObserver(this));
+
+    }
     /**
      * @return The description of the class
      */

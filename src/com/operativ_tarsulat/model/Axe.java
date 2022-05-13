@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.AxeObserver;
+
 import java.io.Serializable;
 
 public class Axe extends Gear implements Serializable, Weapon{
@@ -8,10 +10,10 @@ public class Axe extends Gear implements Serializable, Weapon{
 
 
     /**
-     *
+     * Calls the blank Axe constructor
      */
     Axe() {
-        super();
+        AddObserver(new AxeObserver(this));
 
     }
     /**

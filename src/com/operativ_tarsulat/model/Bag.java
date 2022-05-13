@@ -1,11 +1,21 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.BagObserver;
+
 import java.io.Serializable;
 
 public class Bag extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.Bag;
     private final int capacityGrow = 20;
 
+
+    /**
+     * Calls the blank Bag constructor
+     */
+    Bag() {
+        AddObserver(new BagObserver(this));
+
+    }
     /**
      *
      * @param v The Virologist who wants to reach another Virologist
