@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.AmnesiaVirus;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class InventoryAmnesiaVirusObserver implements Observer {
+public class InventoryAmnesiaVirusObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

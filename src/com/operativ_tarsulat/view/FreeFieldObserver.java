@@ -1,8 +1,10 @@
 package com.operativ_tarsulat.view;
 
+import java.io.Serializable;
+
 import com.operativ_tarsulat.model.FreeField;
 
-public class FreeFieldObserver implements Observer{
+public class FreeFieldObserver implements Observer, Serializable{
     private FreeField subject;
     private FieldPanel panel;
 

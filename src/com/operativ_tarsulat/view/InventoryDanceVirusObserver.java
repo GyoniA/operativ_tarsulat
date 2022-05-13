@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.DanceVirus;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class InventoryDanceVirusObserver implements Observer {
+public class InventoryDanceVirusObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.ProtectiveCape;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class ProtectiveCapeObserver implements Observer{
+public class ProtectiveCapeObserver implements Observer, Serializable{
     /**
      * Observed object.
      */

@@ -1,9 +1,11 @@
 package com.operativ_tarsulat.view;
 
+import java.io.Serializable;
+
 import com.operativ_tarsulat.model.City;
 import com.operativ_tarsulat.model.Laboratory;
 
-public class LaboratoryObserver implements Observer{
+public class LaboratoryObserver implements Observer, Serializable{
     private Laboratory subject;
     private FieldPanel panel;
 

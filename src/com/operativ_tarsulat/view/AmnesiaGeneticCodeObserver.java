@@ -2,9 +2,11 @@ package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.AmnesiaGeneticCode;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class AmnesiaGeneticCodeObserver implements Observer {
+public class AmnesiaGeneticCodeObserver implements Observer, Serializable {
     /**
      * Observed object.
      */

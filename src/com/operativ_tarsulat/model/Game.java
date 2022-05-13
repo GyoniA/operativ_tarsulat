@@ -389,6 +389,10 @@ public class Game implements Serializable {
     	}catch(ClassNotFoundException e) {
     		System.out.println("Sikertelen betöltés, hibás file");
     	}
+    	instance.getCurrentVirologist().NotifyAll();
+    	for(Field f : instance.GetFields()) {
+    		f.NotifyAll();
+    	}
     	Skeleton.LogReturn();
     }
     
