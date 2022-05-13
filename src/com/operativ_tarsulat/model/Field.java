@@ -62,6 +62,7 @@ public abstract class Field extends Observable implements Serializable {
 	public void Accept(Virologist v) {
     	Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),v.getName(),v.getClass().getName());
     	virologists.add(v);
+		this.NotifyAll();
     	Skeleton.LogReturn();
     }
 
@@ -80,7 +81,8 @@ public abstract class Field extends Observable implements Serializable {
     		return true;
     	}
     	Skeleton.LogReturn("false");
-    	return false;
+		this.NotifyAll();
+		return false;
     		
     }
     
