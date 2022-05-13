@@ -30,6 +30,7 @@ public class AmnesiaVirus extends Agent implements Serializable {
      */
     AmnesiaVirus(int d, Virologist v) {
         super(d, v);
+        AddObserver(new ActiveAmnesiaVirusObserver(this));
         Skeleton.LogFunctionCall("AmnesiaVirus ctr", String.valueOf(d), v.getName());
         Skeleton.LogReturn();
     }

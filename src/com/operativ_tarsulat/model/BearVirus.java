@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.ActiveBearVirusObserver;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Random;
@@ -17,6 +19,7 @@ public class BearVirus extends Agent implements Serializable {
      */
     BearVirus() {
         super();
+        AddObserver(new ActiveBearVirusObserver(this));
         Skeleton.LogFunctionCall("BearVirus ctr");
         this.SetDuration(-1);
         Skeleton.LogReturn();
@@ -29,6 +32,7 @@ public class BearVirus extends Agent implements Serializable {
      */
     BearVirus(int d, Virologist v) {
         super(d, v);
+        AddObserver(new ActiveBearVirusObserver(this));
         Skeleton.LogFunctionCall("BearVirus ctr", String.valueOf(d), v.getName());
         Skeleton.LogReturn();
     }
