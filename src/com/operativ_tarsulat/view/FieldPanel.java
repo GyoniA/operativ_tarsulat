@@ -16,6 +16,11 @@ public class FieldPanel extends JPanel {
         imageLabel.setBounds(0,0,40,40);
         namesLabel.setBounds(0,50,40,60);
         this.setBounds(posX,posY,40,100);
+        namesLabel.setText("hel");
+    }
+    
+    public void UpdateBounds() {
+    	this.setBounds(posX,posY,40,100);
     }
 
     public void setImage(String img){
@@ -33,7 +38,7 @@ public class FieldPanel extends JPanel {
     }
 
     public void setPosY(int pos){
-        posY = pos;
+        posY = pos;        
     }
 
 }

@@ -1,16 +1,14 @@
 package com.operativ_tarsulat.view;
 
 import com.operativ_tarsulat.model.FreeField;
-import jdk.jfr.internal.tool.Main;
 
 public class FreeFieldObserver implements Observer{
     private FreeField subject;
-    private FieldPanel panel = new FieldPanel();
+    private FieldPanel panel;
 
     public FreeFieldObserver(FreeField freeField){
-        subject = freeField;
-        panel.setPosX(freeField.getPosX());
-        panel.setPosY(freeField.getPosY());
+    	subject = freeField;
+    	panel = new FieldPanel();
         panel.setNames(updateNames());
         panel.setImage("freeField.png");
         MainWindow.getInstance().getMapPanel().add(panel);
@@ -19,6 +17,9 @@ public class FreeFieldObserver implements Observer{
     @Override
     public void Update() {
         panel.setNames(updateNames());
+        panel.setPosX(subject.getPosX());
+        panel.setPosY(subject.getPosY());
+        panel.UpdateBounds();
     }
 
     private String[] updateNames(){

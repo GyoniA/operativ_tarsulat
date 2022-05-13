@@ -5,12 +5,11 @@ import com.operativ_tarsulat.model.Laboratory;
 
 public class LaboratoryObserver implements Observer{
     private Laboratory subject;
-    private FieldPanel panel = new FieldPanel();
+    private FieldPanel panel;
 
     public LaboratoryObserver(Laboratory lab){
-        subject = lab;
-        panel.setPosX(lab.getPosX());
-        panel.setPosY(lab.getPosY());
+    	subject = lab;
+    	panel = new FieldPanel();
         panel.setNames(updateNames());
         panel.setImage("lab.png");
         MainWindow.getInstance().getMapPanel().add(panel);
@@ -19,6 +18,9 @@ public class LaboratoryObserver implements Observer{
     @Override
     public void Update() {
         panel.setNames(updateNames());
+        panel.setPosX(subject.getPosX());
+        panel.setPosY(subject.getPosY());
+        panel.UpdateBounds();
     }
 
     private String[] updateNames(){

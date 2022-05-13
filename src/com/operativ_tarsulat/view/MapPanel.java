@@ -11,6 +11,7 @@ import java.awt.Dimension;
 public class MapPanel extends JPanel {
 	MapPanel() {
         setPreferredSize(new Dimension(1000,300));
+		this.setLayout(null);
     }
 
     @Override

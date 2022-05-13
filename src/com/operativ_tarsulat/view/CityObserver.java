@@ -4,12 +4,11 @@ import com.operativ_tarsulat.model.City;
 import com.operativ_tarsulat.model.FreeField;
 public class CityObserver implements Observer{
     private City subject;
-    private FieldPanel panel = new FieldPanel();
+    private FieldPanel panel;
 
     public CityObserver(City city){
         subject = city;
-        panel.setPosX(city.getPosX());
-        panel.setPosY(city.getPosY());
+        panel = new FieldPanel();
         panel.setNames(updateNames());
         panel.setImage("city.png");
         MainWindow.getInstance().getMapPanel().add(panel);
@@ -18,7 +17,9 @@ public class CityObserver implements Observer{
     @Override
     public void Update() {
         panel.setNames(updateNames());
-
+        panel.setPosX(subject.getPosX());
+        panel.setPosY(subject.getPosY());
+        panel.UpdateBounds();
     }
 
     private String[] updateNames(){

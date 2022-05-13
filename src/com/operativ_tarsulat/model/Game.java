@@ -315,6 +315,7 @@ public class Game implements Serializable {
     	//TODO generate valid positions
     	for(Field field : fields) {
     		field.setPos(r.nextInt(1000), r.nextInt(300));
+    		field.NotifyAll();
     	}
     	
     	//add extra connections
