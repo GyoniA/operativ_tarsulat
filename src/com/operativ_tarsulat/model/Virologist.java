@@ -142,6 +142,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
         // if movement is allowed
         if(movement)
             v2.ReceiveAgentUse(a,this);
+        NotifyAll();
         Skeleton.LogReturn();
     }
 
@@ -164,8 +165,6 @@ public class Virologist extends Observable implements Steppable, Serializable {
         //Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), a.getClass().toString(), v.getName());
         boolean allowtouch = checkTouch(a,v);
         if(allowtouch) {
-        	a.RemoveObservers();
-        	a.AddObserver(a.CreateActiveObserver());
             this.AddAgent(a);            
         }
         //Skeleton.LogReturn();
@@ -419,6 +418,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
                 createdAgent.NotifyAll();
         	}	        
         }
+        NotifyAll();
         Skeleton.LogReturn();
     }
 
@@ -438,6 +438,8 @@ public class Virologist extends Observable implements Steppable, Serializable {
      */
     public void AddAgent(Agent a) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(),a.getClass().toString());
+    	a.RemoveObservers();
+    	a.AddObserver(a.CreateActiveObserver());
         activeAgents.add(a);
         a.NotifyAll();
         a.setVirologist(this);
