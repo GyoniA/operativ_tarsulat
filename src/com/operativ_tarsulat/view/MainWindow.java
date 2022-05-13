@@ -53,7 +53,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		ImageIcon paralyzeEmblem = new ImageIcon("paralyzeEmblem.png");
 		
 		JScrollPane menuScrollPane = new JScrollPane(listView);
-		menuScrollPane.setBounds(400,410,200,160);
+		menuScrollPane.setBounds(400,410,370,160);
 		getContentPane().add(menuScrollPane);
 		
 		
