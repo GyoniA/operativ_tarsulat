@@ -142,8 +142,6 @@ public class MainWindow extends JFrame implements ActionListener{
 		vLabel.setBounds(10,455,70,20);
 		getContentPane().add(vLabel);
 
-		//TODO start of labels
-
 		gotProtectionLabel = new JLabel("");
 		gotProtectionLabel.setBounds(80,455,25,25);
 		getContentPane().add(gotProtectionLabel);
@@ -167,7 +165,6 @@ public class MainWindow extends JFrame implements ActionListener{
 		gotAmnesiaLabel = new JLabel("");
 		gotAmnesiaLabel.setBounds(184,520,25,25);
 		getContentPane().add(gotAmnesiaLabel);
-		//TODO end of labels
 		
 		JLabel eqLabel = new JLabel("Equipment:");
 		eqLabel.setBounds(780,370,100,25);
