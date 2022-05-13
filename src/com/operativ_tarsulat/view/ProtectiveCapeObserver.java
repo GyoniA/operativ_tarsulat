@@ -1,8 +1,16 @@
 package com.operativ_tarsulat.view;
+import com.operativ_tarsulat.model.AmnesiaVirus;
 import com.operativ_tarsulat.model.ProtectiveCape;
 
 public class ProtectiveCapeObserver implements Observer{
-    private ProtectiveCape subject;
+    /**
+     * Observed object.
+     */
+    ProtectiveCape subject;
+
+    /**
+     * Function that is called when the subject is changed.
+     */
     public void Update(){
 
     }
