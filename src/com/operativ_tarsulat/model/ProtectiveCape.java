@@ -1,10 +1,21 @@
 package com.operativ_tarsulat.model;
+
+import com.operativ_tarsulat.view.ProtectiveCapeObserver;
+
 import java.io.Serializable;
 import java.util.Random;
 
 public class ProtectiveCape extends Gear implements Serializable {
     private final GearSlot slot = GearSlot.ProtectiveCape;
 
+    /**
+     * Calls the blank ProtectiveCape constructor
+     */
+    ProtectiveCape() {
+        super();
+        AddObserver(new ProtectiveCapeObserver(this));
+
+    }
     /**
      * @return The description of the class
      */
