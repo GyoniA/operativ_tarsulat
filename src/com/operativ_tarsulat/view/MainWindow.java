@@ -138,7 +138,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		nucleoLabel.setBounds(240,415,60,20);
 		getContentPane().add(nucleoLabel);
 		
-		JLabel vLabel = new JLabel("Vaccine:");
+		JLabel vLabel = new JLabel("Inventory:");
 		vLabel.setBounds(10,455,70,20);
 		getContentPane().add(vLabel);
 
@@ -146,7 +146,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		gotProtectionLabel.setBounds(80,455,25,25);
 		getContentPane().add(gotProtectionLabel);
 		
-		JLabel vPanel = new JLabel("Virus:");
+		JLabel vPanel = new JLabel("Active:");
 		vPanel.setBounds(10,520,70,20);
 		getContentPane().add(vPanel);
 
