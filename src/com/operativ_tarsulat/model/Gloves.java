@@ -24,9 +24,9 @@ public class Gloves extends Gear implements Serializable {
 
     /**
      *
-     * @param v The Virologist who wants to reach another Virologist
+     * @param v The targeted Virologist
      * @param i An Agent, which v wants to use
-     * @param v2 The targeted Virologist
+     * @param v2 The Virologist who wants to reach another Virologist
      * @return true, because v can't reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
@@ -35,6 +35,7 @@ public class Gloves extends Gear implements Serializable {
         if (uses == 0) {
             v.RemoveGear(this);
         }
+        v2.AddAgent(i);
         Skeleton.LogReturn("true");
     	return true;
     }
