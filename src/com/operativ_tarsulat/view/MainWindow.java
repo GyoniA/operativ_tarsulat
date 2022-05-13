@@ -173,28 +173,28 @@ public class MainWindow extends JFrame implements ActionListener{
 		JLabel ckLabel = new JLabel("ProtectiveCape:");
 		ckLabel.setBounds(780,420,100,25);
 		getContentPane().add(ckLabel);
-		gotProtectiveCapeLabel = new JLabel("KEPECS");//ezt a sort majd ki kell venni.
+		gotProtectiveCapeLabel = new JLabel("");
 		gotProtectiveCapeLabel.setBounds(820,420,40,40);
 		getContentPane().add(gotProtectiveCapeLabel);
 		
 		JLabel gLabel = new JLabel("Gloves:");
 		gLabel.setBounds(885,420,100,25);
 		getContentPane().add(gLabel);
-		gotGlovesLabel = new JLabel("KEPECS");//ezt a sort majd ki kell venni.
+		gotGlovesLabel = new JLabel("");
 		gotGlovesLabel.setBounds(930,420,40,40);
 		getContentPane().add(gotGlovesLabel);
 		
 		JLabel axLabel = new JLabel("Axe:");
 		axLabel.setBounds(885,500,100,25);
 		getContentPane().add(axLabel);
-		gotAxeLabel = new JLabel("KEPECS");//ezt a sort majd ki kell venni.
+		gotAxeLabel = new JLabel("");
 		gotAxeLabel.setBounds(930,500,40,40);
 		getContentPane().add(gotAxeLabel);
 		
 		JLabel baLabel = new JLabel("Bag:");
 		baLabel.setBounds(780,500,100,25);
 		getContentPane().add(baLabel);
-		gotBagLabel = new JLabel("KEPECS");//ezt a sort majd ki kell venni.
+		gotBagLabel = new JLabel("");
 		gotBagLabel.setBounds(820,500,40,40);
 		getContentPane().add(gotBagLabel);
 		
