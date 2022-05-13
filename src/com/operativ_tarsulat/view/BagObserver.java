@@ -23,7 +23,7 @@ public class BagObserver implements Observer{
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("bagEmblem.png"));
+        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("bag.png"));
         MainWindow.getInstance().getAmnesiaLabel().revalidate();
     }
 }

@@ -22,7 +22,7 @@ public class AxeObserver implements Observer{
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("axeEmblem.png"));
+        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("axe.png"));
         MainWindow.getInstance().getAmnesiaLabel().revalidate();
     }
 }
