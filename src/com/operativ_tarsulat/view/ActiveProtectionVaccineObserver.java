@@ -22,7 +22,7 @@ public class ActiveProtectionVaccineObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getGotProtectionLabel().setIcon(new ImageIcon("protectionEmblem.png"));
-        MainWindow.getInstance().getGotProtectionLabel().revalidate();
+        MainWindow.getInstance().getActiveProtectionLabel().setIcon(new ImageIcon("protectionEmblem.png"));
+        MainWindow.getInstance().getActiveProtectionLabel().revalidate();
     }
 }

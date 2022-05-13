@@ -34,6 +34,9 @@ public class VirologistObserver implements Observer {
         MainWindow.getInstance().getProtectionLabel().setIcon(null);
         MainWindow.getInstance().getProtectionLabel().revalidate();
 
+        MainWindow.getInstance().getGotProtectionLabel().setIcon(null);
+        MainWindow.getInstance().getGotProtectionLabel().revalidate();
+
         MainWindow.getInstance().getGotParalyzeLabel().setIcon(null);
         MainWindow.getInstance().getGotParalyzeLabel().revalidate();
 
@@ -57,6 +60,22 @@ public class VirologistObserver implements Observer {
 
         MainWindow.getInstance().getGotAxeLabel().setIcon(null);
         MainWindow.getInstance().getGotAxeLabel().revalidate();
+
+        MainWindow.getInstance().getActiveProtectionLabel().setIcon(null);
+        MainWindow.getInstance().getActiveProtectionLabel().revalidate();
+
+        MainWindow.getInstance().getActiveParalyzeLabel().setIcon(null);
+        MainWindow.getInstance().getActiveParalyzeLabel().revalidate();
+
+        MainWindow.getInstance().getActiveAmnesiaLabel().setIcon(null);
+        MainWindow.getInstance().getActiveAmnesiaLabel().revalidate();
+
+        MainWindow.getInstance().getActiveDanceLabel().setIcon(null);
+        MainWindow.getInstance().getActiveDanceLabel().revalidate();
+
+        MainWindow.getInstance().getActiveBearLabel().setIcon(null);
+        MainWindow.getInstance().getActiveBearLabel().revalidate();
+
 
         for (Gear g : subject.getGears()) {
             g.NotifyAll();

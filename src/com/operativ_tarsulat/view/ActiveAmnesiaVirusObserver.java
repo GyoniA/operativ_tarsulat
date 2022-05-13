@@ -22,7 +22,7 @@ public class ActiveAmnesiaVirusObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getGotAmnesiaLabel().setIcon(new ImageIcon("amnesiaEmblem.png"));
-        MainWindow.getInstance().getGotAmnesiaLabel().revalidate();
+        MainWindow.getInstance().getActiveAmnesiaLabel().setIcon(new ImageIcon("amnesiaEmblem.png"));
+        MainWindow.getInstance().getActiveAmnesiaLabel().revalidate();
     }
 }

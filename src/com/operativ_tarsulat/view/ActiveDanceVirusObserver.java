@@ -22,7 +22,7 @@ public class ActiveDanceVirusObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getGotDanceLabel().setIcon(new ImageIcon("danceEmblem.png"));
-        MainWindow.getInstance().getGotDanceLabel().revalidate();
+        MainWindow.getInstance().getActiveDanceLabel().setIcon(new ImageIcon("danceEmblem.png"));
+        MainWindow.getInstance().getActiveDanceLabel().revalidate();
     }
 }

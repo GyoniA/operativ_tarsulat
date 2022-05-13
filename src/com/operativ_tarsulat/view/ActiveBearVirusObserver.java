@@ -22,7 +22,7 @@ public class ActiveBearVirusObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getGotBearLabel().setIcon(new ImageIcon("bearEmblem.png"));
-        MainWindow.getInstance().getGotBearLabel().revalidate();
+        MainWindow.getInstance().getActiveBearLabel().setIcon(new ImageIcon("bearEmblem.png"));
+        MainWindow.getInstance().getActiveBearLabel().revalidate();
     }
 }

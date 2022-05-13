@@ -22,7 +22,7 @@ public class ActiveParalyzeVirusObserver implements Observer {
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getGotParalyzeLabel().setIcon(new ImageIcon("paralyzeEmblem.png"));
-        MainWindow.getInstance().getGotParalyzeLabel().revalidate();
+        MainWindow.getInstance().getActiveParalyzeLabel().setIcon(new ImageIcon("paralyzeEmblem.png"));
+        MainWindow.getInstance().getActiveParalyzeLabel().revalidate();
     }
 }
