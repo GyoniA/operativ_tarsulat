@@ -46,8 +46,6 @@ public class AmnesiaVirus extends Agent implements Serializable {
      * @return false, because v can reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), i.getClass().getName(), v2.getName());
-        Skeleton.LogReturn("false");
         return false;
     }
 

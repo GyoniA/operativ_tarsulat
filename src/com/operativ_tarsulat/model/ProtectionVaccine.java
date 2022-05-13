@@ -45,8 +45,6 @@ public class ProtectionVaccine extends Agent implements Serializable {
      * @return true, because v can't reach v2
      */
     public Boolean HandleTouch(Virologist v, Agent i, Virologist v2) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName(), i.getClass().getName(), v2.getName());
-        Skeleton.LogReturn("true");
         return true;
     }
 

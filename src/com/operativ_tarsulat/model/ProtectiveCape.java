@@ -84,9 +84,7 @@ public class ProtectiveCape extends Gear implements Serializable {
      * @return false, because it can create Agent
      */
     public Boolean HandleCreateAgent(Virologist v, GeneticCode code) {
-        Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getClass().getName());
-        Skeleton.LogReturn("false");
-    	return false;
+        return false;
     }
 
     /**
