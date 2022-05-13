@@ -12,7 +12,6 @@ public class Gloves extends Gear implements Serializable {
      * Calls the blank Gloves constructor
      */
     Gloves() {
-        super();
         AddObserver(new GlovesObserver(this));
 
     }

@@ -13,7 +13,6 @@ public class Axe extends Gear implements Serializable, Weapon{
      * Calls the blank Axe constructor
      */
     Axe() {
-        super();
         AddObserver(new AxeObserver(this));
 
     }

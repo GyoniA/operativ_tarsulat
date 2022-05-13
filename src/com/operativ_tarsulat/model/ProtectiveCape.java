@@ -12,7 +12,6 @@ public class ProtectiveCape extends Gear implements Serializable {
      * Calls the blank ProtectiveCape constructor
      */
     ProtectiveCape() {
-        super();
         AddObserver(new ProtectiveCapeObserver(this));
 
     }

@@ -13,7 +13,6 @@ public class Bag extends Gear implements Serializable {
      * Calls the blank Bag constructor
      */
     Bag() {
-        super();
         AddObserver(new BagObserver(this));
 
     }
