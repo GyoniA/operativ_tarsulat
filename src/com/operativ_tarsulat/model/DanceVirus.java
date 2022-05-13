@@ -69,8 +69,8 @@ public class DanceVirus extends Agent implements Serializable {
      */
     public Boolean HandleMove(Virologist v) {
         Skeleton.LogFunctionCall(new Object() {}.getClass().getEnclosingMethod().getName(), v.getName());
-        Skeleton.LogReturn("true");
-        return true;
+        Skeleton.LogReturn("false");
+        return false;
     }
 
     /**
