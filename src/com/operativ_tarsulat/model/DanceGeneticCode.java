@@ -1,5 +1,7 @@
 package com.operativ_tarsulat.model;
 
+import com.operativ_tarsulat.view.DanceGeneticCodeObserver;
+
 import java.io.Serializable;
 
 public class DanceGeneticCode extends GeneticCode implements Serializable {
@@ -15,6 +17,7 @@ public class DanceGeneticCode extends GeneticCode implements Serializable {
      */
     DanceGeneticCode() {
         super();
+        AddObserver(new DanceGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("DanceGeneticCode ctr");
         Skeleton.LogReturn();
     }
@@ -26,6 +29,7 @@ public class DanceGeneticCode extends GeneticCode implements Serializable {
      */
     DanceGeneticCode(int a, int n) {
         super(a, n);
+        AddObserver(new DanceGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("DanceGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();
     }
