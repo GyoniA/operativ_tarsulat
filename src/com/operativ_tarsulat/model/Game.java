@@ -78,7 +78,7 @@ public class Game implements Serializable {
 	 * Maximum number of extra neighbours of a field
 	 * The actual number of neighbour fields is generated randomly between 0 and the value of this variable.
 	 */
-	private final int MAX_EXTRA_NEIGHBOURS = 3;
+	private final int MAX_EXTRA_NEIGHBOURS = 1;
 
 	
 	/**

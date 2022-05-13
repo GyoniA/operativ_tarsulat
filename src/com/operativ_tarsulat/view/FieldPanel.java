@@ -1,6 +1,7 @@
 package com.operativ_tarsulat.view;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class FieldPanel extends JPanel {
     private String[] names;
@@ -13,26 +14,28 @@ public class FieldPanel extends JPanel {
     public FieldPanel(){
         this.add(imageLabel);
         this.add(namesLabel);
-        imageLabel.setBounds(0,0,40,40);
-        namesLabel.setBounds(0,50,40,60);
         this.setBounds(posX,posY,40,100);
-        namesLabel.setText("hel");
+
+        imageLabel.setBounds(0,0,40,40);
+        namesLabel.setBounds(0,0,40,60);
+
     }
     
     public void UpdateBounds() {
-    	this.setBounds(posX,posY,40,100);
+    	this.setBounds(posX - 20,posY - 50,40,100);
     }
 
     public void setImage(String img){
         image = img;
-    }
-    public String getImage(){
-        return image;
+        imageLabel.setIcon(new ImageIcon(image));
     }
     public void setNames(String[] nameArray){
         names = nameArray;
+        if(names.length != 0) {
+            for(int i =0;i<names.length;i++)
+                namesLabel.setText(names[i]);
+        }
     }
-
     public void setPosX(int pos){
         posX = pos;
     }
