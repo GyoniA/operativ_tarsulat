@@ -246,7 +246,7 @@ public class Menu {
 	
 	private void menuThread() {
 		while(true) {
-			showCommands(new MenuItem("playerSteps","Játékos léptetése"),new MenuItem("interact","Interakció a mezõvel"), new MenuItem("createAgent","Ágens létrehozása"),new MenuItem("useAgent","Ágens létrehozása"),new MenuItem("stealMaterial","Anyag lopása"),new MenuItem("stealGear","Felszerelés lopása"),new MenuItem("endTurn","Kör befejezése"));
+			showCommands(new MenuItem("playerSteps","Játékos léptetése"),new MenuItem("interact","Interakció a mezõvel"), new MenuItem("createAgent","Ágens létrehozása"),new MenuItem("useAgent","Ágens használata"),new MenuItem("stealMaterial","Anyag lopása"),new MenuItem("stealGear","Felszerelés lopása"),new MenuItem("endTurn","Kör befejezése"));
 			// get the next command
 			int input = waitInput();
 			// evaluate the command
