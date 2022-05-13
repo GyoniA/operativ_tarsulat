@@ -23,7 +23,11 @@ import java.awt.event.ActionListener;
 public class MainWindow extends JFrame implements ActionListener{
 	
 	private static MainWindow instance = null;
-	
+
+	/**
+	 * Returns the singleton instance of the MainWindow class.
+	 * @return the singleton instance
+	 */
 	public static MainWindow getInstance() {
 		if(instance == null)
 			instance = new MainWindow();
@@ -36,8 +40,14 @@ public class MainWindow extends JFrame implements ActionListener{
 	JMenuItem saveItem;
 	JMenuItem exitItem;
 	LoadWindow loadWindow;
-	
+	/**
+	 * JLabels for showing icons in the main window
+	 */
 	JLabel danceLabel,amnesiaLabel,paralyzeLabel,protectionLabel,actualPlayer, nucleoLabel, aminoLabel,gotProtectionLabel,gotParalyzeLabel,gotAmnesiaLabel,gotDanceLabel,gotBearLabel,gotBagLabel,gotProtectiveCapeLabel,gotGlovesLabel,gotAxeLabel,activeParalyzeLabel,activeDanceLabel,activeAmnesiaLabel,activeBearLabel,activeProtectionLabel;
+
+	/**
+	 * MainWindow constructor that creates the main window
+	 */
 	private MainWindow() {
 		super("Vak virológusok földje...");
 		setSize(1000,630);
@@ -245,7 +255,10 @@ public class MainWindow extends JFrame implements ActionListener{
 		
 		this.setResizable(false);
 	}
-	
+
+	/**
+	 * Getter setter functions return or set the value of the variables
+	 */
 	public JLabel getDanceLabel ()
 	{
 		return danceLabel;
@@ -414,10 +427,12 @@ public class MainWindow extends JFrame implements ActionListener{
 	public MapPanel getMapPanel(){
 		return mapPanel;
 	}
-	
 
 
-
+	/**
+	 * Handles the events of the menu items
+	 * @param e the event that has been fired
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==loadItem)

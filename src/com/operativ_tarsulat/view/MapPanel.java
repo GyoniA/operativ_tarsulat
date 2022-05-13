@@ -9,11 +9,18 @@ import java.awt.Graphics;
 import java.awt.Dimension;
 
 public class MapPanel extends JPanel {
+    /**
+     * Constructor of the map panel
+     */
 	MapPanel() {
         setPreferredSize(new Dimension(1000,300));
 		this.setLayout(null);
     }
 
+    /**
+     * Paint all the components of the map
+     * @param g the graphics object
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

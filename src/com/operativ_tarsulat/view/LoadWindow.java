@@ -35,7 +35,11 @@ public class LoadWindow extends JFrame implements ActionListener{
 		this.add(button);
 		this.setResizable(false);
 	}
-	
+
+	/**
+	 * Handles the performed action
+	 * @param e the action event
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==button)

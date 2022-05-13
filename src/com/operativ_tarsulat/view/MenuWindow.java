@@ -26,10 +26,19 @@ public class MenuWindow extends JFrame {
 	JButton loadGameButton,startGameButton;
 	JPanel seedPanel,playersPanel,nameOfgamePanel,newGamePanel,loadGamePanel;
 	JScrollPane playerScroll;
+
+	/**
+	 * Main function of the class
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		MenuWindow menu = new MenuWindow();
 		menu.setVisible(true);
 	}
+
+	/**
+	 * Constructor for the menu window
+	 */
 	public MenuWindow() {
 		super("Menü");
 		this.setSize(600,500);
@@ -37,18 +46,15 @@ public class MenuWindow extends JFrame {
 		Container content = getContentPane();		
 		content.setLayout(null);
 		
-		
 		JLabel title = new JLabel("Vak Virologusok");
 		title.setFont(new Font("Monospaced",Font.ITALIC,30));
 		title.setBounds(150,0,300,50);
 		content.add(title);
 		
-		
 		JLabel newGameLabel = new JLabel("Options for new Game");
 		newGameLabel.setFont(new Font("Serif",Font.PLAIN,20));
 		newGameLabel.setBounds(320,50,200,50);
 		content.add(newGameLabel);
-		
 		
 		JLabel seedLabel = new JLabel("Seed:");
 		seedLabel.setBounds(300,100,100,25);
@@ -64,9 +70,6 @@ public class MenuWindow extends JFrame {
 		playersArea.setBounds(350,150,150,100);
 		content.add(playersLabel);
 		content.add(playersArea);
-		
-		
-		
 		
 		JLabel gameLabel = new JLabel("Game:");
 		nameOfgameField = new JTextField(10);
@@ -94,11 +97,6 @@ public class MenuWindow extends JFrame {
 		content.add(fileNameLabel);
 		content.add(loadGameName);
 		content.add(loadGameButton);
-		
-		
-		
-		
-		
 	
 		startGameButton.addActionListener((e)->{
 			if(!playersArea.getText().isEmpty()&&!nameOfgameField.getText().isEmpty()&&!seed.getText().isEmpty())
@@ -124,10 +122,5 @@ public class MenuWindow extends JFrame {
 			MainWindow.getInstance().setVisible(true);
 			setVisible(false);
 		});
-		
-		
-		
 	}
-	
-	
 }
