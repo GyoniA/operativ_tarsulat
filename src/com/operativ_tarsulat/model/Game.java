@@ -243,7 +243,7 @@ public class Game implements Serializable {
     	}
     	
     	for(int i = 0;i<shelterCount;i++) {
-    		Gear[] g = new Gear[] {new ProtectiveCape(),new Gloves(),new Bag()};// Probably should be changed to switch case for performance purposes
+    		Gear[] g = new Gear[] {new ProtectiveCape(),new Gloves(),new Bag(),new Axe()};// Probably should be changed to switch case for performance purposes
     		int index = RandomInt(0,g.length);
     		shelters.add(new Shelter(g[index])); 
     	}
