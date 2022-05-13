@@ -78,10 +78,11 @@ public abstract class Field extends Observable implements Serializable {
     	{
     		virologists.remove(v);
     		Skeleton.LogReturn("true");
+    		this.NotifyAll();
     		return true;
     	}
     	Skeleton.LogReturn("false");
-		this.NotifyAll();
+		
 		return false;
     		
     }

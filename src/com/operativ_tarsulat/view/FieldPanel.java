@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FieldPanel extends JPanel {
-    private String[] names;
     private String image;
     private JLabel imageLabel = new JLabel();
     private JLabel namesLabel = new JLabel();
@@ -18,6 +17,9 @@ public class FieldPanel extends JPanel {
 
         imageLabel.setBounds(0,0,40,40);
         namesLabel.setBounds(0,0,40,60);
+        imageLabel.setOpaque(false);
+        namesLabel.setOpaque(false);
+        this.setOpaque(false);
 
     }
     
@@ -30,11 +32,12 @@ public class FieldPanel extends JPanel {
         imageLabel.setIcon(new ImageIcon(image));
     }
     public void setNames(String[] nameArray){
-        names = nameArray;
-        if(names.length != 0) {
-            for(int i =0;i<names.length;i++)
-                namesLabel.setText(names[i]);
-        }
+        String names ="<html>";
+
+        for(int i =0;i<nameArray.length;i++)
+            names += nameArray[i] + "<br>";
+
+        namesLabel.setText(names);
     }
     public void setPosX(int pos){
         posX = pos;
