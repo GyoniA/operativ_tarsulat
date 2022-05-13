@@ -102,20 +102,20 @@ public class MainWindow extends JFrame implements ActionListener{
 		JLabel cLabel = new JLabel("Codes:");
 		cLabel.setBounds(10,370,100,20);
 		getContentPane().add(cLabel);
-		
-		danceLabel = new JLabel("KEPKEP"); //ezt a sort majd ki kell venni.
+
+		danceLabel = new JLabel("");
 		danceLabel.setBounds(60,345,70,70);
 		getContentPane().add(danceLabel);
 		
-		amnesiaLabel = new JLabel("KEPKEP");//ezt a sort majd ki kell venni. 
+		amnesiaLabel = new JLabel("");
 		amnesiaLabel.setBounds(110,345,70,70);
 		getContentPane().add(amnesiaLabel);
 		
-		paralyzeLabel = new JLabel("KEPKEP");//ezt a sort majd ki kell venni. 
+		paralyzeLabel = new JLabel("");
 		paralyzeLabel.setBounds(160,345,70,70);
 		getContentPane().add(paralyzeLabel);
 		
-		protectionLabel = new JLabel("KEPKEP");//ezt a sort majd ki kell venni.
+		protectionLabel = new JLabel("");
 		protectionLabel.setBounds(210,345,70,70);
 		getContentPane().add(protectionLabel);
 		
