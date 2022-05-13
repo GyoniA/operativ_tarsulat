@@ -4,7 +4,7 @@ import com.operativ_tarsulat.model.FreeField;
 
 public class FreeFieldObserver implements Observer{
     private FreeField subject;
-    private FieldPanel panel;
+    private FieldPanel panel = new FieldPanel();
 
     public FreeFieldObserver(FreeField freeField){
         subject = freeField;
