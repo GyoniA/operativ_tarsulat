@@ -23,7 +23,10 @@ public abstract class Agent extends Observable implements Steppable, Effect,Seri
      * @return The description of the class
      */
     public String toString(){
-        return "Agent: duration: "+Duration+" Virologist: "+virologist.getName();
+        if (virologist != null) {
+            return "Agent: duration: "+Duration+" Virologist: "+virologist.getName();
+        }
+        return "Agent: duration: "+Duration;
     }
 
     /**
