@@ -6,7 +6,7 @@ import java.util.List;
 import com.operativ_tarsulat.view.Observer;
 
 /*
- * Common parent class for all observable calsses. Used for notifying observers.
+ * Common parent class for all observable classes. Used for notifying observers.
  */
 public class Observable {
 	/*
