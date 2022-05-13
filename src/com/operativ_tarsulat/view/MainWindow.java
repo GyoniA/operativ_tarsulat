@@ -35,6 +35,7 @@ public class MainWindow extends JFrame implements ActionListener{
 	JMenuItem loadItem;
 	JMenuItem saveItem;
 	JMenuItem exitItem;
+	LoadWindow loadWindow;
 	
 	JLabel danceLabel,amnesiaLabel,paralyzeLabel,protectionLabel,actualPlayer, nucleoLabel, aminoLabel,gotProtectionLabel,gotParalyzeLabel,gotAmnesiaLabel,gotDanceLabel,gotBearLabel,gotBagLabel,gotProtectiveCapeLabel,gotGlovesLabel,gotAxeLabel,activeParalyzeLabel,activeDanceLabel,activeAmnesiaLabel,activeBearLabel,activeProtectionLabel;
 	private MainWindow() {
@@ -421,7 +422,9 @@ public class MainWindow extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==loadItem)
 		{
-			 //TODO
+			 loadWindow = new LoadWindow();
+			 loadWindow.setVisible(true);
+			 
 		}
 		if(e.getSource()==saveItem)
 		{
