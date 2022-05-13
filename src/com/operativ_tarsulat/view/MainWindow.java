@@ -170,7 +170,7 @@ public class MainWindow extends JFrame implements ActionListener{
 		eqLabel.setBounds(780,370,100,25);
 		getContentPane().add(eqLabel);
 		
-		JLabel ckLabel = new JLabel("ProtectiveCape:");
+		JLabel ckLabel = new JLabel("Cape:");
 		ckLabel.setBounds(780,420,100,25);
 		getContentPane().add(ckLabel);
 		gotProtectiveCapeLabel = new JLabel("");
