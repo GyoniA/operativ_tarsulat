@@ -22,7 +22,7 @@ public class ProtectiveCapeObserver implements Observer{
      * Function that is called when the subject is changed.
      */
     public void Update(){
-        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("protectivecapeEmblem.png"));
+        MainWindow.getInstance().getAmnesiaLabel().setIcon(new ImageIcon("cloak.png"));
         MainWindow.getInstance().getAmnesiaLabel().revalidate();
     }
 }
