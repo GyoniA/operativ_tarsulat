@@ -10,6 +10,14 @@ public class GlovesObserver implements Observer{
     Gloves subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public GlovesObserver(Gloves subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

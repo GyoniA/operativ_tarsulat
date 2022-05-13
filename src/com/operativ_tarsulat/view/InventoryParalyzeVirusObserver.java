@@ -9,6 +9,14 @@ public class InventoryParalyzeVirusObserver implements Observer {
     ParalyzeVirus subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public InventoryParalyzeVirusObserver(ParalyzeVirus subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

@@ -9,6 +9,14 @@ public class ProtectiveCapeObserver implements Observer{
     ProtectiveCape subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public ProtectiveCapeObserver(ProtectiveCape subject){
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

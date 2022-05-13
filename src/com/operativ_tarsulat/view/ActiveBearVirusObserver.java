@@ -9,6 +9,14 @@ public class ActiveBearVirusObserver implements Observer {
     BearVirus subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public ActiveBearVirusObserver(BearVirus subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

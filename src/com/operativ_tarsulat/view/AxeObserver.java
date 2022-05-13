@@ -10,6 +10,14 @@ public class AxeObserver implements Observer{
     Axe subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public AxeObserver(Axe subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

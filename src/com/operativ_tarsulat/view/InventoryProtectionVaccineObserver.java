@@ -9,6 +9,14 @@ public class InventoryProtectionVaccineObserver implements Observer {
     ProtectionVaccine subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public InventoryProtectionVaccineObserver(ProtectionVaccine subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

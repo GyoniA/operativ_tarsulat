@@ -9,6 +9,14 @@ public class ActiveProtectionVaccineObserver implements Observer {
     ProtectionVaccine subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public ActiveProtectionVaccineObserver(ProtectionVaccine subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

@@ -9,6 +9,14 @@ public class AmnesiaGeneticCodeObserver implements Observer {
     AmnesiaGeneticCode subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public AmnesiaGeneticCodeObserver(AmnesiaGeneticCode subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

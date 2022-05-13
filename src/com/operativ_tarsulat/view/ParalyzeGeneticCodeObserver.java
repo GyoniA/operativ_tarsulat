@@ -9,6 +9,14 @@ public class ParalyzeGeneticCodeObserver implements Observer {
     ParalyzeGeneticCode subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public ParalyzeGeneticCodeObserver(ParalyzeGeneticCode subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

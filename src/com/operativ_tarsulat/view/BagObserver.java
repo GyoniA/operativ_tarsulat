@@ -10,6 +10,14 @@ public class BagObserver implements Observer{
     Bag subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public BagObserver(Bag subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

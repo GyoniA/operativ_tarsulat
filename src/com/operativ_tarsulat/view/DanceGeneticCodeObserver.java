@@ -9,6 +9,14 @@ public class DanceGeneticCodeObserver implements Observer {
     DanceGeneticCode subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public DanceGeneticCodeObserver(DanceGeneticCode subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

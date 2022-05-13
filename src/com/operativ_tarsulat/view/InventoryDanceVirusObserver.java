@@ -9,6 +9,14 @@ public class InventoryDanceVirusObserver implements Observer {
     DanceVirus subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public InventoryDanceVirusObserver(DanceVirus subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

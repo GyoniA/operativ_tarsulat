@@ -9,6 +9,14 @@ public class InventoryAmnesiaVirusObserver implements Observer {
     AmnesiaVirus subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public InventoryAmnesiaVirusObserver(AmnesiaVirus subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){

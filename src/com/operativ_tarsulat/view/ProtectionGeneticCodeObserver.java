@@ -9,6 +9,14 @@ public class ProtectionGeneticCodeObserver implements Observer {
     ProtectionGeneticCode subject;
 
     /**
+     * Constructor.
+     * @param subject
+     */
+    public ProtectionGeneticCodeObserver(ProtectionGeneticCode subject) {
+        this.subject = subject;
+    }
+
+    /**
      * Function that is called when the subject is changed.
      */
     public void Update(){
