@@ -1,4 +1,6 @@
 package com.operativ_tarsulat.model;
+import com.operativ_tarsulat.view.VirologistObserver;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
     public Virologist(String n){
         Skeleton.LogFunctionCall("Virologist ctr",n);
         this.name = n;
+        AddObserver(new VirologistObserver(this));
         Skeleton.LogReturn();
     }
     
@@ -47,11 +50,13 @@ public class Virologist extends Observable implements Steppable, Serializable {
         Skeleton.LogFunctionCall("Virologist ctr",n,f.getClass().toString());
         this.name = n;
         this.field = f;
+        AddObserver(new VirologistObserver(this));
         Skeleton.LogReturn();
     }
 
     public Virologist(){
         Skeleton.LogFunctionCall("Virologist ctr");
+        AddObserver(new VirologistObserver(this));
         Skeleton.LogReturn();
     }
 
@@ -255,6 +260,7 @@ public class Virologist extends Observable implements Steppable, Serializable {
             activeAgents.get(i).HandleTurnStart(this);
             activeAgents.get(i).Step();
         }
+        this.NotifyAll();
         Skeleton.LogReturn();
     }
 
