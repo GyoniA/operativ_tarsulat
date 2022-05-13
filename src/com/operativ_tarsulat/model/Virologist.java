@@ -140,8 +140,10 @@ public class Virologist extends Observable implements Steppable, Serializable {
         boolean movement = checkMovement();
 
         // if movement is allowed
-        if(movement)
-            v2.ReceiveAgentUse(a,this);
+        if(movement) {
+        	v2.ReceiveAgentUse(a,this);
+    		agentInventory.remove(a);
+        }
         NotifyAll();
         Skeleton.LogReturn();
     }

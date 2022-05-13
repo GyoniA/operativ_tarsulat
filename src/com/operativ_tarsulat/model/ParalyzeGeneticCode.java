@@ -17,6 +17,7 @@ public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
      */
     ParalyzeGeneticCode() {
         super();
+        SetDuration(1);
         AddObserver(new ParalyzeGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("ParalyzeGeneticCode ctr");
         Skeleton.LogReturn();
@@ -29,6 +30,7 @@ public class ParalyzeGeneticCode extends GeneticCode implements Serializable {
      */
     ParalyzeGeneticCode( int a, int n) {
         super(a, n);
+        SetDuration(1);
         AddObserver(new ParalyzeGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("ParalyzeGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();

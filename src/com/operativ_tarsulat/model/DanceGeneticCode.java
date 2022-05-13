@@ -17,6 +17,7 @@ public class DanceGeneticCode extends GeneticCode implements Serializable {
      */
     DanceGeneticCode() {
         super();
+        SetDuration(3);
         AddObserver(new DanceGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("DanceGeneticCode ctr");
         Skeleton.LogReturn();
@@ -29,6 +30,7 @@ public class DanceGeneticCode extends GeneticCode implements Serializable {
      */
     DanceGeneticCode(int a, int n) {
         super(a, n);
+        SetDuration(3);
         AddObserver(new DanceGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("DanceGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();

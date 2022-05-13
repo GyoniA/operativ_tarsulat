@@ -17,6 +17,7 @@ public class ProtectionGeneticCode extends GeneticCode implements Serializable {
      */
     ProtectionGeneticCode() {
         super();
+        SetDuration(2);
         AddObserver(new ProtectionGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("ProtectionGeneticCode ctr");
         Skeleton.LogReturn();
@@ -29,6 +30,7 @@ public class ProtectionGeneticCode extends GeneticCode implements Serializable {
      */
     ProtectionGeneticCode(int a, int n) {
         super(a, n);
+        SetDuration(2);
         AddObserver(new ProtectionGeneticCodeObserver(this));
         Skeleton.LogFunctionCall("ProtectionGeneticCode ctr", String.valueOf(a), String.valueOf(n));
         Skeleton.LogReturn();
